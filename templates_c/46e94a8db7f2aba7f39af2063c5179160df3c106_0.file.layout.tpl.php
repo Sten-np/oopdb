@@ -1,18 +1,18 @@
 <?php
-/* Smarty version 4.3.2, created on 2023-09-05 14:23:53
-  from 'C:\Wamp.NET\sites\oopdb\template\layout.tpl' */
+/* Smarty version 4.3.2, created on 2023-09-06 08:32:49
+  from 'C:\Wamp.NET\sites\Project9\template\layout.tpl' */
 
 /* @var Smarty_Internal_Template $_smarty_tpl */
 if ($_smarty_tpl->_decodeProperties($_smarty_tpl, array (
   'version' => '4.3.2',
-  'unifunc' => 'content_64f71dd96c8853_91819743',
+  'unifunc' => 'content_64f83931956199_93766051',
   'has_nocache_code' => false,
   'file_dependency' => 
   array (
-    '22866d203007b7b81717902a88f9c5d7dc8a7930' => 
+    '46e94a8db7f2aba7f39af2063c5179160df3c106' => 
     array (
-      0 => 'C:\\Wamp.NET\\sites\\oopdb\\template\\layout.tpl',
-      1 => 1693916586,
+      0 => 'C:\\Wamp.NET\\sites\\Project9\\template\\layout.tpl',
+      1 => 1693985443,
       2 => 'file',
     ),
   ),
@@ -20,7 +20,7 @@ if ($_smarty_tpl->_decodeProperties($_smarty_tpl, array (
   array (
   ),
 ),false)) {
-function content_64f71dd96c8853_91819743 (Smarty_Internal_Template $_smarty_tpl) {
+function content_64f83931956199_93766051 (Smarty_Internal_Template $_smarty_tpl) {
 $_smarty_tpl->_loadInheritance();
 $_smarty_tpl->inheritance->init($_smarty_tpl, false);
 ?>
@@ -28,7 +28,7 @@ $_smarty_tpl->inheritance->init($_smarty_tpl, false);
 <html lang="en">
 <head>
     <title><?php 
-$_smarty_tpl->inheritance->instanceBlock($_smarty_tpl, 'Block_36095244164f71dd96bd813_84494654', "title");
+$_smarty_tpl->inheritance->instanceBlock($_smarty_tpl, 'Block_65252980464f83931951cd3_22986199', "title");
 ?>
 </title>
     <meta charset="utf-8">
@@ -79,7 +79,7 @@ $_smarty_tpl->inheritance->instanceBlock($_smarty_tpl, 'Block_36095244164f71dd96
             <ul class="nav navbar-nav navbar-right">
                 <li><a href="#"><span class="glyphicon glyphicon-user"></span> Sign in</a></li>
                 <?php 
-$_smarty_tpl->inheritance->instanceBlock($_smarty_tpl, 'Block_197028262064f71dd96c2ab8_56949319', "navmenu");
+$_smarty_tpl->inheritance->instanceBlock($_smarty_tpl, 'Block_25228820064f83931954410_18177705', "navmenu");
 ?>
 
                 <li><a href="#"><span class="glyphicon glyphicon-shopping-cart"></span> Cart</a></li>
@@ -90,7 +90,7 @@ $_smarty_tpl->inheritance->instanceBlock($_smarty_tpl, 'Block_197028262064f71dd9
 
 <div class="container">
     <?php 
-$_smarty_tpl->inheritance->instanceBlock($_smarty_tpl, 'Block_191278670764f71dd96c6925_87721792', "form");
+$_smarty_tpl->inheritance->instanceBlock($_smarty_tpl, 'Block_142466854564f83931955637_32418994', "form");
 ?>
 
 </div><br><br>
@@ -100,12 +100,12 @@ $_smarty_tpl->inheritance->instanceBlock($_smarty_tpl, 'Block_191278670764f71dd9
 </html>
 <?php }
 /* {block "title"} */
-class Block_36095244164f71dd96bd813_84494654 extends Smarty_Internal_Block
+class Block_65252980464f83931951cd3_22986199 extends Smarty_Internal_Block
 {
 public $subBlocks = array (
   'title' => 
   array (
-    0 => 'Block_36095244164f71dd96bd813_84494654',
+    0 => 'Block_65252980464f83931951cd3_22986199',
   ),
 );
 public function callBlock(Smarty_Internal_Template $_smarty_tpl) {
@@ -115,12 +115,12 @@ GameHub<?php
 }
 /* {/block "title"} */
 /* {block "navmenu"} */
-class Block_197028262064f71dd96c2ab8_56949319 extends Smarty_Internal_Block
+class Block_25228820064f83931954410_18177705 extends Smarty_Internal_Block
 {
 public $subBlocks = array (
   'navmenu' => 
   array (
-    0 => 'Block_197028262064f71dd96c2ab8_56949319',
+    0 => 'Block_25228820064f83931954410_18177705',
   ),
 );
 public function callBlock(Smarty_Internal_Template $_smarty_tpl) {
@@ -130,12 +130,12 @@ public function callBlock(Smarty_Internal_Template $_smarty_tpl) {
 }
 /* {/block "navmenu"} */
 /* {block "form"} */
-class Block_191278670764f71dd96c6925_87721792 extends Smarty_Internal_Block
+class Block_142466854564f83931955637_32418994 extends Smarty_Internal_Block
 {
 public $subBlocks = array (
   'form' => 
   array (
-    0 => 'Block_191278670764f71dd96c6925_87721792',
+    0 => 'Block_142466854564f83931955637_32418994',
   ),
 );
 public function callBlock(Smarty_Internal_Template $_smarty_tpl) {

@@ -10,7 +10,7 @@ class Mysql implements Database
 {
     protected $database;
 
-    public function connect(string $username, string $password, string $host, string $dbname)
+    public function connect(string $host, string $dbname, string $username, string $password)
     {
         try
         {
