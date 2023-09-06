@@ -16,7 +16,9 @@ $template = new Smarty();
 $template->clearCompiledTemplate();
 $template->clearAllCache();
 
+
 $action = isset($_GET['action']) ?? null;
+
 
 if(isset($_GET['action']))
 {
@@ -27,6 +29,9 @@ else
     $action = null;
 }
 
+$action = isset($_GET['action']) ?? null;
+
+
 switch($action)
 {
     case "registerForm":
@@ -35,6 +40,7 @@ switch($action)
     default:
         $template->display("template/layout.tpl");
         break;
+
 }
 
 
@@ -54,3 +60,4 @@ foreach ($productList->getProducts() as $product)
 {
    print $product->setCategory();
 }
+
