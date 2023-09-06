@@ -1,8 +1,12 @@
 {
     "autoload": {
         "psr-4": {
-            "Project9\\": "src/"
+            "Project9\\": "src/",
+            "Smarty\\": "vendor/smarty/smarty/libs/Smarty.class.php"
         }
     },
-    "require": {}
+    "require": {
+        "smarty/smarty": "^4.3",
+        "ext-pdo": "*"
+    }
 }
