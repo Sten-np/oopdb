@@ -1,18 +1,18 @@
 <?php
-/* Smarty version 4.3.2, created on 2023-09-06 09:37:13
+/* Smarty version 4.3.2, created on 2023-09-06 10:26:45
   from 'C:\Wamp.NET\sites\oopdb\template\layout.tpl' */
 
 /* @var Smarty_Internal_Template $_smarty_tpl */
 if ($_smarty_tpl->_decodeProperties($_smarty_tpl, array (
   'version' => '4.3.2',
-  'unifunc' => 'content_64f82c29a71874_44300668',
+  'unifunc' => 'content_64f837c5994634_70560986',
   'has_nocache_code' => false,
   'file_dependency' => 
   array (
     '22866d203007b7b81717902a88f9c5d7dc8a7930' => 
     array (
       0 => 'C:\\Wamp.NET\\sites\\oopdb\\template\\layout.tpl',
-      1 => 1693985832,
+      1 => 1693988759,
       2 => 'file',
     ),
   ),
@@ -20,7 +20,7 @@ if ($_smarty_tpl->_decodeProperties($_smarty_tpl, array (
   array (
   ),
 ),false)) {
-function content_64f82c29a71874_44300668 (Smarty_Internal_Template $_smarty_tpl) {
+function content_64f837c5994634_70560986 (Smarty_Internal_Template $_smarty_tpl) {
 $_smarty_tpl->_loadInheritance();
 $_smarty_tpl->inheritance->init($_smarty_tpl, false);
 ?>
@@ -28,7 +28,7 @@ $_smarty_tpl->inheritance->init($_smarty_tpl, false);
 <html lang="en">
 <head>
     <title><?php 
-$_smarty_tpl->inheritance->instanceBlock($_smarty_tpl, 'Block_183050663564f82c29a6ad34_39379282', "title");
+$_smarty_tpl->inheritance->instanceBlock($_smarty_tpl, 'Block_53186173264f837c598e371_45784063', "title");
 ?>
 </title>
     <meta charset="utf-8">
@@ -78,7 +78,7 @@ $_smarty_tpl->inheritance->instanceBlock($_smarty_tpl, 'Block_183050663564f82c29
             <ul class="nav navbar-nav navbar-right">
                 <li><a href="#"><span class="glyphicon glyphicon-user"></span> Sign in</a></li>
                 <?php 
-$_smarty_tpl->inheritance->instanceBlock($_smarty_tpl, 'Block_49108288764f82c29a6ea90_36635076', "navmenu");
+$_smarty_tpl->inheritance->instanceBlock($_smarty_tpl, 'Block_75780325164f837c59917c6_85845711', "navmenu");
 ?>
 
                 <li><a href="#"><span class="glyphicon glyphicon-shopping-cart"></span> Cart</a></li>
@@ -89,7 +89,7 @@ $_smarty_tpl->inheritance->instanceBlock($_smarty_tpl, 'Block_49108288764f82c29a
 
 <div class="container">
     <?php 
-$_smarty_tpl->inheritance->instanceBlock($_smarty_tpl, 'Block_72222667564f82c29a70690_69700119', "form");
+$_smarty_tpl->inheritance->instanceBlock($_smarty_tpl, 'Block_44947021064f837c5993325_05971551', "form");
 ?>
 
 </div><br><br>
@@ -99,12 +99,12 @@ $_smarty_tpl->inheritance->instanceBlock($_smarty_tpl, 'Block_72222667564f82c29a
 </html>
 <?php }
 /* {block "title"} */
-class Block_183050663564f82c29a6ad34_39379282 extends Smarty_Internal_Block
+class Block_53186173264f837c598e371_45784063 extends Smarty_Internal_Block
 {
 public $subBlocks = array (
   'title' => 
   array (
-    0 => 'Block_183050663564f82c29a6ad34_39379282',
+    0 => 'Block_53186173264f837c598e371_45784063',
   ),
 );
 public function callBlock(Smarty_Internal_Template $_smarty_tpl) {
@@ -114,27 +114,27 @@ GameHub<?php
 }
 /* {/block "title"} */
 /* {block "navmenu"} */
-class Block_49108288764f82c29a6ea90_36635076 extends Smarty_Internal_Block
+class Block_75780325164f837c59917c6_85845711 extends Smarty_Internal_Block
 {
 public $subBlocks = array (
   'navmenu' => 
   array (
-    0 => 'Block_49108288764f82c29a6ea90_36635076',
+    0 => 'Block_75780325164f837c59917c6_85845711',
   ),
 );
 public function callBlock(Smarty_Internal_Template $_smarty_tpl) {
 ?>
-<li><a href=""><span class="glyphicon glyphicon-user"></span> register</a></li><?php
+<li><a href="index.php?action=registerForm"><span class="glyphicon glyphicon-user"></span> register</a></li><?php
 }
 }
 /* {/block "navmenu"} */
 /* {block "form"} */
-class Block_72222667564f82c29a70690_69700119 extends Smarty_Internal_Block
+class Block_44947021064f837c5993325_05971551 extends Smarty_Internal_Block
 {
 public $subBlocks = array (
   'form' => 
   array (
-    0 => 'Block_72222667564f82c29a70690_69700119',
+    0 => 'Block_44947021064f837c5993325_05971551',
   ),
 );
 public function callBlock(Smarty_Internal_Template $_smarty_tpl) {
