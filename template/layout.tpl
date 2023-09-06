@@ -45,7 +45,7 @@
             </ul>
             <ul class="nav navbar-nav navbar-right">
                 <li><a href="#"><span class="glyphicon glyphicon-user"></span> Sign in</a></li>
-                {block name="navmenu"}<li><a href="?action=registerForm"><span class="glyphicon glyphicon-user"></span> register</a></li>{/block}
+                {block name="navmenu"}<li><a href=""><span class="glyphicon glyphicon-user"></span> register</a></li>{/block}
                 <li><a href="#"><span class="glyphicon glyphicon-shopping-cart"></span> Cart</a></li>
             </ul>
         </div>

@@ -9,14 +9,7 @@ $template = new Smarty();
 $template->clearCompiledTemplate();
 $template->clearAllCache();
 
-
-if(isset($_GET['action']))
-{
-    $action = $_GET['action'];
-}else
-{
-    $action = null;
-}
+$action = isset($_GET['action']) ?? null;
 
 switch($action)
 {
@@ -26,5 +19,5 @@ switch($action)
     default:
         $template->display("template/layout.tpl");
         break;
-
 }
+
