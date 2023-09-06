@@ -16,6 +16,7 @@ $template = new Smarty();
 $template->clearCompiledTemplate();
 $template->clearAllCache();
 
+$action = isset($_GET['action']) ?? null;
 
 if(isset($_GET['action']))
 {
@@ -34,8 +35,9 @@ switch($action)
     default:
         $template->display("template/layout.tpl");
         break;
-
 }
+
+
 
 $database = new Mysql("localhost", "gamehub", "root", "");
 $database->connect("localhost", "gamehub", "root", "");
