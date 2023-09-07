@@ -1,18 +1,18 @@
 <?php
-/* Smarty version 4.3.2, created on 2023-09-06 10:26:45
+/* Smarty version 4.3.2, created on 2023-09-07 10:17:51
   from 'C:\Wamp.NET\sites\oopdb\template\layout.tpl' */
 
 /* @var Smarty_Internal_Template $_smarty_tpl */
 if ($_smarty_tpl->_decodeProperties($_smarty_tpl, array (
   'version' => '4.3.2',
-  'unifunc' => 'content_64f837c5994634_70560986',
+  'unifunc' => 'content_64f9a34f5c4229_97466306',
   'has_nocache_code' => false,
   'file_dependency' => 
   array (
     '22866d203007b7b81717902a88f9c5d7dc8a7930' => 
     array (
       0 => 'C:\\Wamp.NET\\sites\\oopdb\\template\\layout.tpl',
-      1 => 1693988759,
+      1 => 1693999363,
       2 => 'file',
     ),
   ),
@@ -20,7 +20,7 @@ if ($_smarty_tpl->_decodeProperties($_smarty_tpl, array (
   array (
   ),
 ),false)) {
-function content_64f837c5994634_70560986 (Smarty_Internal_Template $_smarty_tpl) {
+function content_64f9a34f5c4229_97466306 (Smarty_Internal_Template $_smarty_tpl) {
 $_smarty_tpl->_loadInheritance();
 $_smarty_tpl->inheritance->init($_smarty_tpl, false);
 ?>
@@ -28,7 +28,7 @@ $_smarty_tpl->inheritance->init($_smarty_tpl, false);
 <html lang="en">
 <head>
     <title><?php 
-$_smarty_tpl->inheritance->instanceBlock($_smarty_tpl, 'Block_53186173264f837c598e371_45784063', "title");
+$_smarty_tpl->inheritance->instanceBlock($_smarty_tpl, 'Block_66518778864f9a34f5adb09_99612120', "title");
 ?>
 </title>
     <meta charset="utf-8">
@@ -57,7 +57,6 @@ $_smarty_tpl->inheritance->instanceBlock($_smarty_tpl, 'Block_53186173264f837c59
 </head>
 <body>
 
-
 <nav class="navbar navbar-inverse">
     <div class="container-fluid">
         <div class="navbar-header">
@@ -66,19 +65,19 @@ $_smarty_tpl->inheritance->instanceBlock($_smarty_tpl, 'Block_53186173264f837c59
                 <span class="icon-bar"></span>
                 <span class="icon-bar"></span>
             </button>
-            <img class="navbar-brand" src="template/img/GameHub.png">
+         <a href="index.php?action=homePage"><img class="navbar-brand" src="template/img/GameHub.png" ></a>
         </div>
         <div class="collapse navbar-collapse" id="myNavbar">
             <ul class="nav navbar-nav">
-                <li><a href="#">Products</a></li>
+                <li><a href="index.php?action=productPage">Products</a></li>
                 <li><a href="#">Deals</a></li>
                 <li><a href="#">Stores</a></li>
-                <li><a href="#">Contact</a></li>
+                <li><a href="index.php?action=contact">Contact</a></li>
             </ul>
             <ul class="nav navbar-nav navbar-right">
                 <li><a href="#"><span class="glyphicon glyphicon-user"></span> Sign in</a></li>
                 <?php 
-$_smarty_tpl->inheritance->instanceBlock($_smarty_tpl, 'Block_75780325164f837c59917c6_85845711', "navmenu");
+$_smarty_tpl->inheritance->instanceBlock($_smarty_tpl, 'Block_80604731864f9a34f5b3b45_95447973', "navmenu");
 ?>
 
                 <li><a href="#"><span class="glyphicon glyphicon-shopping-cart"></span> Cart</a></li>
@@ -89,8 +88,22 @@ $_smarty_tpl->inheritance->instanceBlock($_smarty_tpl, 'Block_75780325164f837c59
 
 <div class="container">
     <?php 
-$_smarty_tpl->inheritance->instanceBlock($_smarty_tpl, 'Block_44947021064f837c5993325_05971551', "form");
+$_smarty_tpl->inheritance->instanceBlock($_smarty_tpl, 'Block_55084862964f9a34f5b70a0_93996693', "form");
 ?>
+
+    <?php 
+$_smarty_tpl->inheritance->instanceBlock($_smarty_tpl, 'Block_200410750564f9a34f5bb1b1_36267659', "homePage");
+?>
+
+    <?php 
+$_smarty_tpl->inheritance->instanceBlock($_smarty_tpl, 'Block_129923589564f9a34f5beff2_03758286', "productPage");
+?>
+
+    <?php 
+$_smarty_tpl->inheritance->instanceBlock($_smarty_tpl, 'Block_138745449564f9a34f5c1f48_26896257', "contact");
+?>
+
+
 
 </div><br><br>
 
@@ -99,12 +112,12 @@ $_smarty_tpl->inheritance->instanceBlock($_smarty_tpl, 'Block_44947021064f837c59
 </html>
 <?php }
 /* {block "title"} */
-class Block_53186173264f837c598e371_45784063 extends Smarty_Internal_Block
+class Block_66518778864f9a34f5adb09_99612120 extends Smarty_Internal_Block
 {
 public $subBlocks = array (
   'title' => 
   array (
-    0 => 'Block_53186173264f837c598e371_45784063',
+    0 => 'Block_66518778864f9a34f5adb09_99612120',
   ),
 );
 public function callBlock(Smarty_Internal_Template $_smarty_tpl) {
@@ -114,12 +127,12 @@ GameHub<?php
 }
 /* {/block "title"} */
 /* {block "navmenu"} */
-class Block_75780325164f837c59917c6_85845711 extends Smarty_Internal_Block
+class Block_80604731864f9a34f5b3b45_95447973 extends Smarty_Internal_Block
 {
 public $subBlocks = array (
   'navmenu' => 
   array (
-    0 => 'Block_75780325164f837c59917c6_85845711',
+    0 => 'Block_80604731864f9a34f5b3b45_95447973',
   ),
 );
 public function callBlock(Smarty_Internal_Template $_smarty_tpl) {
@@ -129,16 +142,55 @@ public function callBlock(Smarty_Internal_Template $_smarty_tpl) {
 }
 /* {/block "navmenu"} */
 /* {block "form"} */
-class Block_44947021064f837c5993325_05971551 extends Smarty_Internal_Block
+class Block_55084862964f9a34f5b70a0_93996693 extends Smarty_Internal_Block
 {
 public $subBlocks = array (
   'form' => 
   array (
-    0 => 'Block_44947021064f837c5993325_05971551',
+    0 => 'Block_55084862964f9a34f5b70a0_93996693',
   ),
 );
 public function callBlock(Smarty_Internal_Template $_smarty_tpl) {
 }
 }
 /* {/block "form"} */
+/* {block "homePage"} */
+class Block_200410750564f9a34f5bb1b1_36267659 extends Smarty_Internal_Block
+{
+public $subBlocks = array (
+  'homePage' => 
+  array (
+    0 => 'Block_200410750564f9a34f5bb1b1_36267659',
+  ),
+);
+public function callBlock(Smarty_Internal_Template $_smarty_tpl) {
+}
+}
+/* {/block "homePage"} */
+/* {block "productPage"} */
+class Block_129923589564f9a34f5beff2_03758286 extends Smarty_Internal_Block
+{
+public $subBlocks = array (
+  'productPage' => 
+  array (
+    0 => 'Block_129923589564f9a34f5beff2_03758286',
+  ),
+);
+public function callBlock(Smarty_Internal_Template $_smarty_tpl) {
+}
+}
+/* {/block "productPage"} */
+/* {block "contact"} */
+class Block_138745449564f9a34f5c1f48_26896257 extends Smarty_Internal_Block
+{
+public $subBlocks = array (
+  'contact' => 
+  array (
+    0 => 'Block_138745449564f9a34f5c1f48_26896257',
+  ),
+);
+public function callBlock(Smarty_Internal_Template $_smarty_tpl) {
+}
+}
+/* {/block "contact"} */
 }

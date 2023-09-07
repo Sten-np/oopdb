@@ -32,25 +32,34 @@ switch($action)
     case "registerForm":
         $template->display("template/registerForm.tpl");
         break;
+    case "homePage":
+        $template->display("template/homePage.tpl");
+        break;
+    case "productPage":
+        $template->display("template/productPage.tpl");
+        break;
+    case "contact":
+        $template->display("template/contact.tpl");
+        break;
     default:
         $template->display("template/layout.tpl");
         break;
 }
 
 
-
-$database = new Mysql("localhost", "gamehub", "root", "");
-$database->connect("localhost", "gamehub", "root", "");
-
-$productList = new ProductList();
-
-$nintendo1 = new \Project9\Nintendo("Super Mario Bros", "adventure", "img/GameHub", 60, 121, "This is Sparta!!!", 0, "10GB",);
-
-//to add the product in the array ProductList
-$productList->addProduct($nintendo1);
-
-
-foreach ($productList->getProducts() as $product)
-{
-   print $product->setCategory();
-}
+//
+//$database = new Mysql("localhost", "gamehub", "root", "");
+//$database->connect("localhost", "gamehub", "root", "");
+//
+//$productList = new ProductList();
+//
+//$nintendo1 = new \Project9\Nintendo("Super Mario Bros", "adventure", "img/GameHub", 60, 121, "This is Sparta!!!", 0, "10GB",);
+//
+////to add the product in the array ProductList
+//$productList->addProduct($nintendo1);
+//
+//
+//foreach ($productList->getProducts() as $product)
+//{
+//   print $product->setCategory();
+//}
