@@ -11,8 +11,9 @@ class User
         $this->username = $username;
         if ($password == $repeatPassword) {
             $this->password = password_hash($password, PASSWORD_DEFAULT);
+            $this->password = $password;
+            $this->database->insert("user", ["username" => $username, "password" => $password]);
         }
         self::$users[] = $this;
-        $db->insert("user", {$username, $password});
 }
 }
