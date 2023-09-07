@@ -8,7 +8,7 @@ use PDOException;
 
 class Mysql implements Database
 {
-    protected $database;
+    public $db;
 
     public function connect(string $host, string $dbname, string $username, string $password)
     {
@@ -38,9 +38,31 @@ class Mysql implements Database
         // TODO: Implement delete() method.
     }
 
-    public function insert()
+    public function insert(string $table, array $params = []):void
     {
-        // TODO: Implement insert() method.
+
+       try {
+           $columns = implode(', ', array_keys($params));
+           $values = ":".implode(' ,:',array_keys($params));
+           $insert = $this->db->prepare("INSERT INTO $table ($columns) VALUES ($values)");
+           foreach ($params as $key=>$value)
+           {
+               $insert->bindValue(':'.$key, $value);
+           }
+           $insert->execute();
+       }catch(PDOException $error)
+       {
+           throw new Exception($error->getMessage());
+
+       }
+
+//        $insert = $db->prepare("INSERT INTO users SET username=:username, password=:password");
+        //INSERT INTO users (username, password) VALUES (:username, :password);
+//        $insert->bindParam(":username", $user);
+//        $insert->bindParam(":username", $_POST['password']);
+//        $insert->execute();
+
+
     }
 
     public function disconnect()

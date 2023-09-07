@@ -11,7 +11,7 @@ interface Database
 
     public function select();
 
-    public function insert();
+    public function insert(string $table, array $params);
 
     public function update();
 
