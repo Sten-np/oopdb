@@ -1,15 +1,92 @@
-{extends file="template/layout.tpl"}
+<?php
+/* Smarty version 4.3.2, created on 2023-09-07 12:21:14
+  from 'C:\Wamp.NET\sites\oopdb\template\homePage.tpl' */
 
-{block name="title"}
+/* @var Smarty_Internal_Template $_smarty_tpl */
+if ($_smarty_tpl->_decodeProperties($_smarty_tpl, array (
+  'version' => '4.3.2',
+  'unifunc' => 'content_64f9c03ae429b9_95285585',
+  'has_nocache_code' => false,
+  'file_dependency' => 
+  array (
+    '693627cde1332b18542248a57e6de8ab22f19d93' => 
+    array (
+      0 => 'C:\\Wamp.NET\\sites\\oopdb\\template\\homePage.tpl',
+      1 => 1694089273,
+      2 => 'file',
+    ),
+  ),
+  'includes' => 
+  array (
+  ),
+),false)) {
+function content_64f9c03ae429b9_95285585 (Smarty_Internal_Template $_smarty_tpl) {
+$_smarty_tpl->_loadInheritance();
+$_smarty_tpl->inheritance->init($_smarty_tpl, true);
+?>
+
+
+<?php 
+$_smarty_tpl->inheritance->instanceBlock($_smarty_tpl, 'Block_63442657864f9c03ae32987_93087061', "title");
+?>
+
+
+<?php 
+$_smarty_tpl->inheritance->instanceBlock($_smarty_tpl, 'Block_3736417864f9c03ae385b6_60928869', "navmenu");
+?>
+
+
+<?php 
+$_smarty_tpl->inheritance->instanceBlock($_smarty_tpl, 'Block_208942728764f9c03ae3c268_33116699', "homePage");
+$_smarty_tpl->inheritance->endChild($_smarty_tpl, "template/layout.tpl");
+}
+/* {block "title"} */
+class Block_63442657864f9c03ae32987_93087061 extends Smarty_Internal_Block
+{
+public $subBlocks = array (
+  'title' => 
+  array (
+    0 => 'Block_63442657864f9c03ae32987_93087061',
+  ),
+);
+public function callBlock(Smarty_Internal_Template $_smarty_tpl) {
+?>
+
   GameHub | Home
-{/block}
+<?php
+}
+}
+/* {/block "title"} */
+/* {block "navmenu"} */
+class Block_3736417864f9c03ae385b6_60928869 extends Smarty_Internal_Block
+{
+public $subBlocks = array (
+  'navmenu' => 
+  array (
+    0 => 'Block_3736417864f9c03ae385b6_60928869',
+  ),
+);
+public function callBlock(Smarty_Internal_Template $_smarty_tpl) {
+}
+}
+/* {/block "navmenu"} */
+/* {block "homePage"} */
+class Block_208942728764f9c03ae3c268_33116699 extends Smarty_Internal_Block
+{
+public $subBlocks = array (
+  'homePage' => 
+  array (
+    0 => 'Block_208942728764f9c03ae3c268_33116699',
+  ),
+);
+public function callBlock(Smarty_Internal_Template $_smarty_tpl) {
+?>
 
-{block name="navmenu"}{/block}
-
-{block name="homePage"}
 <!doctype html>
 <html lang="en" data-bs-theme="auto">
-  <head><script src="/docs/5.3/assets/js/color-modes.js"></script>
+  <head><?php echo '<script'; ?>
+ src="/docs/5.3/assets/js/color-modes.js"><?php echo '</script'; ?>
+>
 
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1">
@@ -368,9 +445,15 @@
     <p class="mb-0">New to Bootstrap? <a href="/">Visit the homepage</a> or read our <a href="/docs/5.3/getting-started/introduction/">getting started guide</a>.</p>
   </div>
 </footer>
-<script src="/docs/5.3/dist/js/bootstrap.bundle.min.js" integrity="sha384-HwwvtgBNo3bZJJLYd8oVXjrBZt8cqVSpeBNS5n7C8IVInixGAoxmnlMuBnhbgrkm" crossorigin="anonymous"></script>
+<?php echo '<script'; ?>
+ src="/docs/5.3/dist/js/bootstrap.bundle.min.js" integrity="sha384-HwwvtgBNo3bZJJLYd8oVXjrBZt8cqVSpeBNS5n7C8IVInixGAoxmnlMuBnhbgrkm" crossorigin="anonymous"><?php echo '</script'; ?>
+>
 
     </body>
 </html>
 
-{/block}
+<?php
+}
+}
+/* {/block "homePage"} */
+}
