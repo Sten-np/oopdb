@@ -36,7 +36,7 @@
         </div>
         <div class="collapse navbar-collapse" id="myNavbar">
             <ul class="nav navbar-nav">
-                <li><a href="#">Products</a></li>
+                <li><a href="index.php?action=productPage">Products</a></li>
                 <li><a href="#">Deals</a></li>
                 <li><a href="#">Stores</a></li>
                 <li><a href="#">Contact</a></li>

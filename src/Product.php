@@ -6,7 +6,6 @@ abstract class Product
 {
     private string $name;
     private string $genre;
-    private array $requirements = [];
     private string $image;
     private float $truePrice;
     private int $tax;
@@ -25,9 +24,9 @@ abstract class Product
         $this->gain = $gain;
     }
 
-    public function getName()
+    public function getName() : string
     {
-
+     return $this->name;
     }
 
     public function getCategory()
@@ -37,7 +36,7 @@ abstract class Product
 
     public function getCalculatePrice()
     {
-
+      return $this->gain = $this->truePrice / 100 * $this->tax;
     }
 
     public function printInfo()
