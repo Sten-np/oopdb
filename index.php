@@ -30,6 +30,7 @@ else
 }
 
 $action = isset($_GET['action']) ?? null;
+$database = new Db();
 
 
 switch($action)
@@ -37,6 +38,8 @@ switch($action)
     case "registerForm":
         $template->display("template/registerForm.tpl");
         break;
+//    case "register":
+//        if(!empty($_POST['username']) && !empty($_POST['password']));
     default:
         $template->display("template/layout.tpl");
         break;
@@ -47,17 +50,21 @@ switch($action)
 
 $database = new Mysql("localhost", "gamehub", "root", "");
 $database->connect("localhost", "gamehub", "root", "");
-
-$productList = new ProductList();
-
-$nintendo1 = new \Project9\Nintendo("Super Mario Bros", "adventure", "img/GameHub", 60, 121, "This is Sparta!!!", 0, "10GB",);
-
-//to add the product in the array ProductList
-$productList->addProduct($nintendo1);
+//$database->insert("user", "username" => $username, "password" => $password );
 
 
-foreach ($productList->getProducts() as $product)
-{
-   print $product->setCategory();
-}
+//
+//$productList = new ProductList();
+//
+//
+//$nintendo1 = new \Project9\Nintendo("Super Mario Bros", "adventure", "img/GameHub", 60, 121, "This is Sparta!!!", 0, "10GB",);
+//
+////to add the product in the array ProductList
+//$productList->addProduct($nintendo1);
+//
+//
+//foreach ($productList->getProducts() as $product)
+//{
+//   print $product->setCategory();
+//}
 
