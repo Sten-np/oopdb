@@ -7,17 +7,23 @@
 {block name="navmenu"}{/block}
 
 {block name="form"}
-    <form class="form-horizontal" action="/action_page.php">
+    <form class="form-horizontal" action="index.php?action=register" method="POST">
         <div class="form-group">
-            <label class="control-label col-sm-2" for="email">Email:</label>
+            <label class="control-label col-sm-2" for="email">Username:</label>
             <div class="col-sm-10">
-                <input type="email" class="form-control" id="email" placeholder="Enter email">
+                <input type="text" class="form-control" id="email" name="username" placeholder="Username">
             </div>
         </div>
         <div class="form-group">
             <label class="control-label col-sm-2" for="pwd">Password:</label>
             <div class="col-sm-10">
-                <input type="password" class="form-control" id="pwd" placeholder="Enter password">
+                <input type="password" class="form-control" id="pwd" name="password" placeholder="Enter password">
+            </div>
+        </div>
+        <div class="form-group">
+            <label class="control-label col-sm-2" for="pwd">Repeat Password:</label>
+            <div class="col-sm-10">
+                <input type="password" class="form-control" id="pwd" name="passwordrepeat" placeholder="Enter password">
             </div>
         </div>
         <div class="form-group">

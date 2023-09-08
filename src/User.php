@@ -1,21 +1,24 @@
 <?php
 
+namespace Project9;
 
 class User
 {
     private string $username;
     private string $password;
     public static array $users = [];
-    private Database $database;
 
     public function __construct(string $username, string $password, string $repeatPassword)
     {
         $this->username = $username;
         if($password == $repeatPassword)
         {
-            $this->password = password_hash($password, PASSWORD_DEFAULT);
+            $password = password_hash($password, PASSWORD_DEFAULT);
+            $this->password = $password;
+            Db::$db->insert("user", ["username" => $username, "password" => $password]);
         }
         self::$users[] = $this;
-        $this->database->insert("user", [$username => $username, $password => $password]);
+//        $this->database->insert("user", [$username, $password]);
+
     }
 }
