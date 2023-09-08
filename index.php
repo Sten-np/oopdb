@@ -19,7 +19,6 @@ $template->clearCompiledTemplate();
 $template->clearAllCache();
 
 
-$action = isset($_GET['action']) ?? null;
 
 
 if (isset($_GET['action'])) {
@@ -30,15 +29,20 @@ if (isset($_GET['action'])) {
 
 $database = new Db();
 
-$action = isset($_GET['action']) ?? null;
-
+//I've added a extra $_GET['action'], so that the 'switch statement' will work!
+$action = isset($_GET['action']) ? $_GET['action'] : null;
 
 switch ($action) {
     case "register":
         if (!empty($_POST['username']) && !empty($_POST['password']) && !empty($_POST['passwordrepeat'])) ;
         {
             $user = new User($_POST['username'], $_POST['password'], $_POST['passwordrepeat']);
+            print "<h2>Welcome ".($_POST['username'])."</h2><br>".
+                header( "Refresh:3; url=index.php", true, 303);
+            exit;
         }
+
+
         break;
     case "registerForm":
         $template->display("template/registerForm.tpl");
