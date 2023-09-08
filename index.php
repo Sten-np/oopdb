@@ -34,11 +34,11 @@ $action = isset($_GET['action']) ?? null;
 
 switch($action)
 {
-    case "registerForm":
-        $template->display("template/registerForm.tpl");
-
     case "productPage":
         $template->display("template/productPage.tpl");
+        break;
+    case "registerForm":
+        $template->display("template/registerForm.tpl");
         break;
     default:
         $template->display("template/layout.tpl");
@@ -52,21 +52,23 @@ $database = new Mysql("localhost", "gamehub", "root", "");
 $database->connect("localhost", "gamehub", "root", "");
 
 
-//Creating new products
+
+//Creating new products also for testing
 $productList = new ProductList();
 
-$nintendo1 = new \Project9\Nintendo("Super Mario Bros", "adventure", "img/GameHub", 60, 121, "This is Sparta!!!", 0, "10GB",);
+$nintendo1 = new \Project9\Nintendo("Super Mario Bros", "img/GameHub", 60, 121, "This is Sparta!!!", 0,);
 $nintendo1->addRequirements("all your money");
+$nintendo1->setGenre("Adventure");
 //to add the product in the array ProductList
 $productList->addProduct($nintendo1);
 
 
 print "<table style=width: 100 border='1px solid black'>
-           <tr>
-          <th>Catergory</th>
+         <tr>
+         <th>Catergory</th>
          <th>Naam Product</th>
          <th>Verkoopprijs</th>
-         <th>Info</th>
+         <th>Genre</th>
          </tr>";
 
 foreach ($productList->getProducts() as $products)
@@ -74,7 +76,8 @@ foreach ($productList->getProducts() as $products)
     print "<tr>
          <td>".$products->setCategory()."</td>
          <td>".$products->getName()."</td>".
-        "<td>€".$products->getCalculatePrice()."</td>
+        "<td>€".$products->getCalculatePrice()."</td>.
+         <td>".$products->printInfo()."</td>
          </tr>";
 
 }

@@ -9,3 +9,9 @@
     display: flex;
     justify-content: center;
 }
+
+.card-position
+{
+    display: flex;
+    justify-content: space-between;
+}

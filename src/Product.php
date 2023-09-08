@@ -5,7 +5,6 @@ namespace Project9;
 abstract class Product
 {
     private string $name;
-    private string $genre;
     private string $image;
     private float $truePrice;
     private int $tax;
@@ -13,10 +12,9 @@ abstract class Product
     private float $gain;
     protected string $category;
 
-    public function __construct(string $name, string $genre, string $image, float $truePrice, int $tax, string $information, float $gain)
+    public function __construct(string $name, string $image, float $truePrice, int $tax, string $information, float $gain)
     {
         $this->name = $name;
-        $this->genre = $genre;
         $this->image = $image;
         $this->truePrice = $truePrice;
         $this->tax = $tax;
@@ -39,9 +37,25 @@ abstract class Product
       return $this->gain = $this->truePrice / 100 * $this->tax;
     }
 
-    public function printInfo()
+    public function printInfo(): string
     {
+        $totalproduct = "";
+        foreach ($this->getInfo() as $item)
+        {
+            if (is_array($item))
+            {
+                foreach ($item as $subitem)
+                {
+                    $totalproduct .= "<ul style=\"list-style-type: circle\"><li>".$subitem ."</li></ul>";
+                }
+            }
+            else
+            {
+                $totalproduct .= "<li>$item</li>";
+            }
 
+        }
+        return $totalproduct;
     }
 
     abstract public function getInfo();

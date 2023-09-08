@@ -54,6 +54,10 @@
     {block name="form"}{/block}
 </div><br><br>
 
+<div class="container">
+    {block name="productPage"}{/block}
+</div>
+
 
 </body>
 </html>
