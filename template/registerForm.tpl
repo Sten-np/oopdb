@@ -3,8 +3,9 @@
 {block name="title"}
     GameHub | Register
 {/block}
+{block name="register"}
 
-{block name="navmenu"}{/block}
+{/block}
 
 {block name="form"}
     <form class="form-horizontal" action="/action_page.php">
