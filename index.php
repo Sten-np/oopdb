@@ -87,7 +87,15 @@ switch ($action) {
 
 
     case "productPage":
+        // Assuming you have a Database class with a select function
+        $products = Db::$db->select('product', ['*']);
+
+        // Assign the product information to template variables
+        $template->assign('products', $products);
+
+        // Display the "productPage.tpl" template
         $template->display("template/productPage.tpl");
+        break;
         break;
     case "homePage":
         $template->display("template/homePage.tpl");
@@ -108,7 +116,7 @@ $database->__construct("localhost", "gamehub", "root", "");
 
 
 
-////Creating new products also for testing
+//////Creating new products also for testing
 //$productList = new ProductList();
 //
 //$nintendo1 = new \Project9\Nintendo("Super Mario Bros", "img/GameHub", 60, 121, "This is Sparta!!!", 0,);
@@ -136,6 +144,6 @@ $database->__construct("localhost", "gamehub", "root", "");
 //         </tr>";
 //
 //}
-
+//
 
 

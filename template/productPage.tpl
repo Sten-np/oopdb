@@ -27,40 +27,24 @@
         <div class="product-device product-device-2 shadow-sm d-none d-md-block"></div>
     </div>
 
-    <div class="card" style="width: 18rem;">
-        <img class="card-img-top" src="img/GameHub.png" alt="Card image cap">
-        <div class="card-body">
-            <h5 class="card-title">Title</h5>
-            <p class="card-text">Some Info</p>
-            <a href="#" class="btn btn-primary" style="background-color: orange; color: black; border: none">More Info</a>
-        </div>
+    <div class="row" style="padding-left: 1%">
+        {foreach from=$products item=product}
+            <div class="col-md-4" style="width: 25%; padding-top: 3%">
+                <div class="card" style="width: 18rem;">
+                    <img class="card-img-top" src="{$product.image}" alt="Card image cap">
+{*                    <img class="card-img-top" src="img/GameHub.png" alt="Card image cap">*}
+                    <div class="card-body">
+                        <h5 class="card-title">{$product.productName}</h5>
+                        <p class="card-price">{$product.price}</p>
+                        <p class="card-text">{$product.description}</p>
+                        <a href="#" class="btn btn-primary" style="background-color: orange; color: black; border: none">More Info</a>
+                    </div>
+                </div>
+            </div>
+        {/foreach}
     </div>
 
-    <div class="card" style="width: 18rem;">
-        <img class="card-img-top" src="img/GameHub.png" alt="Card image cap">
-        <div class="card-body">
-            <h5 class="card-title">Title</h5>
-            <p class="card-text">Some Info</p>
-            <a href="#" class="btn btn-primary">More Info</a>
-        </div>
-    </div>
 
-    <div class="card" style="width: 18rem;">
-        <img class="card-img-top" src="img/GameHub.png" alt="Card image cap">
-        <div class="card-body">
-            <h5 class="card-title">Title</h5>
-            <p class="card-text">Some Info</p>
-            <a href="#" class="btn btn-primary">More Info</a>
-        </div>
-    </div>
 
-    <div class="card" style="width: 18rem;">
-        <img class="card-img-top" src="img/GameHub.png" alt="Card image cap">
-        <div class="card-body">
-            <h5 class="card-title">Title</h5>
-            <p class="card-text">Some Info</p>
-            <a href="#" class="btn btn-primary">More Info</a>
-        </div>
-    </div>
 
 {/block}

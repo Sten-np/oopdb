@@ -85,6 +85,12 @@
         .bd-mode-toggle {
             z-index: 1500;
         }
+
+        footer {
+            position: fixed;
+            width: 65%;
+            bottom: 0;
+        }
         </style>
 
         <header class="p-3 text-bg-dark">
@@ -124,12 +130,11 @@
     {block name="homePage"}{/block}
     {block name="productPage"}{/block}
     {block name="loginForm"}{/block}
-    {block name="productPage"}{/block}
 
 </div>
 
     <div class="container">
-        <footer class="py-5">
+        <footer class="py-5 " >
             <div class="row">
                 <div class="col-6 col-md-2 mb-3">
                     <h5>Section</h5>
