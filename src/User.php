@@ -20,7 +20,7 @@ class User
         {
             $password = password_hash($password, PASSWORD_DEFAULT);
             $this->password = $password;
-            Db::$db->insert("user", ["username" => $username, "emailadress" => $emailadres, "phonenumber" => $phonenumber, "password" => $password]);
+            Db::$db->insert("user", ["username" => $username, "emailadress" => $emailadres, "phonenumber" => $phonenumber, "password" => $password, "bool_adm" => 0]);
         }
         self::$users[] = $this;
 //        $this->database->insert("user", [$username, $password]);
