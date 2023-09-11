@@ -85,12 +85,6 @@
         .bd-mode-toggle {
             z-index: 1500;
         }
-
-        footer {
-            position: fixed;
-            width: 65%;
-            bottom: 0;
-        }
         </style>
 
         <header class="p-3 text-bg-dark">
