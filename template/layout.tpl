@@ -32,27 +32,34 @@
                 <span class="icon-bar"></span>
                 <span class="icon-bar"></span>
             </button>
-            <img class="navbar-brand" src="template/img/GameHub.png">
+            <li><a href="index.php"><img class="navbar-brand" src="template/img/GameHub.png"></a></li>
         </div>
         <div class="collapse navbar-collapse" id="myNavbar">
             <ul class="nav navbar-nav">
-                <li><a href="#">Products</a></li>
+                <li><a href="index.php?action=productPage">Products</a></li>
                 <li><a href="#">Deals</a></li>
                 <li><a href="#">Stores</a></li>
                 <li><a href="#">Contact</a></li>
             </ul>
             <ul class="nav navbar-nav navbar-right">
-                <li><a href="#"><span class="glyphicon glyphicon-user"></span> Sign in</a></li>
+                <li><a href="index.php?action=loginForm"><span class="glyphicon glyphicon-user"></span> Sign in</a></li>
                 {block name="navmenu"}<li><a href="index.php?action=registerForm"><span class="glyphicon glyphicon-user"></span> register</a></li>{/block}
                 <li><a href="#"><span class="glyphicon glyphicon-shopping-cart"></span> Cart</a></li>
             </ul>
         </div>
     </div>
 </nav>
-
 <div class="container">
     {block name="form"}{/block}
 </div><br><br>
+
+<div class="container">
+    {block name="productPage"}{/block}
+</div>
+
+<div class="container">
+    {block name="loginform"}{/block}
+</div>
 
 
 </body>

@@ -1,0 +1,17 @@
+.responsive {
+    width: 100%;
+    max-width: 400px;
+    height: auto;
+}
+
+.card
+{
+    display: flex;
+    justify-content: center;
+}
+
+.card-position
+{
+    display: flex;
+    justify-content: space-between;
+}
