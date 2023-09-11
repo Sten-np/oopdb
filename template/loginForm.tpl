@@ -14,10 +14,26 @@
         <div class="form-group">
             <label class="control-label col-sm-2" for="password">Password:</label>
             <input required type="password" class="form-control" name="password" id="pwd" placeholder="Enter password" name="password">
+            <input class="showPassword" type="checkbox" onclick="myFunction()"> Show Password
         </div>
         <div class="checkbox">
             <label><input type="checkbox" name="remember"> Remember me</label>
         </div>
         <button type="submit" class="btn btn-default">Submit</button>
     </form>
+    <script>
+        //I've created a 'show password' button, because most people want to make sure if they type the password correct
+        function myFunction()
+        {
+            var x = document.getElementById("pwd");
+            if (x.type === "password")
+            {
+                x.type = "text";
+            }
+            else
+            {
+                x.type = "password";
+            }
+        }
+    </script>
 {/block}

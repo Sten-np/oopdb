@@ -9,7 +9,7 @@ use Project9\ProductList;
 use Project9\Nintendo;
 use Project9\XBox;
 use Project9\Playstation;
-use Project9\Customer;
+use Project9\User;
 use Project9\Db;
 
 session_start();
@@ -42,7 +42,7 @@ switch ($action) {
             // ...
 
             // Assuming you have a User class for registration
-            $user = new Customer($_POST['username'], $_POST['emailadress'], $_POST['phonenumber'], $_POST['password'], $_POST['passwordrepeat']);
+            $user = new User($_POST['username'], $_POST['emailadress'], $_POST['phonenumber'], $_POST['password'], $_POST['passwordrepeat']);
 
             // Display a success message
             echo "<h2>Welcome " . $_POST['username'] . "</h2><br>";

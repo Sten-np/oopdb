@@ -2,7 +2,7 @@
 
 namespace Project9;
 
-class Customer
+class User
 {
     private string $username;
     private string $emailadres;
@@ -20,7 +20,7 @@ class Customer
         {
             $password = password_hash($password, PASSWORD_DEFAULT);
             $this->password = $password;
-            Db::$db->insert("customer", ["username" => $username, "emailadress" => $emailadres, "phonenumber" => $phonenumber, "password" => $password]);
+            Db::$db->insert("user", ["username" => $username, "emailadress" => $emailadres, "phonenumber" => $phonenumber, "password" => $password]);
         }
         self::$users[] = $this;
 //        $this->database->insert("user", [$username, $password]);
