@@ -7,7 +7,7 @@
 
 {/block}
 
-{block name="form"}
+{block name="registerForm"}
     <h2>Sign up</h2>
     <form class="form-horizontal" action="index.php?action=register" method="POST">
         <div class="form-group">

@@ -55,7 +55,6 @@ switch ($action) {
     case "loginForm":
         $template->display("template/loginForm.tpl");
         break;
-        //The login doesn't work right now. We have to check this.
     case "login":
         if (!empty($_POST['emailadress']) && !empty($_POST['password'])) {
             $email = $_POST['emailadress'];
@@ -93,14 +92,11 @@ switch ($action) {
     case "homePage":
         $template->display("template/homePage.tpl");
         break;
-    case "productPage":
-        $template->display("template/productPage.tpl");
-        break;
     case "contact":
         $template->display("template/contact.tpl");
         break;
     default:
-        $template->display("template/layout.tpl");
+        $template->display("template/homePage.tpl");
         break;
 
 }

@@ -109,9 +109,8 @@
         </form>
 
         <div class="text-end">
-        <button type="button" class="btn btn-outline-light me-2">Login</button>
+        <button type="button" class="btn btn-outline-light me-2"><a style="text-decoration: none;  color: inherit" href="index.php?action=loginForm">Login</a></button>
             {block name="register"} <button type="button" class="btn btn-warning" style="background-color: orange"><a style="text-decoration: none;  color: inherit" href="index.php?action=registerForm">Sign-up</a></button>{/block}
-
         </div>
 
         </div>
@@ -121,8 +120,10 @@
 
 
 <div class="container">
-    {block name="form"}{/block}
+    {block name="registerForm"}{/block}
     {block name="homePage"}{/block}
+    {block name="productPage"}{/block}
+    {block name="loginForm"}{/block}
     {block name="productPage"}{/block}
 
 </div>
