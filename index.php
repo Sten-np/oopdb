@@ -55,6 +55,7 @@ switch ($action) {
     case "loginForm":
         $template->display("template/loginForm.tpl");
         break;
+        //The login doesn't work right now. We have to check this.
     case "login":
         if (!empty($_POST['emailadress']) && !empty($_POST['password'])) {
             $email = $_POST['emailadress'];

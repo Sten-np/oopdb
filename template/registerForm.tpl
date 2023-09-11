@@ -7,6 +7,7 @@
 {block name="navmenu"}{/block}
 
 {block name="form"}
+    <h2>Sign up</h2>
     <form class="form-horizontal" action="index.php?action=register" method="POST">
         <div class="form-group">
             <label class="control-label col-sm-2" for="email">Username:</label>
