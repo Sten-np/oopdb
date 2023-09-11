@@ -24,10 +24,38 @@ class Mysql implements Database
         }
     }
 
-    public function select()
+    public function select(string $table, array $columns = ['*'], array $where = [])
     {
-        // TODO: Implement select() method.
+        try {
+            // Build the SELECT query
+            $selectColumns = implode(', ', $columns);
+            $sql = "SELECT $selectColumns FROM $table";
+
+            if (!empty($where)) {
+                $whereConditions = [];
+                foreach ($where as $key => $value) {
+                    $whereConditions[] = "$key = :$key";
+                }
+                $sql .= " WHERE " . implode(' AND ', $whereConditions);
+            }
+
+            $query = self::$db->prepare($sql);
+
+            if (!empty($where)) {
+                foreach ($where as $key => $value) {
+                    $query->bindValue(":$key", $value);
+                }
+            }
+
+            $query->execute();
+
+            // Fetch and return the results as an associative array
+            return $query->fetchAll(PDO::FETCH_ASSOC);
+        } catch (PDOException $error) {
+            throw new Exception($error->getMessage());
+        }
     }
+
 
     public function update()
     {
