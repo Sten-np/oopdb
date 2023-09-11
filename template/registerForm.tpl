@@ -3,10 +3,11 @@
 {block name="title"}
     GameHub | Register
 {/block}
+{block name="register"}
 
-{block name="navmenu"}{/block}
+{/block}
 
-{block name="form"}
+{block name="registerForm"}
     <h2>Sign up</h2>
     <form class="form-horizontal" action="index.php?action=register" method="POST">
         <div class="form-group">

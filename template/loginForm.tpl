@@ -1,10 +1,10 @@
 {extends file="template/layout.tpl"}
 
 {block name="title"}
-    GameHub | Register
+    GameHub | Login
 {/block}
 
-{block name="loginform"}
+{block name="loginForm"}
     <h2>Login</h2>
     <form action="index.php?action=login" method="POST">
         <div class="form-group">

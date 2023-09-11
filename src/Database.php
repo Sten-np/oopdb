@@ -9,7 +9,7 @@ interface Database
 
     public function disconnect();
 
-    public function select();
+    public function select(string $table, array $columns = ['*'], array $where = []);
 
     public function insert(string $table, array $param);
 

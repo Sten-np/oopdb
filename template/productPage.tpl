@@ -1,56 +1,66 @@
+
+
 {extends file="template/layout.tpl"}
 
 {block name="title"}
-  GameHub | Products
+    GameHub | Products
 {/block}
 
+{block name="navmenu"}{/block}
+
 {block name="productPage"}
-
-  <head>
-    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@4.6.2/dist/css/bootstrap.min.css">
-    <script src="https://cdn.jsdelivr.net/npm/jquery@3.6.4/dist/jquery.slim.min.js"></script>
-    <script src="https://cdn.jsdelivr.net/npm/popper.js@1.16.1/dist/umd/popper.min.js"></script>
-    <script src="https://cdn.jsdelivr.net/npm/bootstrap@4.6.2/dist/js/bootstrap.bundle.min.js"></script>
-    <link rel="stylesheet" href="css/style.css">
-  </head>
-
-  <div class="jumbotron text-center">
-    <h1>Product</h1>
-    <p>All our products </p>
-  </div>
-
-
-  <body>
-  <section class="card-position">
-    <article >
-  <div class="card" style="width: 18rem;">
-    <img class="card-img-top" src="img/GameHub.png" alt="Card image cap">
-    <div class="card-body">
-      <h5 class="card-title">Super Mario Bros</h5>
-      <p class="card-text">€60,-</p>
-      <p class="card-text">So Long Gay Bowser!</p>
-      <a href="#" class="btn btn-primary">Buy Now!</a>
-    </div>
-    </article>
-    <article>
-    <div class="card" style="width: 18rem;">
-      <img class="card-img-top" src="..." alt="Card image cap">
-      <div class="card-body">
-        <h5 class="card-title">Card title</h5>
-        <p class="card-text">Some quick example text to build on the card title and make up the bulk of the card's content.</p>
-        <a href="#" class="btn btn-primary">Go somewhere</a>
-      </div>
-    </article>
-    <article>
-      <div class="card" style="width: 18rem;">
-        <img class="card-img-top" src="..." alt="Card image cap">
-        <div class="card-body">
-          <h5 class="card-title">Card title</h5>
-          <p class="card-text">Some quick example text to build on the card title and make up the bulk of the card's content.</p>
-          <a href="#" class="btn btn-primary">Go somewhere</a>
+    <style>
+        .card {
+            display: inline-block;
+        }
+    </style>
+    <div class="position-relative overflow-hidden p-3 p-md-5 m-md-3 text-center bg-body-tertiary">
+        <div class="col-md-6 p-lg-5 mx-auto my-5">
+            <h1 class="display-3 fw-bold">Products</h1>
+            <h3 class="fw-normal text-muted mb-3">Games</h3>
+            <div class="d-flex gap-3 justify-content-center lead fw-normal">
+                <a class="icon-link" href="#">
+                </a>
+            </div>
         </div>
-    </article>
-  </section>
-  </div>
-  </body>
+        <div class="product-device shadow-sm d-none d-md-block"></div>
+        <div class="product-device product-device-2 shadow-sm d-none d-md-block"></div>
+    </div>
+
+    <div class="card" style="width: 18rem;">
+        <img class="card-img-top" src="img/GameHub.png" alt="Card image cap">
+        <div class="card-body">
+            <h5 class="card-title">Title</h5>
+            <p class="card-text">Some Info</p>
+            <a href="#" class="btn btn-primary" style="background-color: orange; color: black; border: none">More Info</a>
+        </div>
+    </div>
+
+    <div class="card" style="width: 18rem;">
+        <img class="card-img-top" src="img/GameHub.png" alt="Card image cap">
+        <div class="card-body">
+            <h5 class="card-title">Title</h5>
+            <p class="card-text">Some Info</p>
+            <a href="#" class="btn btn-primary">More Info</a>
+        </div>
+    </div>
+
+    <div class="card" style="width: 18rem;">
+        <img class="card-img-top" src="img/GameHub.png" alt="Card image cap">
+        <div class="card-body">
+            <h5 class="card-title">Title</h5>
+            <p class="card-text">Some Info</p>
+            <a href="#" class="btn btn-primary">More Info</a>
+        </div>
+    </div>
+
+    <div class="card" style="width: 18rem;">
+        <img class="card-img-top" src="img/GameHub.png" alt="Card image cap">
+        <div class="card-body">
+            <h5 class="card-title">Title</h5>
+            <p class="card-text">Some Info</p>
+            <a href="#" class="btn btn-primary">More Info</a>
+        </div>
+    </div>
+
 {/block}
