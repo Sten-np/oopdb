@@ -8,25 +8,54 @@ use PDOException;
 
 class Mysql implements Database
 {
-    protected $database;
+    public static $db;
 
-    public function connect(string $host, string $dbname, string $username, string $password)
+
+    public function __construct(string $host, string $dbname, string $username, string $password)
     {
         try
         {
-            $this->database = new PDO("mysql:host={$host};dbname={$dbname}", $username, $password);
-            $this->database->setAttribute(PDO::ATTR_ERRMODE, PDO::ERRMODE_EXCEPTION);
-            $this->database->setAttribute(PDO::ATTR_DEFAULT_FETCH_MODE, PDO::FETCH_ASSOC);
+            self::$db = new PDO("mysql:host={$host};dbname={$dbname}", $username, $password);
+            self::$db->setAttribute(PDO::ATTR_ERRMODE, PDO::ERRMODE_EXCEPTION);
+            self::$db->setAttribute(PDO::ATTR_DEFAULT_FETCH_MODE, PDO::FETCH_ASSOC);
         }catch(PDOException $error)
         {
             throw new Exception($error->getMessage());
         }
     }
 
-    public function select()
+    public function select(string $table, array $columns = ['*'], array $where = [])
     {
-        // TODO: Implement select() method.
+        try {
+            // Build the SELECT query
+            $selectColumns = implode(', ', $columns);
+            $sql = "SELECT $selectColumns FROM $table";
+
+            if (!empty($where)) {
+                $whereConditions = [];
+                foreach ($where as $key => $value) {
+                    $whereConditions[] = "$key = :$key";
+                }
+                $sql .= " WHERE " . implode(' AND ', $whereConditions);
+            }
+
+            $query = self::$db->prepare($sql);
+
+            if (!empty($where)) {
+                foreach ($where as $key => $value) {
+                    $query->bindValue(":$key", $value);
+                }
+            }
+
+            $query->execute();
+
+            // Fetch and return the results as an associative array
+            return $query->fetchAll(PDO::FETCH_ASSOC);
+        } catch (PDOException $error) {
+            throw new Exception($error->getMessage());
+        }
     }
+
 
     public function update()
     {
@@ -38,9 +67,31 @@ class Mysql implements Database
         // TODO: Implement delete() method.
     }
 
-    public function insert()
+    //username, password, passwordRepeat, email
+    public function insert(string $table, $params = []) : void
     {
+        try {
+
+            $columns = implode(',', array_keys($params));
+            $values = ":" . implode(' , :', array_keys($params));
+            //It can be $insert or $query
+            $insert =  self::$db->prepare("INSERT INTO $table($columns) VALUES ($values)");
+            foreach ($params as $key => $value) {
+                $insert->bindValue(':' . $key, $value);
+            }
+            $insert->execute();
+        } catch(PDOException $error)
+        {
+            throw new Exception($error->getMessage());
+        }
+
         // TODO: Implement insert() method.
+//        $insert = $db->prepare("INSERT INTO users SET username=:username, password=:password");
+//        INSERT INTO users (username, password)) VALUES (:username, :password);
+//        $insert->bindParam(":username", $user);
+//        $insert->bindParam(":password", $_POST['password']);
+//        $insert->execute();
+
     }
 
     public function disconnect()
