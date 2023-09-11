@@ -110,7 +110,7 @@
 
         <div class="text-end">
         <button type="button" class="btn btn-outline-light me-2">Login</button>
-            {block name="register"} <button type="button" class="btn btn-warning"><a style="text-decoration: none;  color: inherit" href="index.php?action=registerForm">Sign-up</a></button>{/block}
+            {block name="register"} <button type="button" class="btn btn-warning" style="background-color: orange"><a style="text-decoration: none;  color: inherit" href="index.php?action=registerForm">Sign-up</a></button>{/block}
 
         </div>
 
