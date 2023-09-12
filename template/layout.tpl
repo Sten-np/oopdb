@@ -98,9 +98,9 @@
         <ul class="nav col-12 col-lg-auto me-lg-auto mb-2 justify-content-center mb-md-0">
         <li><a href="index.php?action=homePage" class="nav-link px-2 text-secondary">Home</a></li>
         <li><a href="index.php?action=productPage" class="nav-link px-2 text-white">Products</a></li>
-        <li><a href="#" class="nav-link px-2 text-white">Pricing</a></li>
-        <li><a href="#" class="nav-link px-2 text-white">FAQs</a></li>
-        <li><a href="#" class="nav-link px-2 text-white">About</a></li>
+        <li><a href="index.php?action=playstationPage" class="nav-link px-2 text-white">Playstation</a></li>
+        <li><a href="index.php?action=xboxPage" class="nav-link px-2 text-white">Xbox</a></li>
+        <li><a href="index.php?action=nintendoPage" class="nav-link px-2 text-white">Nintendo</a></li>
 {*            <li><a href="index.php?action=registerForm"><span class="glyphicon glyphicon-user"></span> register</a></li>*}
         </ul>
 

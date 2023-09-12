@@ -7,7 +7,7 @@ require_once "vendor/autoload.php";
 use Project9\Mysql;
 use Project9\ProductList;
 use Project9\Nintendo;
-use Project9\XBox;
+use Project9\xboxPage;
 use Project9\Playstation;
 use Project9\User;
 use Project9\Db;
@@ -84,9 +84,12 @@ switch ($action) {
             exit;
         }
         break;
-
-
     case "productPage":
+//        $product_id = isset($_GET['product_id']) ? $_GET['product_id'] : null;
+//        $where = [];
+//        if ($product_id !== null && is_numeric($product_id)) {
+//            $where['product_id'] = $product_id;
+//        }
         // Assuming you have a Database class with a select function
         $products = Db::$db->select('product', ['*']);
 
@@ -97,11 +100,40 @@ switch ($action) {
         $template->display("template/productPage.tpl");
         break;
         break;
-    case "homePage":
-        $template->display("template/homePage.tpl");
-        break;
     case "contact":
         $template->display("template/contact.tpl");
+        break;
+    case "xboxPage":
+        $columns = ['*'];
+        $where = ['category' => 'xbox'];
+        $products = Db::$db->select('product', $columns, $where);
+        $template->assign('products', $products);
+        $template->display("template/xboxPage.tpl");
+        break;
+    case "playstationPage":
+        $columns = ['*'];
+        $where = ['category' => 'playstation'];
+        $products = Db::$db->select('product', $columns, $where);
+        $template->assign('products', $products);
+        $template->display("template/playstationPage.tpl");
+        break;
+    case "nintendoPage":
+        $columns = ['*'];
+        $where = ['category' => 'nintendo'];
+        $products = Db::$db->select('product', $columns, $where);
+        $template->assign('products', $products);
+        $template->display("template/nintendoPage.tpl");
+        break;
+    case "moreInfo":
+        $product_id = isset($_GET['product_id']) ? $_GET['product_id'] : null;
+        $where = ['id' => $product_id];
+        $product = Db::$db->select('product', ['*'], $where);
+
+        // Assign the product information to template variables
+        $template->assign('product', $product);
+
+        // Display the "moreInfo.tpl" template
+        $template->display("template/moreInfo.tpl");
         break;
     default:
         $template->display("template/homePage.tpl");
