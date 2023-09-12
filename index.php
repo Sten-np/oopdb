@@ -24,6 +24,13 @@ $database = new Db();
 //I've added a extra $_GET['action'], so that the 'switch statement' will work!
 $action = isset($_GET['action']) ? $_GET['action'] : null;
 
+//Generate a random token string
+$_SESSION["CSRFToken"] = bin2hex(random_bytes(32));
+
+//Set expiry (less time for hackers)
+//$_SESSION["CSRFToken-expire"] = time() + 3600; //1 hour
+
+
 switch ($action) {
     case "registerForm":
         $template->display("template/registerForm.tpl");
@@ -32,16 +39,33 @@ switch ($action) {
         if (!empty($_POST['username']) && !empty($_POST['emailadress']) && !empty($_POST['phonenumber']) && !empty($_POST['password']) && !empty($_POST['passwordrepeat'])) {
             // Validate user input (e.g., check email format, password requirements)
             // ...
-
             // Assuming you have a User class for registration
-            $user = new User($_POST['username'], $_POST['emailadress'], $_POST['phonenumber'], $_POST['password'], $_POST['passwordrepeat']);
 
-            // Display a success message
-            echo "<h2>Welcome " . $_POST['username'] . "</h2><br>";
-            echo "<p>Your account has been created.</p>";
-            echo "<p>You can now login with your email address " . $_POST['emailadress'] . "</p>";
-            header("Refresh:3; url=index.php", true, 303);
-            exit;
+            if (!isset($_POST['CSRFToken']) || !isset($_SESSION["CSRFToken"]))
+            {
+                exit("Token not set!");
+            }
+
+            if ($_POST["CSRFToken"] == $_SESSION["CSRFToken"])
+            {
+                $user = new User($_POST['username'], $_POST['emailadress'], $_POST['phonenumber'], $_POST['password'], $_POST['passwordrepeat']);
+                // Display a success message
+                echo "<h2>Welcome " . $_POST['username'] . "</h2><br>";
+                echo "<p>Your account has been created.</p>";
+                echo "<p>You can now login with your email address " . $_POST['emailadress'] . "</p>";
+                header("Refresh:3; url=index.php", true, 303);
+                exit;
+
+//                unset($_SESSION["CSRFToken"]);
+            }
+            // ERROR message, cannot validate token
+            else
+            {
+                echo "POST Token: " . $_POST["CSRFToken"] . "<br>";
+                echo "Session Token: " . $_SESSION["CSRFToken"] . "<br>";
+                exit("Invalid Token");
+            }
+
         }
         break;
     case "loginForm":

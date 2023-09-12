@@ -7,10 +7,11 @@
 
 {/block}
 
+
 {block name="registerForm"}
     <h2>Sign up</h2>
     <form class="form-horizontal" action="index.php?action=register" method="POST">
-        <input type="hidden" name="CSRFToken" value="OWY4NmQwODE4ODRjN2Q2NTlhMmZlYWEwYzU1YWQwMTVhM2JmNGYxYjJiMGI4MjJjZDE1ZDZMGYwMGEwOA==">
+        <input type="hidden" name="CSRFToken" value="7437330caf26ec3a26d7a9979798ddc10d3406aebd8030fe81c48374fbbcdff3">
         <div class="form-group">
             <label class="control-label col-sm-2" for="email">Username:</label>
             <div class="col-sm-10">
