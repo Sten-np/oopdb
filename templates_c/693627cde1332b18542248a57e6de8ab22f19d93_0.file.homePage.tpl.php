@@ -1,18 +1,18 @@
 <?php
-/* Smarty version 4.3.2, created on 2023-09-12 07:44:13
+/* Smarty version 4.3.2, created on 2023-09-12 11:50:26
   from 'C:\Wamp.NET\sites\oopdb\template\homePage.tpl' */
 
 /* @var Smarty_Internal_Template $_smarty_tpl */
 if ($_smarty_tpl->_decodeProperties($_smarty_tpl, array (
   'version' => '4.3.2',
-  'unifunc' => 'content_650016cdd62dd5_09927449',
+  'unifunc' => 'content_650050829683e4_57957543',
   'has_nocache_code' => false,
   'file_dependency' => 
   array (
     '693627cde1332b18542248a57e6de8ab22f19d93' => 
     array (
       0 => 'C:\\Wamp.NET\\sites\\oopdb\\template\\homePage.tpl',
-      1 => 1694504652,
+      1 => 1694506443,
       2 => 'file',
     ),
   ),
@@ -20,29 +20,29 @@ if ($_smarty_tpl->_decodeProperties($_smarty_tpl, array (
   array (
   ),
 ),false)) {
-function content_650016cdd62dd5_09927449 (Smarty_Internal_Template $_smarty_tpl) {
+function content_650050829683e4_57957543 (Smarty_Internal_Template $_smarty_tpl) {
 $_smarty_tpl->_loadInheritance();
 $_smarty_tpl->inheritance->init($_smarty_tpl, true);
 ?>
 
 
 <?php 
-$_smarty_tpl->inheritance->instanceBlock($_smarty_tpl, 'Block_251923803650016cdd5d3a3_67669812', "title");
+$_smarty_tpl->inheritance->instanceBlock($_smarty_tpl, 'Block_160125471665005082965b36_83063888', "title");
 ?>
 
 
 
 <?php 
-$_smarty_tpl->inheritance->instanceBlock($_smarty_tpl, 'Block_1984150461650016cdd604d7_43370071', "homePage");
+$_smarty_tpl->inheritance->instanceBlock($_smarty_tpl, 'Block_131924550265005082967071_90606086', "homePage");
 $_smarty_tpl->inheritance->endChild($_smarty_tpl, "template/layout.tpl");
 }
 /* {block "title"} */
-class Block_251923803650016cdd5d3a3_67669812 extends Smarty_Internal_Block
+class Block_160125471665005082965b36_83063888 extends Smarty_Internal_Block
 {
 public $subBlocks = array (
   'title' => 
   array (
-    0 => 'Block_251923803650016cdd5d3a3_67669812',
+    0 => 'Block_160125471665005082965b36_83063888',
   ),
 );
 public function callBlock(Smarty_Internal_Template $_smarty_tpl) {
@@ -54,12 +54,12 @@ public function callBlock(Smarty_Internal_Template $_smarty_tpl) {
 }
 /* {/block "title"} */
 /* {block "homePage"} */
-class Block_1984150461650016cdd604d7_43370071 extends Smarty_Internal_Block
+class Block_131924550265005082967071_90606086 extends Smarty_Internal_Block
 {
 public $subBlocks = array (
   'homePage' => 
   array (
-    0 => 'Block_1984150461650016cdd604d7_43370071',
+    0 => 'Block_131924550265005082967071_90606086',
   ),
 );
 public function callBlock(Smarty_Internal_Template $_smarty_tpl) {
@@ -78,12 +78,11 @@ public function callBlock(Smarty_Internal_Template $_smarty_tpl) {
 
   </style>
   <main>
-    <div class="position-relative overflow-hidden p-3 p-md-5 m-md-3 text-center bg-body-tertiary">
-      <div class="col-md-6 p-lg-5 mx-auto my-5">
+    <div class="position-relative overflow-hidden p-3 p-md-5 m-md-3 text-center bg-body-tertiary" >
+      <div class="col-md-6 p-lg-5 mx-auto my-5" href="#">
         <h1 class="display-3 fw-bold"><img src="../img/GameHub.png"></h1>
         <div class="d-flex gap-3 justify-content-center lead fw-normal">
-          <a class="icon-link" href="#" style="color: orange; text-decoration: none; border-bottom: 1px solid orange">
-            Buy ></a>
+          <a class="icon-link" href="index.php?action=productPage" style="color: orange; text-decoration: none; border-bottom: 1px solid orange">All products ></a>
         </div>
       </div>
       <div class="product-device shadow-sm d-none d-md-block"></div>
@@ -92,17 +91,17 @@ public function callBlock(Smarty_Internal_Template $_smarty_tpl) {
 
     <div class="d-md-flex flex-md-equal w-100 my-md-3 ps-md-3" >
       <div class="text-bg-dark me-md-3 pt-3 px-3 pt-md-5 px-md-5 text-center overflow-hidden">
-        <div class="my-3 py-3">
+        <div class="my-3 py-3" >
           <h2 class="display-5">Playstation</h2>
-          <p class="lead">And an even wittier subheading.</p>
+          <a class="lead" href="index.php?action=playstationPage" style="color: orange; text-decoration: none; border-bottom: 1px solid orange">Buy ></a>
         </div>
         <div class="bg-body-tertiary shadow-sm mx-auto" style="width: 80%; height: 300px; border-radius: 21px 21px 0 0;"><img src="img/playstation.png"></div>
       </div>
 
-      <div class="bg-body-tertiary me-md-3 pt-3 px-3 pt-md-5 px-md-5 text-center overflow-hidden" style="width: 33%">
+      <div class="bg-body-tertiary me-md-3 pt-3 px-3 pt-md-5 px-md-5 text-center overflow-hidden" style="width: 35%" >
         <div class="my-3 p-3" >
           <h2 class="display-5">Xbox</h2>
-          <p class="lead">And an even wittier subheading.</p>
+          <a class="lead" href="index.php?action=xboxPage" style="color: orange; text-decoration: none; border-bottom: 1px solid orange">Buy ></a>
         </div>
         <div class="bg-dark shadow-sm mx-auto" style="width: 80%; height: 300px; border-radius: 21px 21px 0 0;"><img src="img/xbox.png"></div>
       </div>
@@ -110,7 +109,7 @@ public function callBlock(Smarty_Internal_Template $_smarty_tpl) {
       <div class="text-bg-dark me-md-3 pt-3 px-3 pt-md-5 px-md-5 text-center overflow-hidden" >
         <div class="my-3 py-3">
           <h2 class="display-5">Nintendo</h2>
-          <p class="lead">And an even wittier subheading.</p>
+          <a class="lead" href="index.php?action=nintendoPage" style="color: orange; text-decoration: none; border-bottom: 1px solid orange">Buy ></a>
         </div>
         <div class="bg-body-tertiary shadow-sm mx-auto" style="width: 80%; height: 300px; border-radius: 21px 21px 0 0;"><img src="img/nintendo.png"></div>
       </div>

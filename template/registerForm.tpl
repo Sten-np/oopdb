@@ -3,54 +3,74 @@
 {block name="title"}
     GameHub | Register
 {/block}
-{block name="register"}
-
-{/block}
 
 {block name="registerForm"}
-    <h2>Sign up</h2>
+    <style>
+        /* Add your existing styles here */
+
+        /* Center the form vertically and horizontally */
+        .form-horizontal {
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            justify-content: center;
+            height: 100vh;
+        }
+
+        /* Style the labels and inputs similar to the provided form */
+        .form-group {
+            display: flex;
+            flex-direction: column;
+            align-items: center; /* Center input fields horizontally */
+            margin-bottom: 15px;
+        }
+
+        .form-group label {
+            font-weight: bold;
+        }
+
+        /* Adjust the form-control width and center them */
+        .form-control {
+            width: 100%; /* Set the width back to 100% */
+            max-width: 400px; /* Increase the maximum width to your desired value */
+            margin-bottom: 10px;
+        }
+
+        /* Center the submit button */
+        .submit-button {
+            text-align: center;
+        }
+    </style>
     <form class="form-horizontal" action="index.php?action=register" method="POST">
+        <h2>Sign up</h2>
+
         <div class="form-group">
-            <label class="control-label col-sm-2" for="email">Username:</label>
-            <div class="col-sm-10">
-                <input required type="text" class="form-control" id="email" name="username" placeholder="Username">
-            </div>
+            <label for="username">Username:</label>
+            <input type="text" class="form-control" id="username" name="username" placeholder="Username" required>
         </div>
         <div class="form-group">
-            <label class="control-label col-sm-2" for="email">Email:</label>
-            <div class="col-sm-10">
-                <input required type="email" class="form-control" id="email" name="emailadress" placeholder="Enter here your email">
-            </div>
+            <label for="email">Email:</label>
+            <input type="email" class="form-control" id="email" name="emailadress" placeholder="Enter your email" required>
         </div>
         <div class="form-group">
-            <label class="control-label col-sm-2" for="phonenumber">Phone number:</label>
-            <div class="col-sm-10">
-                <input required type="tel" class="form-control" id="phonenumber" name="phonenumber" placeholder="06-12345678">
-            </div>
+            <label for="phonenumber">Phone number:</label>
+            <input type="tel" class="form-control" id="phonenumber" name="phonenumber" placeholder="06-12345678" required>
         </div>
         <div class="form-group">
-            <label class="control-label col-sm-2" for="pwd">Password:</label>
-            <div class="col-sm-10">
-                <input required type="password" class="form-control" id="pwd" name="password" placeholder="Enter password">
-            </div>
+            <label for="password">Password:</label>
+            <input type="password" class="form-control" id="password" name="password" placeholder="Enter password" required>
         </div>
         <div class="form-group">
-            <label class="control-label col-sm-2" for="pwd">Repeat Password:</label>
-            <div class="col-sm-10">
-                <input required type="password" class="form-control" id="pwd" name="passwordrepeat" placeholder="Enter password">
-            </div>
+            <label for="passwordrepeat">Repeat Password:</label>
+            <input type="password" class="form-control" id="passwordrepeat" name="passwordrepeat" placeholder="Repeat password" required>
         </div>
         <div class="form-group">
-            <div class="col-sm-offset-2 col-sm-10">
-                <div class="checkbox">
-                    <label><input type="checkbox"> Remember me</label>
-                </div>
+            <div class="checkbox">
+                <label><input type="checkbox" name="remember"> Remember me</label>
             </div>
         </div>
-        <div class="form-group">
-            <div class="col-sm-offset-2 col-sm-10">
-                <button type="submit" class="btn btn-default">Submit</button>
-            </div>
+        <div class="form-group submit-button">
+            <button type="submit" class="btn btn-primary">Submit</button>
         </div>
     </form>
 {/block}
