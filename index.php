@@ -21,14 +21,15 @@ $template->clearAllCache();
 
 $database = new Db();
 
+//Generate a random token string
+$token = bin2hex(random_bytes(32));
+$_SESSION["csrf_token"] = $token;
+$template->assign("csrf_token", $token);
+
 //I've added a extra $_GET['action'], so that the 'switch statement' will work!
 $action = isset($_GET['action']) ? $_GET['action'] : null;
 
-//Generate a random token string
-$_SESSION["CSRFToken"] = bin2hex(random_bytes(32));
 
-//Set expiry (less time for hackers)
-//$_SESSION["CSRFToken-expire"] = time() + 3600; //1 hour
 
 
 switch ($action) {
@@ -37,16 +38,15 @@ switch ($action) {
         break;
     case "register":
         if (!empty($_POST['username']) && !empty($_POST['emailadress']) && !empty($_POST['phonenumber']) && !empty($_POST['password']) && !empty($_POST['passwordrepeat'])) {
-            // Validate user input (e.g., check email format, password requirements)
-            // ...
-            // Assuming you have a User class for registration
+            var_dump($_POST['csrf_token']);
+            var_dump($_SESSION['csrf_token']);
 
-            if (!isset($_POST['CSRFToken']) || !isset($_SESSION["CSRFToken"]))
+            if (!isset($_POST['csrf_token']) || !isset($_SESSION["csrf_token"]))
             {
                 exit("Token not set!");
             }
 
-            if ($_POST["CSRFToken"] == $_SESSION["CSRFToken"])
+            if (isset($_POST['csrf_token']) && $_POST['csrf_token'] === $_SESSION["csrf_token"])
             {
                 $user = new User($_POST['username'], $_POST['emailadress'], $_POST['phonenumber'], $_POST['password'], $_POST['passwordrepeat']);
                 // Display a success message
@@ -56,13 +56,13 @@ switch ($action) {
                 header("Refresh:3; url=index.php", true, 303);
                 exit;
 
-//                unset($_SESSION["CSRFToken"]);
+//                unset($_SESSION["token"]);
             }
             // ERROR message, cannot validate token
             else
             {
-                echo "POST Token: " . $_POST["CSRFToken"] . "<br>";
-                echo "Session Token: " . $_SESSION["CSRFToken"] . "<br>";
+                echo "POST Token: " . $_POST["token"] . "<br>";
+                echo "Session Token: " . $_SESSION["token"] . "<br>";
                 exit("Invalid Token");
             }
 

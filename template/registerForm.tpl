@@ -11,7 +11,6 @@
 {block name="registerForm"}
     <h2>Sign up</h2>
     <form class="form-horizontal" action="index.php?action=register" method="POST">
-        <input type="hidden" name="CSRFToken" value="7437330caf26ec3a26d7a9979798ddc10d3406aebd8030fe81c48374fbbcdff3">
         <div class="form-group">
             <label class="control-label col-sm-2" for="email">Username:</label>
             <div class="col-sm-10">
@@ -51,6 +50,7 @@
         </div>
         <div class="form-group">
             <div class="col-sm-offset-2 col-sm-10">
+                <input type="hidden" name="csrf_token" value="{$csrf_token}">
                 <button type="submit" class="btn btn-default">Submit</button>
             </div>
         </div>
