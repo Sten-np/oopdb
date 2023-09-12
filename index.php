@@ -91,7 +91,6 @@ switch ($action) {
              if (!empty($admin) && password_verify($pass, $admin[0]['password'])) {
                 // Authentication successful
                 // Set the user's session or redirect to a dashboard page
-                var_dump($admin);
                 if(isset($admin[0]['bool_adm']) && $admin[0]['bool_adm'] != 1)
                 {
                     echo "Your account is not permitted to login as admin...";
@@ -101,7 +100,7 @@ switch ($action) {
                 $_SESSION['admin'] = $admin[0];
                 echo "<h2>Welcome " . $admin[0]['username'] . "</h2><br>";
                 echo "<p>You've logged in.</p>";
-                header("Refresh:2; url=index.php");
+                header("Refresh:2; url=index.php?action=admin-dashboard");
                 exit;
             } else {
                 // Authentication failed
@@ -124,10 +123,14 @@ switch ($action) {
     case "contact":
         $template->display("template/contact.tpl");
         break;
+    case "admin-dashboard":
+        $template->display("template/admin-dashboard.tpl");
+        break;
+    case "admin-users":
+        $template->display("template/admin-users.tpl");
     default:
         $template->display("template/homePage.tpl");
         break;
-
 }
 
 

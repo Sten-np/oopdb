@@ -86,7 +86,8 @@
             z-index: 1500;
         }
         </style>
-
+    {block name="nav"}
+</head>
         <header class="p-3 text-bg-dark">
         <div class="container">
         <div class="d-flex flex-wrap align-items-center justify-content-center justify-content-lg-start">
@@ -116,6 +117,7 @@
         </div>
         </div>
         </header>
+{/block}
 
 
 
@@ -126,7 +128,7 @@
     {block name="loginForm"}{/block}
     {block name="productPage"}{/block}
     {block name="admin-login"}{/block}
-
+    {block name="adm-dash"}{/block}
 </div>
 
 {block name="footer"}
