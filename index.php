@@ -11,12 +11,21 @@ use Project9\xboxPage;
 use Project9\Playstation;
 use Project9\User;
 use Project9\Db;
+use Project9\ProductPageActionHandler;
+use Project9\LoginActionActionHandler;
+use Project9\RegistrationActionHandler;
+use Project9\XboxPageActionHandler;
+use Project9\PlaystationPageActionHandler;
+use Project9\NintendoPageActionHandler;
+use Project9\MoreInfoPageActionHandler;
+
+
 
 session_start();
-
 $template = new Smarty();
 $template->clearCompiledTemplate();
 $template->clearAllCache();
+global $template;
 
 
 $database = new Db();
@@ -39,6 +48,7 @@ switch ($action) {
         $handler = new LoginActionHandler();
         $handler->handleLogin();
         break;
+
         case "admin-login":
         $template->display("template/admin-login.tpl");
         break;
@@ -79,55 +89,27 @@ switch ($action) {
         break;
 
     case "productPage":
-//        $product_id = isset($_GET['product_id']) ? $_GET['product_id'] : null;
-//        $where = [];
-//        if ($product_id !== null && is_numeric($product_id)) {
-//            $where['product_id'] = $product_id;
-//        }
-        // Assuming you have a Database class with a select function
-        $products = Db::$db->select('product', ['*']);
-
-        // Assign the product information to template variables
-        $template->assign('products', $products);
-
-        // Display the "productPage.tpl" template
-        $template->display("template/productPage.tpl");
-        break;
+        $handler = new productPageActionHandler();
+        $handler->handleProductPage();
         break;
     case "contact":
         $template->display("template/contact.tpl");
         break;
     case "xboxPage":
-        $columns = ['*'];
-        $where = ['category' => 'xbox'];
-        $products = Db::$db->select('product', $columns, $where);
-        $template->assign('products', $products);
-        $template->display("template/xboxPage.tpl");
+        $handler = new xboxPageActionHandler();
+        $handler->handleXboxPage();
         break;
     case "playstationPage":
-        $columns = ['*'];
-        $where = ['category' => 'playstation'];
-        $products = Db::$db->select('product', $columns, $where);
-        $template->assign('products', $products);
-        $template->display("template/playstationPage.tpl");
+        $handler = new playstationPageActionHandler();
+        $handler->handlePlaystationPage();
         break;
     case "nintendoPage":
-        $columns = ['*'];
-        $where = ['category' => 'nintendo'];
-        $products = Db::$db->select('product', $columns, $where);
-        $template->assign('products', $products);
-        $template->display("template/nintendoPage.tpl");
+        $handler = new nintendoPageActionHandler();
+        $handler->handleNintendoPage();
         break;
     case "moreInfo":
-        $product_id = isset($_GET['product_id']) ? $_GET['product_id'] : null;
-        $where = ['id' => $product_id];
-        $product = Db::$db->select('product', ['*'], $where);
-
-        // Assign the product information to template variables
-        $template->assign('product', $product);
-
-        // Display the "moreInfo.tpl" template
-        $template->display("template/moreInfo.tpl");
+        $handler = new MoreInfoPageActionHandler();
+        $handler->handleMoreInfoPage();
         break;
     default:
         $template->display("template/homePage.tpl");
@@ -141,35 +123,5 @@ $database = new Mysql("localhost", "gamehub", "root", "");
 $database->__construct("localhost", "gamehub", "root", "");
 
 
-
-//////Creating new products also for testing
-//$productList = new ProductList();
-//
-//$nintendo1 = new \Project9\Nintendo("Super Mario Bros", "img/GameHub", 60, 121, "This is Sparta!!!", 0,);
-//$nintendo1->addRequirements("all your money");
-//$nintendo1->setGenre("Adventure");
-////to add the product in the array ProductList
-//$productList->addProduct($nintendo1);
-//
-//
-//print "<table style=width: 100 border='1px solid black'>
-//         <tr>
-//         <th>Catergory</th>
-//         <th>Naam Product</th>
-//         <th>Verkoopprijs</th>
-//         <th>Genre</th>
-//         </tr>";
-//
-//foreach ($productList->getProducts() as $products)
-//{
-//    print "<tr>
-//         <td>".$products->setCategory()."</td>
-//         <td>".$products->getName()."</td>".
-//        "<td>€".$products->getCalculatePrice()."</td>.
-//         <td>".$products->printInfo()."</td>
-//         </tr>";
-//
-//}
-//
 
 

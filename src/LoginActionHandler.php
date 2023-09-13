@@ -2,11 +2,13 @@
 
 namespace Project9;
 
-class LoginActionHandler extends BaseActionHandler
+class LoginActionHandler
 {
+
     public function handleLoginForm()
     {
-        $this->smarty->display("template/loginForm.tpl");
+        global $template;
+        $template->display("template/loginForm.tpl");
     }
 
     public function handleLogin()
@@ -39,13 +41,14 @@ class LoginActionHandler extends BaseActionHandler
             header("Location: index.php?action=loginForm&error=1");
             exit;
         }
+        global $template;
 
         // Assign success messages to Smarty variables
-        $this->smarty->assign('welcomeMessage', "Welcome " . $users[0]['username']);
-        $this->smarty->assign('loginMessage', "You've logged in.");
+        $template->assign('welcomeMessage', "Welcome " . $users[0]['username']);
+        $template->assign('loginMessage', "You've logged in.");
 
         // Display the success template
-        $this->smarty->display("template/login_success.tpl");
+        $template->display("template/login_success.tpl");
         header("Refresh:3; url=index.php");
         exit;
     }

@@ -5,7 +5,8 @@ class registrationActionHandler extends baseActionHandler
 {
     public function handleRegisterForm()
 {
-    $this->smarty->display("template/registerForm.tpl");
+    global $template;
+    $template->display("template/registerForm.tpl");
 }
 
     public function handleRegister()
@@ -24,14 +25,14 @@ class registrationActionHandler extends baseActionHandler
         header("Refresh:3; url=index.php", true, 303);
         exit;
     }
-
+    global $template;
     // Assign success messages to Smarty variables
-    $this->smarty->assign('welcomeMessage', "Welcome " . $_POST['username']);
-    $this->smarty->assign('accountCreatedMessage', "Your account has been created.");
+    $template->assign('welcomeMessage', "Welcome " . $_POST['username']);
+    $template->assign('accountCreatedMessage', "Your account has been created.");
     $this->smarty->assign('loginMessage', "You can now login with your email address " . $_POST['emailadress']);
 
     // Display the success template
-    $this->smarty->display("template/register_success.tpl");
+    $template->display("template/register_success.tpl");
     header("Refresh:3; url=index.php", true, 303);
     exit;
 }
