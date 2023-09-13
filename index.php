@@ -9,6 +9,7 @@ use Project9\ProductList;
 use Project9\Nintendo;
 use Project9\XBox;
 use Project9\Playstation;
+use Project9\Security;
 use Project9\User;
 use Project9\Db;
 
@@ -22,9 +23,11 @@ $template->clearAllCache();
 $database = new Db();
 
 //Generate a random token string
-$token = bin2hex(random_bytes(32));
-$_SESSION["csrf_token"] = $token;
-$template->assign("csrf_token", $token);
+$security = new Security();
+$security->generateToken();
+$security->validateToken();
+
+$template->assign("csrf_token", $security);
 
 //I've added a extra $_GET['action'], so that the 'switch statement' will work!
 $action = isset($_GET['action']) ? $_GET['action'] : null;
