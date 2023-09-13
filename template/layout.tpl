@@ -86,7 +86,7 @@
             z-index: 1500;
         }
         </style>
-
+</head>
         <header class="p-3 text-bg-dark">
         <div class="container">
         <div class="d-flex flex-wrap align-items-center justify-content-center justify-content-lg-start">
@@ -101,6 +101,7 @@
         <li><a href="index.php?action=playstationPage" class="nav-link px-2 text-white">Playstation</a></li>
         <li><a href="index.php?action=xboxPage" class="nav-link px-2 text-white">Xbox</a></li>
         <li><a href="index.php?action=nintendoPage" class="nav-link px-2 text-white">Nintendo</a></li>
+        <li><a href="index.php?action=contact" class="nav-link px-2 text-white">Contact</a></li>
 {*            <li><a href="index.php?action=registerForm"><span class="glyphicon glyphicon-user"></span> register</a></li>*}
         </ul>
 
@@ -126,7 +127,7 @@
     {block name="loginForm"}{/block}
     {block name="productPage"}{/block}
     {block name="admin-login"}{/block}
-
+    {block name="contact-page"}{/block}
 </div>
 
 {block name="footer"}

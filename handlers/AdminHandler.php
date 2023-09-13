@@ -44,5 +44,6 @@ class AdminHandler
             header("Refresh:3; url=index.php?action=admin-login");
             exit;
         }
+
     }
 }
