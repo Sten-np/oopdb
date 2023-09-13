@@ -14,6 +14,11 @@ class Security {
         return $csrfToken;
     }
 
+    public function expireCSRFToken()
+    {
+        $_SESSION['csrf_token_expire'] = time() + 3600;// 3600 is set to 1HR
+    }
+
 
     public static function verifyCSRFToken($csrf_token) {
         // Verify that a CSRF token was submitted

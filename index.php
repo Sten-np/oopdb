@@ -116,10 +116,10 @@ switch ($action) {
             exit;
         }
         break;
-        case "admin-login":
+    case "admin-login":
         $template->display("template/admin-login.tpl");
         break;
-        case "login-adm":
+    case "login-adm":
         if(!empty($_POST['email']) && !empty($_POST['pass']))
         {
             $email = $_POST['email'];
@@ -128,7 +128,7 @@ switch ($action) {
             $where = ['emailadress' => $email];
             $admin = Db::$db->select('user', ['*'], $where);
 
-             if (!empty($admin) && password_verify($pass, $admin[0]['password'])) {
+            if (!empty($admin) && password_verify($pass, $admin[0]['password'])) {
                 // Authentication successful
                 // Set the user's session or redirect to a dashboard page
                 var_dump($admin);
