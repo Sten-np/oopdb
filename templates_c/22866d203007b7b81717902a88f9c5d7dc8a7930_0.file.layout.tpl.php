@@ -1,7 +1,11 @@
 <?php
 <<<<<<< Updated upstream
 <<<<<<< Updated upstream
+<<<<<<< Updated upstream
 /* Smarty version 4.3.2, created on 2023-09-13 08:03:02
+=======
+/* Smarty version 4.3.2, created on 2023-09-13 08:51:08
+>>>>>>> Stashed changes
 =======
 /* Smarty version 4.3.2, created on 2023-09-13 08:51:08
 >>>>>>> Stashed changes
@@ -15,7 +19,11 @@ if ($_smarty_tpl->_decodeProperties($_smarty_tpl, array (
   'version' => '4.3.2',
 <<<<<<< Updated upstream
 <<<<<<< Updated upstream
+<<<<<<< Updated upstream
   'unifunc' => 'content_65016cb6c54825_80997090',
+=======
+  'unifunc' => 'content_650177fca1bd07_45403913',
+>>>>>>> Stashed changes
 =======
   'unifunc' => 'content_650177fca1bd07_45403913',
 >>>>>>> Stashed changes
@@ -30,7 +38,11 @@ if ($_smarty_tpl->_decodeProperties($_smarty_tpl, array (
       0 => 'C:\\Wamp.NET\\sites\\oopdb\\template\\layout.tpl',
 <<<<<<< Updated upstream
 <<<<<<< Updated upstream
+<<<<<<< Updated upstream
       1 => 1694592138,
+=======
+      1 => 1694594890,
+>>>>>>> Stashed changes
 =======
       1 => 1694594890,
 >>>>>>> Stashed changes
@@ -46,7 +58,11 @@ if ($_smarty_tpl->_decodeProperties($_smarty_tpl, array (
 ),false)) {
 <<<<<<< Updated upstream
 <<<<<<< Updated upstream
+<<<<<<< Updated upstream
 function content_65016cb6c54825_80997090 (Smarty_Internal_Template $_smarty_tpl) {
+=======
+function content_650177fca1bd07_45403913 (Smarty_Internal_Template $_smarty_tpl) {
+>>>>>>> Stashed changes
 =======
 function content_650177fca1bd07_45403913 (Smarty_Internal_Template $_smarty_tpl) {
 >>>>>>> Stashed changes
@@ -68,7 +84,11 @@ $_smarty_tpl->inheritance->init($_smarty_tpl, false);
     <title><?php 
 <<<<<<< Updated upstream
 <<<<<<< Updated upstream
+<<<<<<< Updated upstream
 $_smarty_tpl->inheritance->instanceBlock($_smarty_tpl, 'Block_89969063565016cb6c3b634_17747603', "title");
+=======
+$_smarty_tpl->inheritance->instanceBlock($_smarty_tpl, 'Block_1920374416650177fc9ff9f1_78493321', "title");
+>>>>>>> Stashed changes
 =======
 $_smarty_tpl->inheritance->instanceBlock($_smarty_tpl, 'Block_1920374416650177fc9ff9f1_78493321', "title");
 >>>>>>> Stashed changes
@@ -181,7 +201,11 @@ $_smarty_tpl->inheritance->instanceBlock($_smarty_tpl, 'Block_1920374416650177fc
             <?php 
 <<<<<<< Updated upstream
 <<<<<<< Updated upstream
+<<<<<<< Updated upstream
 $_smarty_tpl->inheritance->instanceBlock($_smarty_tpl, 'Block_141892672365016cb6c417a9_23544212', "register");
+=======
+$_smarty_tpl->inheritance->instanceBlock($_smarty_tpl, 'Block_1794000251650177fca06b45_45366934', "register");
+>>>>>>> Stashed changes
 =======
 $_smarty_tpl->inheritance->instanceBlock($_smarty_tpl, 'Block_1794000251650177fca06b45_45366934', "register");
 >>>>>>> Stashed changes
@@ -200,6 +224,7 @@ $_smarty_tpl->inheritance->instanceBlock($_smarty_tpl, 'Block_1794000251650177fc
 
 <div class="container-fluid">
     <?php 
+<<<<<<< Updated upstream
 <<<<<<< Updated upstream
 <<<<<<< Updated upstream
 $_smarty_tpl->inheritance->instanceBlock($_smarty_tpl, 'Block_15843262365016cb6c44109_88314231', "registerForm");
@@ -227,6 +252,29 @@ $_smarty_tpl->inheritance->instanceBlock($_smarty_tpl, 'Block_683022185650177fca
 $_smarty_tpl->inheritance->instanceBlock($_smarty_tpl, 'Block_4760284650177fca0f139_34791492', "productPage");
 =======
 $_smarty_tpl->inheritance->instanceBlock($_smarty_tpl, 'Block_1900962976650177fca09d50_78797078', "registerForm");
+=======
+$_smarty_tpl->inheritance->instanceBlock($_smarty_tpl, 'Block_1900962976650177fca09d50_78797078', "registerForm");
+?>
+
+    <?php 
+$_smarty_tpl->inheritance->instanceBlock($_smarty_tpl, 'Block_683022185650177fca0c5c7_07189038', "homePage");
+?>
+
+    <?php 
+$_smarty_tpl->inheritance->instanceBlock($_smarty_tpl, 'Block_4760284650177fca0f139_34791492', "productPage");
+?>
+
+    <?php 
+$_smarty_tpl->inheritance->instanceBlock($_smarty_tpl, 'Block_358586906650177fca11ed4_11481234', "loginForm");
+?>
+
+    <?php 
+$_smarty_tpl->inheritance->instanceBlock($_smarty_tpl, 'Block_987324408650177fca14791_24069831', "productPage");
+?>
+
+    <?php 
+$_smarty_tpl->inheritance->instanceBlock($_smarty_tpl, 'Block_753182056650177fca16e32_36131508', "admin-login");
+>>>>>>> Stashed changes
 ?>
 
     <?php 
@@ -280,7 +328,11 @@ $_smarty_tpl->inheritance->instanceBlock($_smarty_tpl, 'Block_753182056650177fca
 <?php 
 <<<<<<< Updated upstream
 <<<<<<< Updated upstream
+<<<<<<< Updated upstream
 $_smarty_tpl->inheritance->instanceBlock($_smarty_tpl, 'Block_5649678065016cb6c52318_27330029', "footer");
+=======
+$_smarty_tpl->inheritance->instanceBlock($_smarty_tpl, 'Block_1183532897650177fca194a9_98783246', "footer");
+>>>>>>> Stashed changes
 =======
 $_smarty_tpl->inheritance->instanceBlock($_smarty_tpl, 'Block_1183532897650177fca194a9_98783246', "footer");
 >>>>>>> Stashed changes
@@ -303,7 +355,11 @@ $_smarty_tpl->inheritance->instanceBlock($_smarty_tpl, 'Block_1183532897650177fc
 /* {block "title"} */
 <<<<<<< Updated upstream
 <<<<<<< Updated upstream
+<<<<<<< Updated upstream
 class Block_89969063565016cb6c3b634_17747603 extends Smarty_Internal_Block
+=======
+class Block_1920374416650177fc9ff9f1_78493321 extends Smarty_Internal_Block
+>>>>>>> Stashed changes
 =======
 class Block_1920374416650177fc9ff9f1_78493321 extends Smarty_Internal_Block
 >>>>>>> Stashed changes
@@ -316,7 +372,11 @@ public $subBlocks = array (
   array (
 <<<<<<< Updated upstream
 <<<<<<< Updated upstream
+<<<<<<< Updated upstream
     0 => 'Block_89969063565016cb6c3b634_17747603',
+=======
+    0 => 'Block_1920374416650177fc9ff9f1_78493321',
+>>>>>>> Stashed changes
 =======
     0 => 'Block_1920374416650177fc9ff9f1_78493321',
 >>>>>>> Stashed changes
@@ -334,7 +394,11 @@ GameHub<?php
 /* {block "register"} */
 <<<<<<< Updated upstream
 <<<<<<< Updated upstream
+<<<<<<< Updated upstream
 class Block_141892672365016cb6c417a9_23544212 extends Smarty_Internal_Block
+=======
+class Block_1794000251650177fca06b45_45366934 extends Smarty_Internal_Block
+>>>>>>> Stashed changes
 =======
 class Block_1794000251650177fca06b45_45366934 extends Smarty_Internal_Block
 >>>>>>> Stashed changes
@@ -347,7 +411,11 @@ public $subBlocks = array (
   array (
 <<<<<<< Updated upstream
 <<<<<<< Updated upstream
+<<<<<<< Updated upstream
     0 => 'Block_141892672365016cb6c417a9_23544212',
+=======
+    0 => 'Block_1794000251650177fca06b45_45366934',
+>>>>>>> Stashed changes
 =======
     0 => 'Block_1794000251650177fca06b45_45366934',
 >>>>>>> Stashed changes
@@ -365,7 +433,11 @@ public function callBlock(Smarty_Internal_Template $_smarty_tpl) {
 /* {block "registerForm"} */
 <<<<<<< Updated upstream
 <<<<<<< Updated upstream
+<<<<<<< Updated upstream
 class Block_15843262365016cb6c44109_88314231 extends Smarty_Internal_Block
+=======
+class Block_1900962976650177fca09d50_78797078 extends Smarty_Internal_Block
+>>>>>>> Stashed changes
 =======
 class Block_1900962976650177fca09d50_78797078 extends Smarty_Internal_Block
 >>>>>>> Stashed changes
@@ -378,7 +450,11 @@ public $subBlocks = array (
   array (
 <<<<<<< Updated upstream
 <<<<<<< Updated upstream
+<<<<<<< Updated upstream
     0 => 'Block_15843262365016cb6c44109_88314231',
+=======
+    0 => 'Block_1900962976650177fca09d50_78797078',
+>>>>>>> Stashed changes
 =======
     0 => 'Block_1900962976650177fca09d50_78797078',
 >>>>>>> Stashed changes
@@ -394,7 +470,11 @@ public function callBlock(Smarty_Internal_Template $_smarty_tpl) {
 /* {block "homePage"} */
 <<<<<<< Updated upstream
 <<<<<<< Updated upstream
+<<<<<<< Updated upstream
 class Block_145166549765016cb6c46742_38722267 extends Smarty_Internal_Block
+=======
+class Block_683022185650177fca0c5c7_07189038 extends Smarty_Internal_Block
+>>>>>>> Stashed changes
 =======
 class Block_683022185650177fca0c5c7_07189038 extends Smarty_Internal_Block
 >>>>>>> Stashed changes
@@ -407,7 +487,11 @@ public $subBlocks = array (
   array (
 <<<<<<< Updated upstream
 <<<<<<< Updated upstream
+<<<<<<< Updated upstream
     0 => 'Block_145166549765016cb6c46742_38722267',
+=======
+    0 => 'Block_683022185650177fca0c5c7_07189038',
+>>>>>>> Stashed changes
 =======
     0 => 'Block_683022185650177fca0c5c7_07189038',
 >>>>>>> Stashed changes
@@ -423,7 +507,11 @@ public function callBlock(Smarty_Internal_Template $_smarty_tpl) {
 /* {block "productPage"} */
 <<<<<<< Updated upstream
 <<<<<<< Updated upstream
+<<<<<<< Updated upstream
 class Block_25892604165016cb6c48ce9_57887679 extends Smarty_Internal_Block
+=======
+class Block_4760284650177fca0f139_34791492 extends Smarty_Internal_Block
+>>>>>>> Stashed changes
 =======
 class Block_4760284650177fca0f139_34791492 extends Smarty_Internal_Block
 >>>>>>> Stashed changes
@@ -436,7 +524,11 @@ public $subBlocks = array (
   array (
 <<<<<<< Updated upstream
 <<<<<<< Updated upstream
+<<<<<<< Updated upstream
     0 => 'Block_25892604165016cb6c48ce9_57887679',
+=======
+    0 => 'Block_4760284650177fca0f139_34791492',
+>>>>>>> Stashed changes
 =======
     0 => 'Block_4760284650177fca0f139_34791492',
 >>>>>>> Stashed changes
@@ -452,7 +544,11 @@ public function callBlock(Smarty_Internal_Template $_smarty_tpl) {
 /* {block "loginForm"} */
 <<<<<<< Updated upstream
 <<<<<<< Updated upstream
+<<<<<<< Updated upstream
 class Block_2389658565016cb6c4b258_18785072 extends Smarty_Internal_Block
+=======
+class Block_358586906650177fca11ed4_11481234 extends Smarty_Internal_Block
+>>>>>>> Stashed changes
 =======
 class Block_358586906650177fca11ed4_11481234 extends Smarty_Internal_Block
 >>>>>>> Stashed changes
@@ -465,7 +561,11 @@ public $subBlocks = array (
   array (
 <<<<<<< Updated upstream
 <<<<<<< Updated upstream
+<<<<<<< Updated upstream
     0 => 'Block_2389658565016cb6c4b258_18785072',
+=======
+    0 => 'Block_358586906650177fca11ed4_11481234',
+>>>>>>> Stashed changes
 =======
     0 => 'Block_358586906650177fca11ed4_11481234',
 >>>>>>> Stashed changes
@@ -481,7 +581,11 @@ public function callBlock(Smarty_Internal_Template $_smarty_tpl) {
 /* {block "productPage"} */
 <<<<<<< Updated upstream
 <<<<<<< Updated upstream
+<<<<<<< Updated upstream
 class Block_39450699365016cb6c4d7d8_68893257 extends Smarty_Internal_Block
+=======
+class Block_987324408650177fca14791_24069831 extends Smarty_Internal_Block
+>>>>>>> Stashed changes
 =======
 class Block_987324408650177fca14791_24069831 extends Smarty_Internal_Block
 >>>>>>> Stashed changes
@@ -494,7 +598,11 @@ public $subBlocks = array (
   array (
 <<<<<<< Updated upstream
 <<<<<<< Updated upstream
+<<<<<<< Updated upstream
     0 => 'Block_39450699365016cb6c4d7d8_68893257',
+=======
+    0 => 'Block_987324408650177fca14791_24069831',
+>>>>>>> Stashed changes
 =======
     0 => 'Block_987324408650177fca14791_24069831',
 >>>>>>> Stashed changes
@@ -510,7 +618,11 @@ public function callBlock(Smarty_Internal_Template $_smarty_tpl) {
 /* {block "admin-login"} */
 <<<<<<< Updated upstream
 <<<<<<< Updated upstream
+<<<<<<< Updated upstream
 class Block_66789506965016cb6c4fd60_24125979 extends Smarty_Internal_Block
+=======
+class Block_753182056650177fca16e32_36131508 extends Smarty_Internal_Block
+>>>>>>> Stashed changes
 =======
 class Block_753182056650177fca16e32_36131508 extends Smarty_Internal_Block
 >>>>>>> Stashed changes
@@ -523,7 +635,11 @@ public $subBlocks = array (
   array (
 <<<<<<< Updated upstream
 <<<<<<< Updated upstream
+<<<<<<< Updated upstream
     0 => 'Block_66789506965016cb6c4fd60_24125979',
+=======
+    0 => 'Block_753182056650177fca16e32_36131508',
+>>>>>>> Stashed changes
 =======
     0 => 'Block_753182056650177fca16e32_36131508',
 >>>>>>> Stashed changes
@@ -539,7 +655,11 @@ public function callBlock(Smarty_Internal_Template $_smarty_tpl) {
 /* {block "footer"} */
 <<<<<<< Updated upstream
 <<<<<<< Updated upstream
+<<<<<<< Updated upstream
 class Block_5649678065016cb6c52318_27330029 extends Smarty_Internal_Block
+=======
+class Block_1183532897650177fca194a9_98783246 extends Smarty_Internal_Block
+>>>>>>> Stashed changes
 =======
 class Block_1183532897650177fca194a9_98783246 extends Smarty_Internal_Block
 >>>>>>> Stashed changes
@@ -552,7 +672,11 @@ public $subBlocks = array (
   array (
 <<<<<<< Updated upstream
 <<<<<<< Updated upstream
+<<<<<<< Updated upstream
     0 => 'Block_5649678065016cb6c52318_27330029',
+=======
+    0 => 'Block_1183532897650177fca194a9_98783246',
+>>>>>>> Stashed changes
 =======
     0 => 'Block_1183532897650177fca194a9_98783246',
 >>>>>>> Stashed changes
