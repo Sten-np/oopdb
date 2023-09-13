@@ -29,54 +29,16 @@ switch ($action) {
         $template->display("template/registerForm.tpl");
         break;
     case "register":
-        if (!empty($_POST['username']) && !empty($_POST['emailadress']) && !empty($_POST['phonenumber']) && !empty($_POST['password']) && !empty($_POST['passwordrepeat'])) {
-            // Validate user input (e.g., check email format, password requirements)
-            // ...
-
-            // Assuming you have a User class for registration
-            $user = new User($_POST['username'], $_POST['emailadress'], $_POST['phonenumber'], $_POST['password'], $_POST['passwordrepeat']);
-
-            // Display a success message
-            echo "<h2>Welcome " . $_POST['username'] . "</h2><br>";
-            echo "<p>Your account has been created.</p>";
-            echo "<p>You can now login with your email address " . $_POST['emailadress'] . "</p>";
-            header("Refresh:3; url=index.php", true, 303);
-            exit;
-        }
+        $handler = new RegistrationActionHandler();
+        $handler->handleRegister();
         break;
     case "loginForm":
         $template->display("template/loginForm.tpl");
         break;
     case "login":
-        if (!empty($_POST['emailadress']) && !empty($_POST['password'])) {
-            $email = $_POST['emailadress'];
-            $password = $_POST['password'];
-
-            $where = ['emailadress' => $email];
-            $users = Db::$db->select('user', ['*'], $where);
-
-            if (!empty($users) && password_verify($password, $users[0]['password'])) {
-                // Authentication successful
-                // Set the user's session or redirect to a dashboard page
-                $_SESSION['user'] = $users[0];
-                echo "<h2>Welcome " . $users[0]['username'] . "</h2><br>";
-                echo "<p>You've logged in.</p>";
-                header("Refresh:3; url=index.php");
-                exit;
-            } else {
-                // Authentication failed
-                // Display an error message or redirect back to the login page with an error parameter
-                echo "<p>Incorrect email or password. Please try again.</p>";
-                header("Refresh:3; url=index.php?action=loginForm");
-                exit;
-            }
-        } else {
-            // Handle login errors (e.g., missing fields)
-            header("Location: index.php?action=loginForm&error=1");
-            exit;
-        }
+        $handler = new LoginActionHandler();
+        $handler->handleLogin();
         break;
-<<<<<<< HEAD
         case "admin-login":
         $template->display("template/admin-login.tpl");
         break;
@@ -116,8 +78,6 @@ switch ($action) {
         }
         break;
 
-=======
->>>>>>> productPage
     case "productPage":
 //        $product_id = isset($_GET['product_id']) ? $_GET['product_id'] : null;
 //        $where = [];
