@@ -16,7 +16,8 @@ class Security {
 
     public function expireCSRFToken()
     {
-        $_SESSION['csrf_token_expire'] = time() + 3600;// 3600 is set to 1HR
+        $timeSet = $_SESSION['csrf_token_expire'] = time() + 3600;// 3600 is set to 1HR
+        unset($timeSet);
     }
 
 

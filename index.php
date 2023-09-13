@@ -59,6 +59,10 @@ switch ($action) {
                 echo "<h2>Welcome " . $_POST['username'] . "</h2><br>";
                 echo "<p>Your account has been created.</p>";
                 echo "<p>You can now login with your email address " . $_POST['emailadress'] . "</p>";
+
+                // Expire the CSRF token
+                $security->expireCSRFToken($_POST['csrf_token']);
+
                 header("Refresh:3; url=index.php", true, 303);
                 exit;
             } else {
@@ -92,6 +96,10 @@ switch ($action) {
                     $_SESSION['user'] = $users[0];
                     echo "<h2>Welcome " . $users[0]['username'] . "</h2><br>";
                     echo "<p>You've logged in.</p>";
+
+                    // Expire the CSRF token
+                    $security->expireCSRFToken($_POST['csrf_token']);
+
                     header("Refresh:3; url=index.php");
                     exit;
                 }
