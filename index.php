@@ -4,13 +4,11 @@ declare(strict_types=1);
 
 require_once "vendor/autoload.php";
 
-use Project9\Mysql;
-use Project9\ProductList;
-use Project9\Nintendo;
-use Project9\xboxPage;
-use Project9\Playstation;
-use Project9\User;
+use Handlers\AdminHandler;
 use Project9\Db;
+use Project9\Mysql;
+use Project9\User;
+use Project9\xboxPage;
 
 session_start();
 
@@ -76,48 +74,12 @@ switch ($action) {
             exit;
         }
         break;
-<<<<<<< HEAD
         case "admin-login":
         $template->display("template/admin-login.tpl");
         break;
         case "login-adm":
-        if(!empty($_POST['email']) && !empty($_POST['pass']))
-        {
-            $email = $_POST['email'];
-            $pass = $_POST['pass'];
-
-            $where = ['emailadress' => $email];
-            $admin = Db::$db->select('user', ['*'], $where);
-
-             if (!empty($admin) && password_verify($pass, $admin[0]['password'])) {
-                // Authentication successful
-                // Set the user's session or redirect to a dashboard page
-                var_dump($admin);
-                if(isset($admin[0]['bool_adm']) && $admin[0]['bool_adm'] != 1)
-                {
-                    echo "Your account is not permitted to login as admin...";
-                    header("Refresh:2; url=index.php?action=admin-login");
-                    exit();
-                }
-                $_SESSION['admin'] = $admin[0];
-                echo "<h2>Welcome " . $admin[0]['username'] . "</h2><br>";
-                echo "<p>You've logged in.</p>";
-                header("Refresh:2; url=index.php");
-                exit;
-            } else {
-                // Authentication failed
-                // Display an error message or redirect back to the login page with an error parameter
-                echo "<p>Incorrect email or password. Please try again.</p>";
-                header("Refresh:3; url=index.php?action=admin-login");
-                exit;
-            }
-
-
-        }
+            $adminHandler = new AdminHandler($_POST['email'], $_POST['pass']);
         break;
-
-=======
->>>>>>> productPage
     case "productPage":
 //        $product_id = isset($_GET['product_id']) ? $_GET['product_id'] : null;
 //        $where = [];
