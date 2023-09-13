@@ -1,18 +1,30 @@
 <?php
+<<<<<<< HEAD
 /* Smarty version 4.3.2, created on 2023-09-11 14:47:32
+=======
+/* Smarty version 4.3.2, created on 2023-09-12 11:50:26
+>>>>>>> productPage
   from 'C:\Wamp.NET\sites\oopdb\template\layout.tpl' */
 
 /* @var Smarty_Internal_Template $_smarty_tpl */
 if ($_smarty_tpl->_decodeProperties($_smarty_tpl, array (
   'version' => '4.3.2',
+<<<<<<< HEAD
   'unifunc' => 'content_64ff0c64493dd6_24490870',
+=======
+  'unifunc' => 'content_650050829f8401_73259856',
+>>>>>>> productPage
   'has_nocache_code' => false,
   'file_dependency' => 
   array (
     '22866d203007b7b81717902a88f9c5d7dc8a7930' => 
     array (
       0 => 'C:\\Wamp.NET\\sites\\oopdb\\template\\layout.tpl',
+<<<<<<< HEAD
       1 => 1694432865,
+=======
+      1 => 1694506350,
+>>>>>>> productPage
       2 => 'file',
     ),
   ),
@@ -20,7 +32,11 @@ if ($_smarty_tpl->_decodeProperties($_smarty_tpl, array (
   array (
   ),
 ),false)) {
+<<<<<<< HEAD
 function content_64ff0c64493dd6_24490870 (Smarty_Internal_Template $_smarty_tpl) {
+=======
+function content_650050829f8401_73259856 (Smarty_Internal_Template $_smarty_tpl) {
+>>>>>>> productPage
 $_smarty_tpl->_loadInheritance();
 $_smarty_tpl->inheritance->init($_smarty_tpl, false);
 ?>
@@ -34,7 +50,11 @@ $_smarty_tpl->inheritance->init($_smarty_tpl, false);
     <meta name="author" content="Mark Otto, Jacob Thornton, and Bootstrap contributors">
     <meta name="generator" content="Hugo 0.115.4">
     <title><?php 
+<<<<<<< HEAD
 $_smarty_tpl->inheritance->instanceBlock($_smarty_tpl, 'Block_150922320064ff0c644843a1_59611240', "title");
+=======
+$_smarty_tpl->inheritance->instanceBlock($_smarty_tpl, 'Block_1396426689650050829f04f6_61389779', "title");
+>>>>>>> productPage
 ?>
 </title>
 
@@ -127,9 +147,9 @@ $_smarty_tpl->inheritance->instanceBlock($_smarty_tpl, 'Block_150922320064ff0c64
         <ul class="nav col-12 col-lg-auto me-lg-auto mb-2 justify-content-center mb-md-0">
         <li><a href="index.php?action=homePage" class="nav-link px-2 text-secondary">Home</a></li>
         <li><a href="index.php?action=productPage" class="nav-link px-2 text-white">Products</a></li>
-        <li><a href="#" class="nav-link px-2 text-white">Pricing</a></li>
-        <li><a href="#" class="nav-link px-2 text-white">FAQs</a></li>
-        <li><a href="#" class="nav-link px-2 text-white">About</a></li>
+        <li><a href="index.php?action=playstationPage" class="nav-link px-2 text-white">Playstation</a></li>
+        <li><a href="index.php?action=xboxPage" class="nav-link px-2 text-white">Xbox</a></li>
+        <li><a href="index.php?action=nintendoPage" class="nav-link px-2 text-white">Nintendo</a></li>
         </ul>
 
         <form class="col-12 col-lg-auto mb-3 mb-lg-0 me-lg-3" role="search">
@@ -139,7 +159,11 @@ $_smarty_tpl->inheritance->instanceBlock($_smarty_tpl, 'Block_150922320064ff0c64
         <div class="text-end">
         <button type="button" class="btn btn-outline-light me-2"><a style="text-decoration: none;  color: inherit" href="index.php?action=loginForm">Login</a></button>
             <?php 
+<<<<<<< HEAD
 $_smarty_tpl->inheritance->instanceBlock($_smarty_tpl, 'Block_129068844764ff0c644881c1_68975005', "register");
+=======
+$_smarty_tpl->inheritance->instanceBlock($_smarty_tpl, 'Block_1404288696650050829f3115_21029990', "register");
+>>>>>>> productPage
 ?>
 
         </div>
@@ -152,6 +176,7 @@ $_smarty_tpl->inheritance->instanceBlock($_smarty_tpl, 'Block_129068844764ff0c64
 
 <div class="container-fluid">
     <?php 
+<<<<<<< HEAD
 $_smarty_tpl->inheritance->instanceBlock($_smarty_tpl, 'Block_178980829264ff0c64489b04_75870579', "registerForm");
 ?>
 
@@ -169,6 +194,21 @@ $_smarty_tpl->inheritance->instanceBlock($_smarty_tpl, 'Block_25240689664ff0c644
 
     <?php 
 $_smarty_tpl->inheritance->instanceBlock($_smarty_tpl, 'Block_116594229564ff0c6448f855_35574530', "productPage");
+=======
+$_smarty_tpl->inheritance->instanceBlock($_smarty_tpl, 'Block_1785424718650050829f4327_22359228', "registerForm");
+?>
+
+    <?php 
+$_smarty_tpl->inheritance->instanceBlock($_smarty_tpl, 'Block_1235479264650050829f5400_25829039', "homePage");
+?>
+
+    <?php 
+$_smarty_tpl->inheritance->instanceBlock($_smarty_tpl, 'Block_563691084650050829f64b6_27588087', "productPage");
+?>
+
+    <?php 
+$_smarty_tpl->inheritance->instanceBlock($_smarty_tpl, 'Block_892791729650050829f75a1_79311500', "loginForm");
+>>>>>>> productPage
 ?>
 
     <?php 
@@ -176,7 +216,34 @@ $_smarty_tpl->inheritance->instanceBlock($_smarty_tpl, 'Block_99647767964ff0c644
 ?>
 
 
+<<<<<<< HEAD
 </div>
+=======
+    <div class="container">
+        <footer class="py-5 " >
+            <div class="row">
+                <div class="col-6 col-md-2 mb-3">
+                    <h5>Section</h5>
+                    <ul class="nav flex-column">
+                        <li class="nav-item mb-2"><a href="#" class="nav-link p-0 text-body-secondary">Home</a></li>
+                        <li class="nav-item mb-2"><a href="#" class="nav-link p-0 text-body-secondary">Features</a></li>
+                        <li class="nav-item mb-2"><a href="#" class="nav-link p-0 text-body-secondary">Pricing</a></li>
+                        <li class="nav-item mb-2"><a href="#" class="nav-link p-0 text-body-secondary">FAQs</a></li>
+                        <li class="nav-item mb-2"><a href="#" class="nav-link p-0 text-body-secondary">About</a></li>
+                    </ul>
+                </div>
+
+                <div class="col-6 col-md-2 mb-3">
+                    <h5>Section</h5>
+                    <ul class="nav flex-column">
+                        <li class="nav-item mb-2"><a href="#" class="nav-link p-0 text-body-secondary">Home</a></li>
+                        <li class="nav-item mb-2"><a href="#" class="nav-link p-0 text-body-secondary">Features</a></li>
+                        <li class="nav-item mb-2"><a href="#" class="nav-link p-0 text-body-secondary">Pricing</a></li>
+                        <li class="nav-item mb-2"><a href="#" class="nav-link p-0 text-body-secondary">FAQs</a></li>
+                        <li class="nav-item mb-2"><a href="#" class="nav-link p-0 text-body-secondary">About</a></li>
+                    </ul>
+                </div>
+>>>>>>> productPage
 
 <?php 
 $_smarty_tpl->inheritance->instanceBlock($_smarty_tpl, 'Block_180992085564ff0c644926c9_74840514', "footer");
@@ -194,12 +261,20 @@ $_smarty_tpl->inheritance->instanceBlock($_smarty_tpl, 'Block_180992085564ff0c64
 
 <?php }
 /* {block "title"} */
+<<<<<<< HEAD
 class Block_150922320064ff0c644843a1_59611240 extends Smarty_Internal_Block
+=======
+class Block_1396426689650050829f04f6_61389779 extends Smarty_Internal_Block
+>>>>>>> productPage
 {
 public $subBlocks = array (
   'title' => 
   array (
+<<<<<<< HEAD
     0 => 'Block_150922320064ff0c644843a1_59611240',
+=======
+    0 => 'Block_1396426689650050829f04f6_61389779',
+>>>>>>> productPage
   ),
 );
 public function callBlock(Smarty_Internal_Template $_smarty_tpl) {
@@ -209,12 +284,20 @@ GameHub<?php
 }
 /* {/block "title"} */
 /* {block "register"} */
+<<<<<<< HEAD
 class Block_129068844764ff0c644881c1_68975005 extends Smarty_Internal_Block
+=======
+class Block_1404288696650050829f3115_21029990 extends Smarty_Internal_Block
+>>>>>>> productPage
 {
 public $subBlocks = array (
   'register' => 
   array (
+<<<<<<< HEAD
     0 => 'Block_129068844764ff0c644881c1_68975005',
+=======
+    0 => 'Block_1404288696650050829f3115_21029990',
+>>>>>>> productPage
   ),
 );
 public function callBlock(Smarty_Internal_Template $_smarty_tpl) {
@@ -224,12 +307,20 @@ public function callBlock(Smarty_Internal_Template $_smarty_tpl) {
 }
 /* {/block "register"} */
 /* {block "registerForm"} */
+<<<<<<< HEAD
 class Block_178980829264ff0c64489b04_75870579 extends Smarty_Internal_Block
+=======
+class Block_1785424718650050829f4327_22359228 extends Smarty_Internal_Block
+>>>>>>> productPage
 {
 public $subBlocks = array (
   'registerForm' => 
   array (
+<<<<<<< HEAD
     0 => 'Block_178980829264ff0c64489b04_75870579',
+=======
+    0 => 'Block_1785424718650050829f4327_22359228',
+>>>>>>> productPage
   ),
 );
 public function callBlock(Smarty_Internal_Template $_smarty_tpl) {
@@ -237,12 +328,20 @@ public function callBlock(Smarty_Internal_Template $_smarty_tpl) {
 }
 /* {/block "registerForm"} */
 /* {block "homePage"} */
+<<<<<<< HEAD
 class Block_152669714164ff0c6448b2b7_38004045 extends Smarty_Internal_Block
+=======
+class Block_1235479264650050829f5400_25829039 extends Smarty_Internal_Block
+>>>>>>> productPage
 {
 public $subBlocks = array (
   'homePage' => 
   array (
+<<<<<<< HEAD
     0 => 'Block_152669714164ff0c6448b2b7_38004045',
+=======
+    0 => 'Block_1235479264650050829f5400_25829039',
+>>>>>>> productPage
   ),
 );
 public function callBlock(Smarty_Internal_Template $_smarty_tpl) {
@@ -250,12 +349,20 @@ public function callBlock(Smarty_Internal_Template $_smarty_tpl) {
 }
 /* {/block "homePage"} */
 /* {block "productPage"} */
+<<<<<<< HEAD
 class Block_26527176264ff0c6448c9e1_27877596 extends Smarty_Internal_Block
+=======
+class Block_563691084650050829f64b6_27588087 extends Smarty_Internal_Block
+>>>>>>> productPage
 {
 public $subBlocks = array (
   'productPage' => 
   array (
+<<<<<<< HEAD
     0 => 'Block_26527176264ff0c6448c9e1_27877596',
+=======
+    0 => 'Block_563691084650050829f64b6_27588087',
+>>>>>>> productPage
   ),
 );
 public function callBlock(Smarty_Internal_Template $_smarty_tpl) {
@@ -263,18 +370,27 @@ public function callBlock(Smarty_Internal_Template $_smarty_tpl) {
 }
 /* {/block "productPage"} */
 /* {block "loginForm"} */
+<<<<<<< HEAD
 class Block_25240689664ff0c6448e107_96027752 extends Smarty_Internal_Block
+=======
+class Block_892791729650050829f75a1_79311500 extends Smarty_Internal_Block
+>>>>>>> productPage
 {
 public $subBlocks = array (
   'loginForm' => 
   array (
+<<<<<<< HEAD
     0 => 'Block_25240689664ff0c6448e107_96027752',
+=======
+    0 => 'Block_892791729650050829f75a1_79311500',
+>>>>>>> productPage
   ),
 );
 public function callBlock(Smarty_Internal_Template $_smarty_tpl) {
 }
 }
 /* {/block "loginForm"} */
+<<<<<<< HEAD
 /* {block "productPage"} */
 class Block_116594229564ff0c6448f855_35574530 extends Smarty_Internal_Block
 {
@@ -367,4 +483,6 @@ public function callBlock(Smarty_Internal_Template $_smarty_tpl) {
 }
 }
 /* {/block "footer"} */
+=======
+>>>>>>> productPage
 }
