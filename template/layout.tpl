@@ -124,11 +124,8 @@
     {block name="homePage"}{/block}
     {block name="productPage"}{/block}
     {block name="loginForm"}{/block}
-<<<<<<< HEAD
     {block name="productPage"}{/block}
     {block name="admin-login"}{/block}
-=======
->>>>>>> productPage
 
 </div>
 
