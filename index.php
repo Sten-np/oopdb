@@ -85,17 +85,9 @@ switch ($action) {
         }
         break;
     case "productPage":
-//        $product_id = isset($_GET['product_id']) ? $_GET['product_id'] : null;
-//        $where = [];
-//        if ($product_id !== null && is_numeric($product_id)) {
-//            $where['product_id'] = $product_id;
-//        }
-        // Assuming you have a Database class with a select function
         $products = Db::$db->select('product', ['*']);
-
         // Assign the product information to template variables
         $template->assign('products', $products);
-
         // Display the "productPage.tpl" template
         $template->display("template/productPage.tpl");
         break;

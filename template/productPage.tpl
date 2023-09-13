@@ -44,16 +44,13 @@
     <div class="row" style="padding-left: 1%">
         {foreach from=$products item=product}
             <div class="col-md-4" style="width: 25%; padding-top: 3%">
-                <div class="card" style="width: 100%;">
-                    <div class="card-img-container">
-                        <img class="card-img-top" src="{$product.image}" alt="Card image cap">
-                    </div>
-                    <div class="card-info">
+                <div class="card" style="width: 18rem;">
+                    <img class="card-img-top" src="{$product.image}" alt="Card image cap">
+                    <div class="card-body">
                         <h5 class="card-title">{$product.productName}</h5>
                         <p class="card-price">{$product.price}</p>
                         <p class="card-text">{$product.description}</p>
-                        <a href="productpage.php?product_id={$product.id}#" class="btn btn-primary" style="background-color: orange; color: black; border: none">More Info</a>
-                    </div>
+                        <a href="index.php?action=moreInfo&product_id={$product.id}" class="btn btn-primary" style="background-color: orange; color: black; border: none">More Info</a>                    </div>
                 </div>
             </div>
         {/foreach}
