@@ -1,6 +1,9 @@
 {extends file="template/layout.tpl"}
 {block name="footer"}{/block}
 {block name="nav"}{/block}
+{block name="title"}
+  GameHub | Admin Dashboard
+{/block}
 
 {block name="adm-dash"}
     <!doctype html>
@@ -11,7 +14,6 @@
         <meta name="description" content="">
         <meta name="author" content="Mark Otto, Jacob Thornton, and Bootstrap contributors">
         <meta name="generator" content="Hugo 0.84.0">
-        <title>Dashboard Template · Bootstrap v5.0</title>
 
         <link rel="canonical" href="https://getbootstrap.com/docs/5.0/examples/dashboard/">
 
@@ -45,7 +47,7 @@
                 <div class="position-sticky pt-3">
                     <ul class="nav flex-column">
                         <li class="nav-item">
-                            <a class="nav-link active" aria-current="page" href="#">
+                            <a class="nav-link active" aria-current="page" href="index.php?action=admin-dashboard">
                                 <span data-feather="home"></span>
                                 Dashboard
                             </a>
@@ -86,15 +88,7 @@
             </main>
         </div>
     </div>
-
-
     <script src="../assets/dist/js/bootstrap.bundle.min.js"></script>
-
-    <script src="https://cdn.jsdelivr.net/npm/feather-icons@4.28.0/dist/feather.min.js"></script>
-    <script src="https://cdn.jsdelivr.net/npm/chart.js@2.9.4/dist/Chart.min.js"></script>
     </body>
     </html>
-
-
-
 {/block}
