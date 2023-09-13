@@ -1,6 +1,10 @@
 <?php
 <<<<<<< Updated upstream
+<<<<<<< Updated upstream
 /* Smarty version 4.3.2, created on 2023-09-13 08:03:02
+=======
+/* Smarty version 4.3.2, created on 2023-09-13 08:51:08
+>>>>>>> Stashed changes
 =======
 /* Smarty version 4.3.2, created on 2023-09-13 08:51:08
 >>>>>>> Stashed changes
@@ -10,7 +14,11 @@
 if ($_smarty_tpl->_decodeProperties($_smarty_tpl, array (
   'version' => '4.3.2',
 <<<<<<< Updated upstream
+<<<<<<< Updated upstream
   'unifunc' => 'content_65016cb6b45105_70670876',
+=======
+  'unifunc' => 'content_650177fc8d6c35_70694855',
+>>>>>>> Stashed changes
 =======
   'unifunc' => 'content_650177fc8d6c35_70694855',
 >>>>>>> Stashed changes
@@ -21,7 +29,11 @@ if ($_smarty_tpl->_decodeProperties($_smarty_tpl, array (
     array (
       0 => 'C:\\Wamp.NET\\sites\\oopdb\\template\\homePage.tpl',
 <<<<<<< Updated upstream
+<<<<<<< Updated upstream
       1 => 1694592149,
+=======
+      1 => 1694594890,
+>>>>>>> Stashed changes
 =======
       1 => 1694594890,
 >>>>>>> Stashed changes
@@ -33,7 +45,11 @@ if ($_smarty_tpl->_decodeProperties($_smarty_tpl, array (
   ),
 ),false)) {
 <<<<<<< Updated upstream
+<<<<<<< Updated upstream
 function content_65016cb6b45105_70670876 (Smarty_Internal_Template $_smarty_tpl) {
+=======
+function content_650177fc8d6c35_70694855 (Smarty_Internal_Template $_smarty_tpl) {
+>>>>>>> Stashed changes
 =======
 function content_650177fc8d6c35_70694855 (Smarty_Internal_Template $_smarty_tpl) {
 >>>>>>> Stashed changes
@@ -44,7 +60,11 @@ $_smarty_tpl->inheritance->init($_smarty_tpl, true);
 
 <?php 
 <<<<<<< Updated upstream
+<<<<<<< Updated upstream
 $_smarty_tpl->inheritance->instanceBlock($_smarty_tpl, 'Block_184662478265016cb6b3f081_44760439', "title");
+=======
+$_smarty_tpl->inheritance->instanceBlock($_smarty_tpl, 'Block_1200791563650177fc8d0220_36819967', "title");
+>>>>>>> Stashed changes
 =======
 $_smarty_tpl->inheritance->instanceBlock($_smarty_tpl, 'Block_1200791563650177fc8d0220_36819967', "title");
 >>>>>>> Stashed changes
@@ -53,6 +73,7 @@ $_smarty_tpl->inheritance->instanceBlock($_smarty_tpl, 'Block_1200791563650177fc
 
 
 <?php 
+<<<<<<< Updated upstream
 <<<<<<< Updated upstream
 $_smarty_tpl->inheritance->instanceBlock($_smarty_tpl, 'Block_24801334065016cb6b424f7_64432526', "homePage");
 $_smarty_tpl->inheritance->endChild($_smarty_tpl, "template/layout.tpl");
@@ -66,12 +87,23 @@ $_smarty_tpl->inheritance->endChild($_smarty_tpl, "template/layout.tpl");
 /* {block "title"} */
 class Block_1200791563650177fc8d0220_36819967 extends Smarty_Internal_Block
 >>>>>>> Stashed changes
+=======
+$_smarty_tpl->inheritance->instanceBlock($_smarty_tpl, 'Block_12042604650177fc8d3a20_16133331', "homePage");
+$_smarty_tpl->inheritance->endChild($_smarty_tpl, "template/layout.tpl");
+}
+/* {block "title"} */
+class Block_1200791563650177fc8d0220_36819967 extends Smarty_Internal_Block
+>>>>>>> Stashed changes
 {
 public $subBlocks = array (
   'title' => 
   array (
 <<<<<<< Updated upstream
+<<<<<<< Updated upstream
     0 => 'Block_184662478265016cb6b3f081_44760439',
+=======
+    0 => 'Block_1200791563650177fc8d0220_36819967',
+>>>>>>> Stashed changes
 =======
     0 => 'Block_1200791563650177fc8d0220_36819967',
 >>>>>>> Stashed changes
@@ -87,7 +119,11 @@ public function callBlock(Smarty_Internal_Template $_smarty_tpl) {
 /* {/block "title"} */
 /* {block "homePage"} */
 <<<<<<< Updated upstream
+<<<<<<< Updated upstream
 class Block_24801334065016cb6b424f7_64432526 extends Smarty_Internal_Block
+=======
+class Block_12042604650177fc8d3a20_16133331 extends Smarty_Internal_Block
+>>>>>>> Stashed changes
 =======
 class Block_12042604650177fc8d3a20_16133331 extends Smarty_Internal_Block
 >>>>>>> Stashed changes
@@ -96,7 +132,11 @@ public $subBlocks = array (
   'homePage' => 
   array (
 <<<<<<< Updated upstream
+<<<<<<< Updated upstream
     0 => 'Block_24801334065016cb6b424f7_64432526',
+=======
+    0 => 'Block_12042604650177fc8d3a20_16133331',
+>>>>>>> Stashed changes
 =======
     0 => 'Block_12042604650177fc8d3a20_16133331',
 >>>>>>> Stashed changes
