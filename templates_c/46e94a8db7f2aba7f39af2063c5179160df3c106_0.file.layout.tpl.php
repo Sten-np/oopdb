@@ -1,32 +1,18 @@
 <?php
-<<<<<<< HEAD:templates_c/22866d203007b7b81717902a88f9c5d7dc8a7930_0.file.layout.tpl.php
-/* Smarty version 4.3.2, created on 2023-09-13 09:41:32
-  from 'C:\Wamp.NET\sites\oopdb\template\layout.tpl' */
-=======
-/* Smarty version 4.3.2, created on 2023-09-13 10:37:18
+/* Smarty version 4.3.2, created on 2023-09-13 11:29:37
   from 'C:\Wamp.NET\sites\Project9\template\layout.tpl' */
->>>>>>> csrftokenForms:templates_c/46e94a8db7f2aba7f39af2063c5179160df3c106_0.file.layout.tpl.php
 
 /* @var Smarty_Internal_Template $_smarty_tpl */
 if ($_smarty_tpl->_decodeProperties($_smarty_tpl, array (
   'version' => '4.3.2',
-<<<<<<< HEAD:templates_c/22866d203007b7b81717902a88f9c5d7dc8a7930_0.file.layout.tpl.php
-  'unifunc' => 'content_650183cc037c75_97467474',
-=======
-  'unifunc' => 'content_650190de17d2e4_84658906',
->>>>>>> csrftokenForms:templates_c/46e94a8db7f2aba7f39af2063c5179160df3c106_0.file.layout.tpl.php
+  'unifunc' => 'content_65019d214e0ac5_54566603',
   'has_nocache_code' => false,
   'file_dependency' => 
   array (
     '46e94a8db7f2aba7f39af2063c5179160df3c106' => 
     array (
-<<<<<<< HEAD:templates_c/22866d203007b7b81717902a88f9c5d7dc8a7930_0.file.layout.tpl.php
-      0 => 'C:\\Wamp.NET\\sites\\oopdb\\template\\layout.tpl',
-      1 => 1694595572,
-=======
       0 => 'C:\\Wamp.NET\\sites\\Project9\\template\\layout.tpl',
-      1 => 1694600705,
->>>>>>> csrftokenForms:templates_c/46e94a8db7f2aba7f39af2063c5179160df3c106_0.file.layout.tpl.php
+      1 => 1694601448,
       2 => 'file',
     ),
   ),
@@ -34,11 +20,7 @@ if ($_smarty_tpl->_decodeProperties($_smarty_tpl, array (
   array (
   ),
 ),false)) {
-<<<<<<< HEAD:templates_c/22866d203007b7b81717902a88f9c5d7dc8a7930_0.file.layout.tpl.php
-function content_650183cc037c75_97467474 (Smarty_Internal_Template $_smarty_tpl) {
-=======
-function content_650190de17d2e4_84658906 (Smarty_Internal_Template $_smarty_tpl) {
->>>>>>> csrftokenForms:templates_c/46e94a8db7f2aba7f39af2063c5179160df3c106_0.file.layout.tpl.php
+function content_65019d214e0ac5_54566603 (Smarty_Internal_Template $_smarty_tpl) {
 $_smarty_tpl->_loadInheritance();
 $_smarty_tpl->inheritance->init($_smarty_tpl, false);
 ?>
@@ -52,11 +34,7 @@ $_smarty_tpl->inheritance->init($_smarty_tpl, false);
     <meta name="author" content="Mark Otto, Jacob Thornton, and Bootstrap contributors">
     <meta name="generator" content="Hugo 0.115.4">
     <title><?php 
-<<<<<<< HEAD:templates_c/22866d203007b7b81717902a88f9c5d7dc8a7930_0.file.layout.tpl.php
-$_smarty_tpl->inheritance->instanceBlock($_smarty_tpl, 'Block_2013635107650183cc025991_67286451', "title");
-=======
-$_smarty_tpl->inheritance->instanceBlock($_smarty_tpl, 'Block_1689966376650190de171ac3_16628932', "title");
->>>>>>> csrftokenForms:templates_c/46e94a8db7f2aba7f39af2063c5179160df3c106_0.file.layout.tpl.php
+$_smarty_tpl->inheritance->instanceBlock($_smarty_tpl, 'Block_40693994665019d214d9137_15448742', "title");
 ?>
 </title>
 
@@ -140,7 +118,6 @@ $_smarty_tpl->inheritance->instanceBlock($_smarty_tpl, 'Block_1689966376650190de
 
     <header class="p-3 text-bg-dark">
         <div class="container">
-<<<<<<< HEAD:templates_c/22866d203007b7b81717902a88f9c5d7dc8a7930_0.file.layout.tpl.php
             <div class="d-flex flex-wrap align-items-center justify-content-center justify-content-lg-start">
                 <a href="/" class="d-flex align-items-center mb-2 mb-lg-0 text-white text-decoration-none">
                     <svg class="bi me-2" width="40" height="32" role="img" aria-label="Bootstrap"><use xlink:href="#bootstrap"/></svg>
@@ -162,31 +139,7 @@ $_smarty_tpl->inheritance->instanceBlock($_smarty_tpl, 'Block_1689966376650190de
                 <div class="text-end">
                     <button type="button" class="btn btn-outline-light me-2"><a style="text-decoration: none;  color: inherit" href="index.php?action=loginForm">Login</a></button>
                     <?php 
-$_smarty_tpl->inheritance->instanceBlock($_smarty_tpl, 'Block_647866271650183cc02bf70_34929482', "register");
-=======
-        <div class="d-flex flex-wrap align-items-center justify-content-center justify-content-lg-start">
-        <a href="/" class="d-flex align-items-center mb-2 mb-lg-0 text-white text-decoration-none">
-        <svg class="bi me-2" width="40" height="32" role="img" aria-label="Bootstrap"><use xlink:href="#bootstrap"/></svg>
-        </a>
-
-
-        <ul class="nav col-12 col-lg-auto me-lg-auto mb-2 justify-content-center mb-md-0">
-        <li><a href="index.php?action=homePage" class="nav-link px-2 text-secondary">Home</a></li>
-        <li><a href="index.php?action=productPage" class="nav-link px-2 text-white">Products</a></li>
-        <li><a href="#" class="nav-link px-2 text-white">Pricing</a></li>
-        <li><a href="#" class="nav-link px-2 text-white">FAQs</a></li>
-        <li><a href="#" class="nav-link px-2 text-white">About</a></li>
-        </ul>
-
-        <form class="col-12 col-lg-auto mb-3 mb-lg-0 me-lg-3" role="search">
-        <input type="search" class="form-control form-control-dark text-bg-dark" placeholder="Search..." aria-label="Search">
-        </form>
-
-        <div class="text-end">
-        <button type="button" class="btn btn-outline-light me-2"><a style="text-decoration: none;  color: inherit" href="index.php?action=loginForm">Login</a></button>
-            <?php 
-$_smarty_tpl->inheritance->instanceBlock($_smarty_tpl, 'Block_1643238536650190de174287_33456995', "register");
->>>>>>> csrftokenForms:templates_c/46e94a8db7f2aba7f39af2063c5179160df3c106_0.file.layout.tpl.php
+$_smarty_tpl->inheritance->instanceBlock($_smarty_tpl, 'Block_25465887565019d214dbcb4_90014452', "register");
 ?>
 
                 </div>
@@ -197,52 +150,25 @@ $_smarty_tpl->inheritance->instanceBlock($_smarty_tpl, 'Block_1643238536650190de
 
 
 
-<<<<<<< HEAD:templates_c/22866d203007b7b81717902a88f9c5d7dc8a7930_0.file.layout.tpl.php
     <div class="container">
         <?php 
-$_smarty_tpl->inheritance->instanceBlock($_smarty_tpl, 'Block_416296337650183cc02e8f3_96834886', "registerForm");
+$_smarty_tpl->inheritance->instanceBlock($_smarty_tpl, 'Block_192748517365019d214dcda7_80529399', "registerForm");
 ?>
 
         <?php 
-$_smarty_tpl->inheritance->instanceBlock($_smarty_tpl, 'Block_248499207650183cc030f83_72102695', "homePage");
+$_smarty_tpl->inheritance->instanceBlock($_smarty_tpl, 'Block_48728271065019d214dde20_34110332', "homePage");
 ?>
 
         <?php 
-$_smarty_tpl->inheritance->instanceBlock($_smarty_tpl, 'Block_936471312650183cc033545_96353736', "productPage");
+$_smarty_tpl->inheritance->instanceBlock($_smarty_tpl, 'Block_114667508365019d214dedd7_60649386', "productPage");
 ?>
 
         <?php 
-$_smarty_tpl->inheritance->instanceBlock($_smarty_tpl, 'Block_477795131650183cc035ad8_95114263', "loginForm");
+$_smarty_tpl->inheritance->instanceBlock($_smarty_tpl, 'Block_197996931265019d214dfd28_88652225', "loginForm");
 ?>
 
 
     </div>
-=======
-<div class="container-fluid">
-    <?php 
-$_smarty_tpl->inheritance->instanceBlock($_smarty_tpl, 'Block_672187997650190de1753b7_74563176', "registerForm");
-?>
-
-    <?php 
-$_smarty_tpl->inheritance->instanceBlock($_smarty_tpl, 'Block_459271998650190de176381_52430070', "homePage");
-?>
-
-    <?php 
-$_smarty_tpl->inheritance->instanceBlock($_smarty_tpl, 'Block_732634109650190de177327_33681948', "productPage");
-?>
-
-    <?php 
-$_smarty_tpl->inheritance->instanceBlock($_smarty_tpl, 'Block_1938347142650190de1782a6_04585124', "loginForm");
-?>
-
-    <?php 
-$_smarty_tpl->inheritance->instanceBlock($_smarty_tpl, 'Block_963189859650190de179b69_20989020', "productPage");
-?>
-
-    <?php 
-$_smarty_tpl->inheritance->instanceBlock($_smarty_tpl, 'Block_1388041796650190de17b2b7_79558370', "admin-login");
-?>
->>>>>>> csrftokenForms:templates_c/46e94a8db7f2aba7f39af2063c5179160df3c106_0.file.layout.tpl.php
 
     <div class="container">
         <footer class="py-5 " >
@@ -269,7 +195,6 @@ $_smarty_tpl->inheritance->instanceBlock($_smarty_tpl, 'Block_1388041796650190de
                     </ul>
                 </div>
 
-<<<<<<< HEAD:templates_c/22866d203007b7b81717902a88f9c5d7dc8a7930_0.file.layout.tpl.php
                 <div class="col-6 col-md-2 mb-3">
                     <h5>Section</h5>
                     <ul class="nav flex-column">
@@ -280,11 +205,6 @@ $_smarty_tpl->inheritance->instanceBlock($_smarty_tpl, 'Block_1388041796650190de
                         <li class="nav-item mb-2"><a href="#" class="nav-link p-0 text-body-secondary">About</a></li>
                     </ul>
                 </div>
-=======
-<?php 
-$_smarty_tpl->inheritance->instanceBlock($_smarty_tpl, 'Block_884478461650190de17c311_64178772', "footer");
-?>
->>>>>>> csrftokenForms:templates_c/46e94a8db7f2aba7f39af2063c5179160df3c106_0.file.layout.tpl.php
 
                 <div class="col-md-5 offset-md-1 mb-3">
                     <form>
@@ -312,20 +232,12 @@ $_smarty_tpl->inheritance->instanceBlock($_smarty_tpl, 'Block_884478461650190de1
 
 <?php }
 /* {block "title"} */
-<<<<<<< HEAD:templates_c/22866d203007b7b81717902a88f9c5d7dc8a7930_0.file.layout.tpl.php
-class Block_2013635107650183cc025991_67286451 extends Smarty_Internal_Block
-=======
-class Block_1689966376650190de171ac3_16628932 extends Smarty_Internal_Block
->>>>>>> csrftokenForms:templates_c/46e94a8db7f2aba7f39af2063c5179160df3c106_0.file.layout.tpl.php
+class Block_40693994665019d214d9137_15448742 extends Smarty_Internal_Block
 {
 public $subBlocks = array (
   'title' => 
   array (
-<<<<<<< HEAD:templates_c/22866d203007b7b81717902a88f9c5d7dc8a7930_0.file.layout.tpl.php
-    0 => 'Block_2013635107650183cc025991_67286451',
-=======
-    0 => 'Block_1689966376650190de171ac3_16628932',
->>>>>>> csrftokenForms:templates_c/46e94a8db7f2aba7f39af2063c5179160df3c106_0.file.layout.tpl.php
+    0 => 'Block_40693994665019d214d9137_15448742',
   ),
 );
 public function callBlock(Smarty_Internal_Template $_smarty_tpl) {
@@ -335,20 +247,12 @@ GameHub<?php
 }
 /* {/block "title"} */
 /* {block "register"} */
-<<<<<<< HEAD:templates_c/22866d203007b7b81717902a88f9c5d7dc8a7930_0.file.layout.tpl.php
-class Block_647866271650183cc02bf70_34929482 extends Smarty_Internal_Block
-=======
-class Block_1643238536650190de174287_33456995 extends Smarty_Internal_Block
->>>>>>> csrftokenForms:templates_c/46e94a8db7f2aba7f39af2063c5179160df3c106_0.file.layout.tpl.php
+class Block_25465887565019d214dbcb4_90014452 extends Smarty_Internal_Block
 {
 public $subBlocks = array (
   'register' => 
   array (
-<<<<<<< HEAD:templates_c/22866d203007b7b81717902a88f9c5d7dc8a7930_0.file.layout.tpl.php
-    0 => 'Block_647866271650183cc02bf70_34929482',
-=======
-    0 => 'Block_1643238536650190de174287_33456995',
->>>>>>> csrftokenForms:templates_c/46e94a8db7f2aba7f39af2063c5179160df3c106_0.file.layout.tpl.php
+    0 => 'Block_25465887565019d214dbcb4_90014452',
   ),
 );
 public function callBlock(Smarty_Internal_Template $_smarty_tpl) {
@@ -358,20 +262,12 @@ public function callBlock(Smarty_Internal_Template $_smarty_tpl) {
 }
 /* {/block "register"} */
 /* {block "registerForm"} */
-<<<<<<< HEAD:templates_c/22866d203007b7b81717902a88f9c5d7dc8a7930_0.file.layout.tpl.php
-class Block_416296337650183cc02e8f3_96834886 extends Smarty_Internal_Block
-=======
-class Block_672187997650190de1753b7_74563176 extends Smarty_Internal_Block
->>>>>>> csrftokenForms:templates_c/46e94a8db7f2aba7f39af2063c5179160df3c106_0.file.layout.tpl.php
+class Block_192748517365019d214dcda7_80529399 extends Smarty_Internal_Block
 {
 public $subBlocks = array (
   'registerForm' => 
   array (
-<<<<<<< HEAD:templates_c/22866d203007b7b81717902a88f9c5d7dc8a7930_0.file.layout.tpl.php
-    0 => 'Block_416296337650183cc02e8f3_96834886',
-=======
-    0 => 'Block_672187997650190de1753b7_74563176',
->>>>>>> csrftokenForms:templates_c/46e94a8db7f2aba7f39af2063c5179160df3c106_0.file.layout.tpl.php
+    0 => 'Block_192748517365019d214dcda7_80529399',
   ),
 );
 public function callBlock(Smarty_Internal_Template $_smarty_tpl) {
@@ -379,20 +275,12 @@ public function callBlock(Smarty_Internal_Template $_smarty_tpl) {
 }
 /* {/block "registerForm"} */
 /* {block "homePage"} */
-<<<<<<< HEAD:templates_c/22866d203007b7b81717902a88f9c5d7dc8a7930_0.file.layout.tpl.php
-class Block_248499207650183cc030f83_72102695 extends Smarty_Internal_Block
-=======
-class Block_459271998650190de176381_52430070 extends Smarty_Internal_Block
->>>>>>> csrftokenForms:templates_c/46e94a8db7f2aba7f39af2063c5179160df3c106_0.file.layout.tpl.php
+class Block_48728271065019d214dde20_34110332 extends Smarty_Internal_Block
 {
 public $subBlocks = array (
   'homePage' => 
   array (
-<<<<<<< HEAD:templates_c/22866d203007b7b81717902a88f9c5d7dc8a7930_0.file.layout.tpl.php
-    0 => 'Block_248499207650183cc030f83_72102695',
-=======
-    0 => 'Block_459271998650190de176381_52430070',
->>>>>>> csrftokenForms:templates_c/46e94a8db7f2aba7f39af2063c5179160df3c106_0.file.layout.tpl.php
+    0 => 'Block_48728271065019d214dde20_34110332',
   ),
 );
 public function callBlock(Smarty_Internal_Template $_smarty_tpl) {
@@ -400,20 +288,12 @@ public function callBlock(Smarty_Internal_Template $_smarty_tpl) {
 }
 /* {/block "homePage"} */
 /* {block "productPage"} */
-<<<<<<< HEAD:templates_c/22866d203007b7b81717902a88f9c5d7dc8a7930_0.file.layout.tpl.php
-class Block_936471312650183cc033545_96353736 extends Smarty_Internal_Block
-=======
-class Block_732634109650190de177327_33681948 extends Smarty_Internal_Block
->>>>>>> csrftokenForms:templates_c/46e94a8db7f2aba7f39af2063c5179160df3c106_0.file.layout.tpl.php
+class Block_114667508365019d214dedd7_60649386 extends Smarty_Internal_Block
 {
 public $subBlocks = array (
   'productPage' => 
   array (
-<<<<<<< HEAD:templates_c/22866d203007b7b81717902a88f9c5d7dc8a7930_0.file.layout.tpl.php
-    0 => 'Block_936471312650183cc033545_96353736',
-=======
-    0 => 'Block_732634109650190de177327_33681948',
->>>>>>> csrftokenForms:templates_c/46e94a8db7f2aba7f39af2063c5179160df3c106_0.file.layout.tpl.php
+    0 => 'Block_114667508365019d214dedd7_60649386',
   ),
 );
 public function callBlock(Smarty_Internal_Template $_smarty_tpl) {
@@ -421,119 +301,16 @@ public function callBlock(Smarty_Internal_Template $_smarty_tpl) {
 }
 /* {/block "productPage"} */
 /* {block "loginForm"} */
-<<<<<<< HEAD:templates_c/22866d203007b7b81717902a88f9c5d7dc8a7930_0.file.layout.tpl.php
-class Block_477795131650183cc035ad8_95114263 extends Smarty_Internal_Block
-=======
-class Block_1938347142650190de1782a6_04585124 extends Smarty_Internal_Block
->>>>>>> csrftokenForms:templates_c/46e94a8db7f2aba7f39af2063c5179160df3c106_0.file.layout.tpl.php
+class Block_197996931265019d214dfd28_88652225 extends Smarty_Internal_Block
 {
 public $subBlocks = array (
   'loginForm' => 
   array (
-<<<<<<< HEAD:templates_c/22866d203007b7b81717902a88f9c5d7dc8a7930_0.file.layout.tpl.php
-    0 => 'Block_477795131650183cc035ad8_95114263',
-=======
-    0 => 'Block_1938347142650190de1782a6_04585124',
->>>>>>> csrftokenForms:templates_c/46e94a8db7f2aba7f39af2063c5179160df3c106_0.file.layout.tpl.php
+    0 => 'Block_197996931265019d214dfd28_88652225',
   ),
 );
 public function callBlock(Smarty_Internal_Template $_smarty_tpl) {
 }
 }
 /* {/block "loginForm"} */
-<<<<<<< HEAD:templates_c/22866d203007b7b81717902a88f9c5d7dc8a7930_0.file.layout.tpl.php
-=======
-/* {block "productPage"} */
-class Block_963189859650190de179b69_20989020 extends Smarty_Internal_Block
-{
-public $subBlocks = array (
-  'productPage' => 
-  array (
-    0 => 'Block_963189859650190de179b69_20989020',
-  ),
-);
-public function callBlock(Smarty_Internal_Template $_smarty_tpl) {
-}
-}
-/* {/block "productPage"} */
-/* {block "admin-login"} */
-class Block_1388041796650190de17b2b7_79558370 extends Smarty_Internal_Block
-{
-public $subBlocks = array (
-  'admin-login' => 
-  array (
-    0 => 'Block_1388041796650190de17b2b7_79558370',
-  ),
-);
-public function callBlock(Smarty_Internal_Template $_smarty_tpl) {
-}
-}
-/* {/block "admin-login"} */
-/* {block "footer"} */
-class Block_884478461650190de17c311_64178772 extends Smarty_Internal_Block
-{
-public $subBlocks = array (
-  'footer' => 
-  array (
-    0 => 'Block_884478461650190de17c311_64178772',
-  ),
-);
-public function callBlock(Smarty_Internal_Template $_smarty_tpl) {
-?>
-
-    <div class="container">
-        <footer class="py-5">
-            <div class="row">
-                <div class="col-6 col-md-2 mb-3">
-                    <h5>Section</h5>
-                    <ul class="nav flex-column">
-                        <li class="nav-item mb-2"><a href="index.php?action=admin-login" class="nav-link p-0 text-body-secondary">Inloggen als beheerder</a></li>
-                        <li class="nav-item mb-2"><a href="#" class="nav-link p-0 text-body-secondary">Features</a></li>
-                        <li class="nav-item mb-2"><a href="#" class="nav-link p-0 text-body-secondary">Pricing</a></li>
-                        <li class="nav-item mb-2"><a href="#" class="nav-link p-0 text-body-secondary">FAQs</a></li>
-                        <li class="nav-item mb-2"><a href="#" class="nav-link p-0 text-body-secondary">About</a></li>
-                    </ul>
-                </div>
-
-                <div class="col-6 col-md-2 mb-3">
-                    <h5>Section</h5>
-                    <ul class="nav flex-column">
-                        <li class="nav-item mb-2"><a href="#" class="nav-link p-0 text-body-secondary">Home</a></li>
-                        <li class="nav-item mb-2"><a href="#" class="nav-link p-0 text-body-secondary">Features</a></li>
-                        <li class="nav-item mb-2"><a href="#" class="nav-link p-0 text-body-secondary">Pricing</a></li>
-                        <li class="nav-item mb-2"><a href="#" class="nav-link p-0 text-body-secondary">FAQs</a></li>
-                        <li class="nav-item mb-2"><a href="#" class="nav-link p-0 text-body-secondary">About</a></li>
-                    </ul>
-                </div>
-
-                <div class="col-6 col-md-2 mb-3">
-                    <h5>Section</h5>
-                    <ul class="nav flex-column">
-                        <li class="nav-item mb-2"><a href="#" class="nav-link p-0 text-body-secondary">Home</a></li>
-                        <li class="nav-item mb-2"><a href="#" class="nav-link p-0 text-body-secondary">Features</a></li>
-                        <li class="nav-item mb-2"><a href="#" class="nav-link p-0 text-body-secondary">Pricing</a></li>
-                        <li class="nav-item mb-2"><a href="#" class="nav-link p-0 text-body-secondary">FAQs</a></li>
-                        <li class="nav-item mb-2"><a href="#" class="nav-link p-0 text-body-secondary">About</a></li>
-                    </ul>
-                </div>
-
-                <div class="col-md-5 offset-md-1 mb-3">
-                    <form>
-                        <h5 >Subscribe to our newsletter</h5>
-                        <p>Monthly digest of what's new and exciting from us.</p>
-                        <div class="d-flex flex-column flex-sm-row w-100 gap-2">
-                            <label for="newsletter1" class="visually-hidden">Email address</label>
-                            <input id="newsletter1" type="text" class="form-control" placeholder="Email address">
-                            <button class="btn btn-primary" type="button" style="background-color: orange; color: black; border: none">Subscribe</button>
-                        </div>
-                    </form>
-                </div>
-            </div>
-        </footer>
-    </div>
-<?php
-}
-}
-/* {/block "footer"} */
->>>>>>> csrftokenForms:templates_c/46e94a8db7f2aba7f39af2063c5179160df3c106_0.file.layout.tpl.php
 }
