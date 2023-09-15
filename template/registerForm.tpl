@@ -55,7 +55,7 @@
             text-align: center;
         }
     </style>
-    <form class="form-horizontal" action="index.php?action=register" method="POST">
+    <form class="form-horizontal" action="index.php?action=register" method="POST" autocomplete="off">
         <h2>Sign up</h2>
 
         <div class="form-group">
@@ -68,16 +68,16 @@
         </div>
         <div class="form-group">
             <label for="phonenumber">Phone number:</label>
-            <input type="tel" class="form-control" id="phonenumber" name="phonenumber" placeholder="06-12345678" required>
+            <input type="tel" class="form-control" id="phonenumber" name="phonenumber" minlength="10" placeholder="06-12345678" required>
         </div>
         <div class="form-group">
             <label for="password">Password:</label>
-            <input type="password" class="form-control" id="password" name="password" placeholder="Enter password" required>
+            <input type="password" class="form-control" id="password" name="password" minlength="8" placeholder="Enter password" required>
             <input class="showPassword" type="checkbox" onclick="myFunction()"> Show Password
         </div>
         <div class="form-group">
             <label for="passwordrepeat">Repeat Password:</label>
-            <input type="password" class="form-control" id="passwordrepeat" name="passwordrepeat" placeholder="Repeat password" required>
+            <input type="password" class="form-control" id="passwordrepeat" name="passwordrepeat" minlength="8" placeholder="Repeat password" required>
             <input class="showPassword" type="checkbox" onclick="myFunctionCheck()"> Show Password
         </div>
         <div class="form-group">

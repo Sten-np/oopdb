@@ -22,10 +22,21 @@ class registrationActionHandler
 
     public function handleRegister()
 {    global $security;
+    $minPasswordLength = 8;
+
     if (!empty($_POST['username']) && !empty($_POST['emailadress']) && !empty($_POST['phonenumber']) && !empty($_POST['password']) && !empty($_POST['passwordrepeat']))
     {
         // Validate user input (e.g., check email format, password requirements)
         // ...
+        // checks if the password is truly 8 characters or higher
+        if(strlen($_POST['password']) < $minPasswordLength && mb_strlen($_POST['password'] < $minPasswordLength))
+        {
+            echo "<h2>Your password have lesser than 8 characters</h2>";
+            echo "Password must be at least {$minPasswordLength} characters!";
+            header("Refresh:3; url=index.php?action=registerForm", true, 303);
+            exit;
+        }
+
         if ($security->verifyCSRFToken($_POST['csrf_token']))
         {
             // Assuming you have a User class for registration
