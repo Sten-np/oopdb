@@ -1,7 +1,7 @@
 <?php
 
 namespace Project9;
-class registrationActionHandler extends baseActionHandler
+class registrationActionHandler
 {
     public function handleRegisterForm()
 {
