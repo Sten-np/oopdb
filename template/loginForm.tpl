@@ -36,7 +36,7 @@
     </style>
     <main class="form-signin">
         <link href="sign-in.css" rel="stylesheet">
-        <form>
+        <form action="index.php?action=login" method="post">
             <h2>Login</h2>
             <div class="form-group">
                 <label for="email">Email:</label>

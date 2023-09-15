@@ -47,6 +47,7 @@ class Mysql implements Database
                 }
             }
 
+
             $query->execute();
 
             // Fetch and return the results as an associative array
