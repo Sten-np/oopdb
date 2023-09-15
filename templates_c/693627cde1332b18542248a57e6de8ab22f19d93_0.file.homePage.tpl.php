@@ -1,26 +1,38 @@
 <?php
+<<<<<<< HEAD
 <<<<<<< Updated upstream
 /* Smarty version 4.3.2, created on 2023-09-15 13:46:25
 =======
 /* Smarty version 4.3.2, created on 2023-09-15 11:44:42
 >>>>>>> Stashed changes
+=======
+/* Smarty version 4.3.2, created on 2023-09-13 13:44:27
+>>>>>>> develop
   from 'C:\Wamp.NET\sites\oopdb\template\homePage.tpl' */
 
 /* @var Smarty_Internal_Template $_smarty_tpl */
 if ($_smarty_tpl->_decodeProperties($_smarty_tpl, array (
   'version' => '4.3.2',
+<<<<<<< HEAD
 <<<<<<< Updated upstream
   'unifunc' => 'content_650444119f5922_68340766',
 =======
   'unifunc' => 'content_650443aae61a02_19659170',
 >>>>>>> Stashed changes
+=======
+  'unifunc' => 'content_6501a09bd445d4_47527348',
+>>>>>>> develop
   'has_nocache_code' => false,
   'file_dependency' => 
   array (
     '693627cde1332b18542248a57e6de8ab22f19d93' => 
     array (
       0 => 'C:\\Wamp.NET\\sites\\oopdb\\template\\homePage.tpl',
+<<<<<<< HEAD
       1 => 1694778026,
+=======
+      1 => 1694596023,
+>>>>>>> develop
       2 => 'file',
     ),
   ),
@@ -28,27 +40,36 @@ if ($_smarty_tpl->_decodeProperties($_smarty_tpl, array (
   array (
   ),
 ),false)) {
+<<<<<<< HEAD
 <<<<<<< Updated upstream
 function content_650444119f5922_68340766 (Smarty_Internal_Template $_smarty_tpl) {
 =======
 function content_650443aae61a02_19659170 (Smarty_Internal_Template $_smarty_tpl) {
 >>>>>>> Stashed changes
+=======
+function content_6501a09bd445d4_47527348 (Smarty_Internal_Template $_smarty_tpl) {
+>>>>>>> develop
 $_smarty_tpl->_loadInheritance();
 $_smarty_tpl->inheritance->init($_smarty_tpl, true);
 ?>
 
 
 <?php 
+<<<<<<< HEAD
 <<<<<<< Updated upstream
 $_smarty_tpl->inheritance->instanceBlock($_smarty_tpl, 'Block_1521310302650444119f2057_57965029', "title");
 =======
 $_smarty_tpl->inheritance->instanceBlock($_smarty_tpl, 'Block_1403783766650443aae5be13_49215905', "title");
 >>>>>>> Stashed changes
+=======
+$_smarty_tpl->inheritance->instanceBlock($_smarty_tpl, 'Block_5745937136501a09bd40ed1_35461456', "title");
+>>>>>>> develop
 ?>
 
 
 
 <?php 
+<<<<<<< HEAD
 <<<<<<< Updated upstream
 $_smarty_tpl->inheritance->instanceBlock($_smarty_tpl, 'Block_1806622368650444119f3e46_35875284', "homePage");
 $_smarty_tpl->inheritance->endChild($_smarty_tpl, "template/layout.tpl");
@@ -62,15 +83,26 @@ $_smarty_tpl->inheritance->endChild($_smarty_tpl, "template/layout.tpl");
 /* {block "title"} */
 class Block_1403783766650443aae5be13_49215905 extends Smarty_Internal_Block
 >>>>>>> Stashed changes
+=======
+$_smarty_tpl->inheritance->instanceBlock($_smarty_tpl, 'Block_11272017726501a09bd42b45_49774074', "homePage");
+$_smarty_tpl->inheritance->endChild($_smarty_tpl, "template/layout.tpl");
+}
+/* {block "title"} */
+class Block_5745937136501a09bd40ed1_35461456 extends Smarty_Internal_Block
+>>>>>>> develop
 {
 public $subBlocks = array (
   'title' => 
   array (
+<<<<<<< HEAD
 <<<<<<< Updated upstream
     0 => 'Block_1521310302650444119f2057_57965029',
 =======
     0 => 'Block_1403783766650443aae5be13_49215905',
 >>>>>>> Stashed changes
+=======
+    0 => 'Block_5745937136501a09bd40ed1_35461456',
+>>>>>>> develop
   ),
 );
 public function callBlock(Smarty_Internal_Template $_smarty_tpl) {
@@ -82,20 +114,28 @@ public function callBlock(Smarty_Internal_Template $_smarty_tpl) {
 }
 /* {/block "title"} */
 /* {block "homePage"} */
+<<<<<<< HEAD
 <<<<<<< Updated upstream
 class Block_1806622368650444119f3e46_35875284 extends Smarty_Internal_Block
 =======
 class Block_876372024650443aae5ee22_66071548 extends Smarty_Internal_Block
 >>>>>>> Stashed changes
+=======
+class Block_11272017726501a09bd42b45_49774074 extends Smarty_Internal_Block
+>>>>>>> develop
 {
 public $subBlocks = array (
   'homePage' => 
   array (
+<<<<<<< HEAD
 <<<<<<< Updated upstream
     0 => 'Block_1806622368650444119f3e46_35875284',
 =======
     0 => 'Block_876372024650443aae5ee22_66071548',
 >>>>>>> Stashed changes
+=======
+    0 => 'Block_11272017726501a09bd42b45_49774074',
+>>>>>>> develop
   ),
 );
 public function callBlock(Smarty_Internal_Template $_smarty_tpl) {

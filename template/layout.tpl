@@ -85,6 +85,7 @@
         .bd-mode-toggle {
             z-index: 1500;
         }
+<<<<<<< HEAD
     </style>
 
     <header class="p-3 text-bg-dark">
@@ -112,6 +113,36 @@
                     <button type="button" class="btn btn-outline-light me-2"><a style="text-decoration: none;  color: inherit" href="index.php?action=loginForm">Login</a></button>
                     {block name="register"} <button type="button" class="btn btn-warning" style="background-color: orange"><a style="text-decoration: none;  color: inherit" href="index.php?action=registerForm">Sign-up</a></button>{/block}
                 </div>
+=======
+        </style>
+</head>
+        <header class="p-3 text-bg-dark">
+        <div class="container">
+        <div class="d-flex flex-wrap align-items-center justify-content-center justify-content-lg-start">
+        <a href="/" class="d-flex align-items-center mb-2 mb-lg-0 text-white text-decoration-none">
+        <svg class="bi me-2" width="40" height="32" role="img" aria-label="Bootstrap"><use xlink:href="#bootstrap"/></svg>
+        </a>
+
+
+        <ul class="nav col-12 col-lg-auto me-lg-auto mb-2 justify-content-center mb-md-0">
+        <li><a href="index.php?action=homePage" class="nav-link px-2 text-secondary">Home</a></li>
+        <li><a href="index.php?action=productPage" class="nav-link px-2 text-white">Products</a></li>
+        <li><a href="index.php?action=playstationPage" class="nav-link px-2 text-white">Playstation</a></li>
+        <li><a href="index.php?action=xboxPage" class="nav-link px-2 text-white">Xbox</a></li>
+        <li><a href="index.php?action=nintendoPage" class="nav-link px-2 text-white">Nintendo</a></li>
+        <li><a href="index.php?action=contact" class="nav-link px-2 text-white">Contact</a></li>
+{*            <li><a href="index.php?action=registerForm"><span class="glyphicon glyphicon-user"></span> register</a></li>*}
+        </ul>
+
+        <form class="col-12 col-lg-auto mb-3 mb-lg-0 me-lg-3" role="search">
+        <input type="search" class="form-control form-control-dark text-bg-dark" placeholder="Search..." aria-label="Search">
+        </form>
+
+        <div class="text-end">
+        <button type="button" class="btn btn-outline-light me-2"><a style="text-decoration: none;  color: inherit" href="index.php?action=loginForm">Login</a></button>
+            {block name="register"} <button type="button" class="btn btn-warning" style="background-color: orange"><a style="text-decoration: none;  color: inherit" href="index.php?action=registerForm">Sign-up</a></button>{/block}
+        </div>
+>>>>>>> develop
 
             </div>
         </div>
@@ -119,6 +150,7 @@
 
 
 
+<<<<<<< HEAD
     <div class="container">
         {block name="registerForm"}{/block}
         {block name="homePage"}{/block}
@@ -126,6 +158,17 @@
         {block name="loginForm"}{/block}
 
     </div>
+=======
+<div class="container-fluid">
+    {block name="registerForm"}{/block}
+    {block name="homePage"}{/block}
+    {block name="productPage"}{/block}
+    {block name="loginForm"}{/block}
+    {block name="productPage"}{/block}
+    {block name="admin-login"}{/block}
+    {block name="contact-page"}{/block}
+</div>
+>>>>>>> develop
 
     <div class="container">
         <footer class="py-5 " >
