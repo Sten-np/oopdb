@@ -8,8 +8,6 @@ use Handlers\AdminHandler;
 use Project9\Db;
 use Project9\Mysql;
 use Project9\User;
-<<<<<<< HEAD
-use Project9\Db;
 use Project9\ProductPageActionHandler;
 use Project9\LoginActionHandler;
 use Project9\RegistrationActionHandler;
@@ -17,10 +15,8 @@ use Project9\XboxPageActionHandler;
 use Project9\PlaystationPageActionHandler;
 use Project9\NintendoPageActionHandler;
 use Project9\MoreInfoPageActionHandler;
-
-=======
 use Project9\xboxPage;
->>>>>>> develop
+
 
 
 session_start();
@@ -50,20 +46,12 @@ switch ($action) {
         $handler = new LoginActionHandler();
         $handler->handleLogin();
         break;
-<<<<<<< HEAD
-
-=======
->>>>>>> develop
         case "admin-login":
         $template->display("template/admin-login.tpl");
         break;
         case "login-adm":
             $adminHandler = new AdminHandler($_POST['email'], $_POST['pass']);
         break;
-<<<<<<< HEAD
-
-=======
->>>>>>> develop
     case "productPage":
         $handler = new productPageActionHandler();
         $handler->handleProductPage();
@@ -94,10 +82,3 @@ switch ($action) {
 //Connecting to the database
 $database = new Mysql("localhost", "gamehub", "root", "");
 $database->__construct("localhost", "gamehub", "root", "");
-<<<<<<< HEAD
-
-
-
-
-=======
->>>>>>> develop

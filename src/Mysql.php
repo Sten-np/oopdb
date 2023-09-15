@@ -97,6 +97,12 @@ class Mysql implements Database
 
     public function disconnect()
     {
-
+        try
+        {
+            self::$db = null;
+        }catch(PDOException $error)
+        {
+            throw new Exception($error->getMessage());
+        }
     }
 }
