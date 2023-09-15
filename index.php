@@ -12,7 +12,7 @@ use Project9\Playstation;
 use Project9\User;
 use Project9\Db;
 use Project9\ProductPageActionHandler;
-use Project9\LoginActionActionHandler;
+use Project9\LoginActionHandler;
 use Project9\RegistrationActionHandler;
 use Project9\XboxPageActionHandler;
 use Project9\PlaystationPageActionHandler;
