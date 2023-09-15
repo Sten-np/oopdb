@@ -36,9 +36,8 @@
     </style>
     <main class="form-signin">
         <link href="sign-in.css" rel="stylesheet">
-        <form>
+        <form action="index.php?action=login" method="POST">
             <h2>Login</h2>
-            <form action="index.php?action=login" method="POST">
             <div class="form-group">
                 <label class="control-label col-sm-2" for="email">Email:</label>
                 <input type="email" class="form-control" name="emailadress" id="email" placeholder="Enter email" name="emailadress" required>
