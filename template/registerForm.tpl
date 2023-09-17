@@ -59,7 +59,7 @@
         <h2>Sign up</h2>
 
         <div class="form-group">
-            <label for="username">Username:</label>
+            <label for="username" title="Enter here your name, not weird characters!">Username:</label>
             <input type="text" class="form-control" id="username" name="username" placeholder="Username" required>
         </div>
         <div class="form-group">
@@ -71,7 +71,7 @@
             <input type="tel" class="form-control" id="phonenumber" name="phonenumber" minlength="10" placeholder="06-12345678" required>
         </div>
         <div class="form-group">
-            <label for="password">Password:</label>
+            <label for="password" title="At least one lowercase, one uppercase, one digit number, one special character, miminum 8 to maximum 30 characters">Password:</label>
             <input type="password" class="form-control" id="password" name="password" minlength="8" placeholder="Enter password" required>
             <input class="showPassword" type="checkbox" onclick="myFunction()"> Show Password
         </div>

@@ -20,22 +20,49 @@ class registrationActionHandler
     $template->display("template/registerForm.tpl");
 }
 
+
     public function handleRegister()
 {    global $security;
-    $minPasswordLength = 8;
 
     if (!empty($_POST['username']) && !empty($_POST['emailadress']) && !empty($_POST['phonenumber']) && !empty($_POST['password']) && !empty($_POST['passwordrepeat']))
     {
-        // Validate user input (e.g., check email format, password requirements)
-        // ...
-        // checks if the password is truly 8 characters or higher
-        if(strlen($_POST['password']) < $minPasswordLength && mb_strlen($_POST['password'] < $minPasswordLength))
+        if(!isset($_POST['username']) || strlen($_POST['username']) > 75 || !preg_match('/^[a-zA-Z-0-9 ]+$/', $_POST['username']))
         {
-            echo "<h2>Your password have lesser than 8 characters</h2>";
-            echo "Password must be at least {$minPasswordLength} characters!";
+            echo "<h2>Your username has more than 75 characters</h2>";
+            echo "The username you've created, has more than 75 characters or special characters. Which is not allowed!<br>";
+            echo "The username you've created:<br>{$_POST['username']}";
             header("Refresh:3; url=index.php?action=registerForm", true, 303);
             exit;
         }
+        if(!isset($_POST['emailadress']) || strlen($_POST['emailadress']) > 45 || !filter_var($_POST['emailadress'], FILTER_VALIDATE_EMAIL))
+        {
+            echo "<h2>Your emailadress has more than 45 characters or isn't a email</h2>";
+            echo "The emailadress you've created, has more than 45 characters or isn't a email. Which is not allowed!<br> {$_POST['username']}";
+            header("Refresh:3; url=index.php?action=registerForm", true, 303);
+            exit;
+        }
+
+        // checks if the password is longer than 30 characters
+        if(!isset($_POST['password']) || !preg_match('/^(?=.*[a-z])(?=.*[A-Z])(?=.*[0-9])(?=.*[\~?!@#\$%\^&\*])(?=.{8,30})/', $_POST['password']))
+        {
+            echo "<h2>Your password you've created is not allowed!</h2>";
+            echo "Password must have at least the following things:<br>";
+            echo "Password must have at least one lowercase letter.<br>";
+            echo "Password must have at least one uppercase letter.<br>";
+            echo "Password must have at least one digit (0-9).<br>";
+            echo "Password must have at least one special character for example: ~ ? ! @ # $ % ^ & * .<br>";
+            echo "Password must have a minimum length of 8 characters and the maximum length is 30 characters<br>";
+            header("Refresh:3; url=index.php?action=registerForm", true, 303);
+            exit;
+        }
+        else if(!isset($_POST['passwordrepeat']) || $_POST['passwordrepeat'] !== $_POST['password'])
+        {
+            echo "<h2>Your password doesn't match!</h2>";
+            echo "Password must be the same of the Repeat Password!<br>";
+            header("Refresh:3; url=index.php?action=registerForm", true, 303);
+            exit;
+        }
+
 
         if ($security->verifyCSRFToken($_POST['csrf_token']))
         {
