@@ -11,6 +11,9 @@ use Project9\XBox;
 use Project9\Playstation;
 use Project9\User;
 use Project9\Db;
+use Project9\AdminListHandler;
+use Project9\UserListHandler;
+use Project9\AdminChangeState;
 
 session_start();
 
@@ -127,7 +130,14 @@ switch ($action) {
         $template->display("template/admin-dashboard.tpl");
         break;
     case "admin-users":
-        $template->display("template/admin-users.tpl");
+        $UserListHandler = new UserListHandler();
+        break;
+    case "admin-admins":
+        $adminlisthandler = new AdminListHandler();
+        break;
+    case "changeadminstate":
+        $adminChangeState = new AdminChangeState();
+        break;
     default:
         $template->display("template/homePage.tpl");
         break;

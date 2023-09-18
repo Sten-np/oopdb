@@ -71,7 +71,7 @@
                             </a>
                         </li>
                         <li class="nav-item">
-                            <a class="nav-link" href="#">
+                            <a class="nav-link" href="index.php?action=admin-admins">
                                 <span data-feather="bar-chart-2"></span>
                                 Admins
                             </a>
@@ -84,7 +84,8 @@
                 <div class="d-flex justify-content-between flex-wrap flex-md-nowrap align-items-center pt-3 pb-2 mb-3 border-bottom">
                     <h1 class="h2">Dashboard</h1>
                 </div>
-
+                {block name="admins"}{/block}
+                {block name="users"}{/block}
             </main>
         </div>
     </div>
