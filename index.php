@@ -14,11 +14,13 @@ use Project9\User;
 use Project9\Db;
 use Project9\ProductPageActionHandler;
 use Project9\LoginActionHandler;
+use Project9\LogoutActionHandler;
 use Project9\RegistrationActionHandler;
 use Project9\XboxPageActionHandler;
 use Project9\PlaystationPageActionHandler;
 use Project9\NintendoPageActionHandler;
 use Project9\MoreInfoPageActionHandler;
+use Project9\UserInformationActionHandler;
 
 
 
@@ -104,7 +106,10 @@ switch ($action) {
 
         }
         break;
-
+    case "logout":
+        $handler = new LogoutActionHandler();
+        $handler->handleLogout();
+        break;
     case "productPage":
         $handler = new productPageActionHandler();
         $handler->handleProductPage();
@@ -127,6 +132,10 @@ switch ($action) {
     case "moreInfo":
         $handler = new MoreInfoPageActionHandler();
         $handler->handleMoreInfoPage();
+        break;
+    case "userInformation":
+        $handler = new UserInformationActionHandler();
+        $handler->handleUserInformationPage();
         break;
     default:
         $template->display("template/homePage.tpl");
