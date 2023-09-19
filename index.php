@@ -21,6 +21,7 @@ use Project9\PlaystationPageActionHandler;
 use Project9\NintendoPageActionHandler;
 use Project9\MoreInfoPageActionHandler;
 use Project9\UserInformationActionHandler;
+use Project9\SearchPageHandler;
 
 
 
@@ -136,6 +137,10 @@ switch ($action) {
     case "userInformation":
         $handler = new UserInformationActionHandler();
         $handler->handleUserInformationPage();
+        break;
+    case "search":
+        $handler = new SearchPageHandler();
+        $handler->handleSearchPage();
         break;
     default:
         $template->display("template/homePage.tpl");
