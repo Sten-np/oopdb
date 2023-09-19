@@ -13,7 +13,7 @@ interface Database
 
     public function insert(string $table, array $param);
 
-    public function update();
+    public function update(string $table, array $data, string $where);
 
     public function delete();
 }
