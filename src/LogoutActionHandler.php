@@ -15,6 +15,7 @@ class LogoutActionHandler
         // Check if the user is not logged in
         if (!isset($_SESSION['username']) && !isset($_SESSION['emailadress'])) {
 
+            session_unset();
             // Display a confirmation message
             echo "<h2>You are logging out!</h2>";
             echo "<p>Bye! See you next time!</p>";
