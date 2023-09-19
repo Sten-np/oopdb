@@ -57,9 +57,27 @@ class Mysql implements Database
     }
 
 
-    public function update()
+    public function update(string $table, array $data, string $where)
     {
-        // TODO: Implement update() method.
+        try {
+            $sql = "UPDATE $table SET ";
+            $values = [];
+
+            foreach ($data as $key => $value) {
+                $sql .= "$key = :$key, ";
+                $values[":$key"] = $value;
+            }
+
+            $sql = rtrim($sql, ', ');
+            $sql .= " WHERE `id` =  $where";
+
+            $stmt = self::$db->prepare($sql);
+            $stmt->execute($values);
+
+            return $stmt->rowCount() > 0; // Check if any rows were affected
+        } catch (PDOException $e) {
+            throw new PDOException($e);
+        }
     }
 
     public function delete()
