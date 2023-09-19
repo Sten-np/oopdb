@@ -16,19 +16,9 @@ use Project9\PlaystationPageActionHandler;
 use Project9\NintendoPageActionHandler;
 use Project9\MoreInfoPageActionHandler;
 use Project9\xboxPage;
-use Project9\Db;
 use Project9\AdminListHandler;
 use Project9\UserListHandler;
 use Project9\AdminChangeState;
-use Project9\ProductPageActionHandler;
-use Project9\LoginActionHandler;
-use Project9\RegistrationActionHandler;
-use Project9\XboxPageActionHandler;
-use Project9\PlaystationPageActionHandler;
-use Project9\NintendoPageActionHandler;
-use Project9\MoreInfoPageActionHandler;
-use Project9\xboxPage;
-
 
 
 
