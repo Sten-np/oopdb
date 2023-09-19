@@ -9,7 +9,7 @@ class AdminListHandler
         try
         {
             $where = ['bool_adm' => 1];
-            $admins = Db::$db->select('user', ['id', 'username', 'bool_adm'], $where);
+            $admins = Db::$db->select('user', ['id', 'emailadress' ,'username', 'bool_adm'], $where);
         }catch (\PDOException $error)
         {
             throw new \Exception("Error!" . $error);

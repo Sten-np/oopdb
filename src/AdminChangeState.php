@@ -9,8 +9,13 @@ class AdminChangeState
     {
         try
         {
-            $where = ['bool_adm' => 1];
-            $admins = Db::$db->INSERT('user', ['id', 'username', 'bool_adm'], $where);
+            $data = [
+                'bool_adm' => $_POST['bool_adm_stateform']
+            ];
+            Db::$db->update("user", $data , $_POST['user_id_stateform']);
+
+            echo '<script>alert("Changed to admin successful!");</script>';
+            header('Location: index.php?action=admin-users');
 
         }catch (\PDOException $error)
         {
