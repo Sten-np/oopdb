@@ -14,7 +14,7 @@
     </style>
     <div class="position-relative overflow-hidden p-3 p-md-5 m-md-3 text-center bg-body-tertiary">
         <div class="col-md-6 p-lg-5 mx-auto my-5">
-            <h3 class="display-3 fw-bold"><img src="../img/GameHub.png" style="height: 100%; width: 40%; object-fit: contain;"</h3>
+            <h3 class="display-3 fw-bold"><img src="../img/xbox.png" style="height: 100%; width: 40%; object-fit: contain;"</h3>
             <div class="d-flex gap-3 justify-content-center lead fw-normal">
                 <a class="icon-link" href="#">
                 </a>
@@ -23,7 +23,8 @@
         <div class="product-device shadow-sm d-none d-md-block"></div>
         <div class="product-device product-device-2 shadow-sm d-none d-md-block"></div>
     </div>
-    <div class="row" style="padding-left: 1%"  >
+
+    <div class="row" style="padding-left: 1%">
         {foreach from=$products item=product}
             <div class="col-md-4" style="width: 25%; padding-top: 3%">
                 <div class="card" style="width: 18rem;">

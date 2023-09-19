@@ -6,20 +6,16 @@ abstract class Product
 {
     private string $name;
     private string $image;
-    private float $truePrice;
-    private int $tax;
+    private float $price;
     private string $information;
-    private float $gain;
     protected string $category;
 
-    public function __construct(string $name, string $image, float $truePrice, int $tax, string $information, float $gain)
+    public function __construct(string $name, string $image, float $price, string $information)
     {
         $this->name = $name;
         $this->image = $image;
-        $this->truePrice = $truePrice;
-        $this->tax = $tax;
+        $this->price = $price;
         $this->information = $information;
-        $this->gain = $gain;
     }
 
     public function getName() : string
@@ -32,9 +28,9 @@ abstract class Product
      return $this->setCategory();
     }
 
-    public function getCalculatePrice()
+    public function getPrice(): float
     {
-      return $this->gain = $this->truePrice / 100 * $this->tax;
+        return $this->price;
     }
 
     public function printInfo(): string

@@ -47,6 +47,7 @@ class Mysql implements Database
                 }
             }
 
+
             $query->execute();
 
             // Fetch and return the results as an associative array
@@ -114,6 +115,12 @@ class Mysql implements Database
 
     public function disconnect()
     {
-        self::$db = null;
+        try
+        {
+            self::$db = null;
+        }catch(PDOException $error)
+        {
+            throw new Exception($error->getMessage());
+        }
     }
 }
