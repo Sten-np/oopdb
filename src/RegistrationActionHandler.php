@@ -36,8 +36,18 @@ class registrationActionHandler
         }
         if(!isset($_POST['emailadress']) || strlen($_POST['emailadress']) > 45 || !filter_var($_POST['emailadress'], FILTER_VALIDATE_EMAIL))
         {
-            echo "<h2>Your emailadress has more than 45 characters or isn't a email</h2>";
+            echo "<h2>Your email adress has more than 45 characters or isn't a email</h2>";
             echo "The emailadress you've created, has more than 45 characters or isn't a email. Which is not allowed!<br> {$_POST['username']}";
+            header("Refresh:3; url=index.php?action=registerForm", true, 303);
+            exit;
+        }
+
+        if (!isset($_POST['phonenumber']) || empty($_POST['phonenumber']) || strlen($_POST['phonenumber']) > 15 || !preg_match('/^[0-9]{2}-[0-9]{8}+$/', $_POST['phonenumber']))
+        {
+            echo "<h2>Your phone number has more than 15 characters or contains invalid characters</h2>";
+            echo "<p>Your account has not been created because the phone number you provided is not allowed</p>";
+            echo "<p>Or you typed your phone number like 06 12345678. Which must be 06-12345678</p>";
+            echo "<p>The phone number you've entered: <br>{$_POST['phonenumber']}</p>";
             header("Refresh:3; url=index.php?action=registerForm", true, 303);
             exit;
         }

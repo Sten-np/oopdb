@@ -67,7 +67,7 @@
             <input type="email" class="form-control" id="email" name="emailadress" placeholder="Enter your email" required>
         </div>
         <div class="form-group">
-            <label for="phonenumber">Phone number:</label>
+            <label for="phonenumber" title="for example=06-12345678">Phone number:</label>
             <input type="tel" class="form-control" id="phonenumber" name="phonenumber" minlength="10" placeholder="06-12345678" required>
         </div>
         <div class="form-group">
