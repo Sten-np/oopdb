@@ -62,7 +62,7 @@ public function select(array $columns, array $params)
 
                     if (is_array($value)) {
                         // BETWEEN
-                        $conditions[] = $table . '.' . $column . " '" . $value[0] . "' AND '" . $value[1]"'";
+                        $conditions[] = $table . '.' . $column . " '" . $value[0] . "' AND '" . $value[1]."'";
                     } elseif (strpos($params, "LIKE") !== false) {
                         //LIKE
                         $conditions[] = $table . "." . $column . " '$value'";
