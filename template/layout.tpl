@@ -66,28 +66,46 @@
             -webkit-overflow-scrolling: touch;
         }
 
-        .btn-bd-primary {
-            --bd-violet-bg: #712cf9;
-            --bd-violet-rgb: 112.520718, 44.062154, 249.437846;
-
-            --bs-btn-font-weight: 600;
-            --bs-btn-color: var(--bs-white);
-            --bs-btn-bg: var(--bd-violet-bg);
-            --bs-btn-border-color: var(--bd-violet-bg);
-            --bs-btn-hover-color: var(--bs-white);
-            --bs-btn-hover-bg: #6528e0;
-            --bs-btn-hover-border-color: #6528e0;
-            --bs-btn-focus-shadow-rgb: var(--bd-violet-rgb);
-            --bs-btn-active-color: var(--bs-btn-hover-color);
-            --bs-btn-active-bg: #5a23c8;
-            --bs-btn-active-border-color: #5a23c8;
+        /*dropdown button*/
+        .dropdown {
+            position: relative;
+            display: inline-block;
         }
-        .bd-mode-toggle {
-            z-index: 1500;
+
+        .dropdown-content {
+            display: none;
+            position: absolute;
+            min-width: 160px;
+            z-index: 1;
+            transition: all 1s;
+        }
+
+        .dropdown-content:after {
+            content: '\00bb';
+            position: absolute;
+            opacity: 0;
+            top: 0;
+            right: -20px;
+            transition: 0.5s;
+        }
+
+        .dropdown-content a {
+            color: white;
+            padding: 12px 16px;
+            text-decoration: none;
+            display: block;
+        }
+
+        .dropdown-content a:hover {
+            background-color: orange;
+        }
+
+        .dropdown:hover .dropdown-content {
+            display: block;
         }
 
     </style>
-
+</head>
     <header class="p-3 text-bg-dark">
         <div class="container">
             <div class="d-flex flex-wrap align-items-center justify-content-center justify-content-lg-start">
@@ -102,17 +120,54 @@
                     <li><a href="index.php?action=playstationPage" class="nav-link px-2 text-white">Playstation</a></li>
                     <li><a href="index.php?action=xboxPage" class="nav-link px-2 text-white">Xbox</a></li>
                     <li><a href="index.php?action=nintendoPage" class="nav-link px-2 text-white">Nintendo</a></li>
-                    {*            <li><a href="index.php?action=registerForm"><span class="glyphicon glyphicon-user"></span> register</a></li>*}
                 </ul>
 
-                <form class="col-12 col-lg-auto mb-3 mb-lg-0 me-lg-3" role="search">
-                    <input type="search" class="form-control form-control-dark text-bg-dark" placeholder="Search..." aria-label="Search">
+                <form method="POST" class="col-12 col-lg-auto mb-3 mb-lg-0 me-lg-3" role="search" action="index.php?action=search" autocomplete="off">
+                    <input type="search" name="search" class="form-control form-control-dark text-bg-dark" placeholder="Search..." aria-label="Search">
                 </form>
 
+
                 <div class="text-end">
-                    <button type="button" class="btn btn-outline-light me-2"><a style="text-decoration: none;  color: inherit" href="index.php?action=loginForm">Login</a></button>
-                    {block name="register"} <button type="button" class="btn btn-warning" style="background-color: orange"><a style="text-decoration: none;  color: inherit" href="index.php?action=registerForm">Sign-up</a></button>{/block}
+                    {if isset($smarty.session.user)}
+                    <div class="dropdown">
+                        <button type="button" class="btn btn-warning" style="background-color: orange"><a style="text-decoration: none; color: inherit" href="index.php?action=userInformation">{$smarty.session.user.username}</a></button>
+
+                        <div class="dropdown-content">
+                    <ul class="dropdown-menu d-block position-static mx-0 border-0 shadow w-220px" data-bs-theme="dark">
+                        <li>
+                            <a class="dropdown-item d-flex gap-2 align-items-center" href="index.php?action=userInformation">
+                                <svg class="bi" width="16" height="16"><use xlink:href="#files"/></svg>
+                                Mijn gegevens
+                            <a class="dropdown-item d-flex gap-2 align-items-center" href="#">
+                                <svg class="bi" width="16" height="16"><use xlink:href="#image-fill"/></svg>
+                                Photos
+                            <a class="dropdown-item d-flex gap-2 align-items-center" href="#">
+                                <svg class="bi" width="16" height="16"><use xlink:href="#film"/></svg>
+                                Movies
+                            <a class="dropdown-item d-flex gap-2 align-items-center" href="#">
+                                <svg class="bi" width="16" height="16"><use xlink:href="#music-note-beamed"/></svg>
+                                Music
+                            <a class="dropdown-item d-flex gap-2 align-items-center" href="#">
+                                <svg class="bi" width="16" height="16"><use xlink:href="#joystick"/></svg>
+                                Games
+                            </a>
+                        </li>
+                        <li><hr class="dropdown-divider"></li>
+                        <li>
+                            <a class="dropdown-item d-flex gap-2 align-items-center" href="index.php?action=logout">
+                                <svg class="bi" width="16" height="16"><use xlink:href="#trash"/></svg>
+                                Uitloggen
+                            </a>
+                        </li>
+                    </ul>
                 </div>
+                        </div>
+                    {else}
+                        <button type="button" class="btn btn-outline-light me-2"><a style="text-decoration: none; color: inherit" href="index.php?action=loginForm">Login</a></button>
+                    {block name="register"} <button type="button" class="btn btn-warning" style="background-color: orange"><a style="text-decoration: none; color: inherit" href="index.php?action=registerForm">Sign-up</a></button>{/block}
+                    {/if}
+                </div>
+            </div>
         </div>
 </head>
 <div class="container-fluid">
@@ -124,6 +179,15 @@
     {block name="admin-login"}{/block}
     {block name="contact-page"}{/block}
 </div>
+
+    <div class="container">
+        {block name="userInformation"}{/block}
+        {block name="registerForm"}{/block}
+        {block name="homePage"}{/block}
+        {block name="productPage"}{/block}
+        {block name="loginForm"}{/block}
+
+    </div>
 
     <div class="container">
         <footer class="py-5 " >
@@ -156,7 +220,8 @@
     </div>
 
     <!--<script src="../assets/dist/js/bootstrap.bundle.min.js"></script>-->
-    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.1/dist/js/bootstrap.bundle.min.js" integrity="sha384-HwwvtgBNo3bZJJLYd8oVXjrBZt8cqVSpeBNS5n7C8IVInixGAoxmnlMuBnhbgrkm" crossorigin="anonymous"></script>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.1/dist/js/bootstrap.bundle.min.js" integrity="sha384-HwwvtgBNo3bZJJLYd8oVXjrBZt8cqVSpeBNS5n7C8IVInixGAoxmnlMuBnhbgrkm" crossorigin="anonymous">
+    </script>
     </body>
 </html>
 
