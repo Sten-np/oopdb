@@ -1,3 +1,29 @@
+<?php
+/* Smarty version 4.3.2, created on 2023-09-20 09:05:40
+  from 'C:\Wamp.NET\sites\Project9\template\layout.tpl' */
+
+/* @var Smarty_Internal_Template $_smarty_tpl */
+if ($_smarty_tpl->_decodeProperties($_smarty_tpl, array (
+  'version' => '4.3.2',
+  'unifunc' => 'content_650ab5e47869e1_45940686',
+  'has_nocache_code' => false,
+  'file_dependency' => 
+  array (
+    '46e94a8db7f2aba7f39af2063c5179160df3c106' => 
+    array (
+      0 => 'C:\\Wamp.NET\\sites\\Project9\\template\\layout.tpl',
+      1 => 1695200510,
+      2 => 'file',
+    ),
+  ),
+  'includes' => 
+  array (
+  ),
+),false)) {
+function content_650ab5e47869e1_45940686 (Smarty_Internal_Template $_smarty_tpl) {
+$_smarty_tpl->_loadInheritance();
+$_smarty_tpl->inheritance->init($_smarty_tpl, false);
+?>
 <!doctype html>
 <html lang="en" data-bs-theme="dark">
 <head>
@@ -7,7 +33,10 @@
     <meta name="description" content="">
     <meta name="author" content="Mark Otto, Jacob Thornton, and Bootstrap contributors">
     <meta name="generator" content="Hugo 0.115.4">
-    <title>{block name = "title"}GameHub{/block}</title>
+    <title><?php 
+$_smarty_tpl->inheritance->instanceBlock($_smarty_tpl, 'Block_545393963650ab5e4775389_92842524', "title");
+?>
+</title>
 
     <link rel="canonical" href="https://getbootstrap.com/docs/5.3/examples/product/">
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.1/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-4bw+/aepP/YC94hEpVNVgiZdgIC5+VKNBQNGCHeKRQN+PtmoHDEXuppvnDJzQIu9" crossorigin="anonymous">
@@ -130,9 +159,10 @@
 
 
                 <div class="text-end">
-                    {if isset($smarty.session.user)}
+                    <?php if ((isset($_SESSION['user']))) {?>
                     <div class="dropdown">
-                        <button type="button" class="btn btn-warning" style="background-color: orange"><a style="text-decoration: none; color: inherit" href="index.php?action=userInformation">{$smarty.session.user.username}</a></button>
+                        <button type="button" class="btn btn-warning" style="background-color: orange"><a style="text-decoration: none; color: inherit" href="index.php?action=userInformation"><?php echo $_SESSION['user']['username'];?>
+</a></button>
 
                         <div class="dropdown-content">
                     <ul class="dropdown-menu d-block position-static mx-0 border-0 shadow w-220px" data-bs-theme="dark">
@@ -164,24 +194,47 @@
                     </ul>
                 </div>
                         </div>
-                    {else}
+                    <?php } else { ?>
                         <button type="button" class="btn btn-outline-light me-2"><a style="text-decoration: none; color: inherit" href="index.php?action=loginForm">Login</a></button>
-                    {block name="register"} <button type="button" class="btn btn-warning" style="background-color: orange"><a style="text-decoration: none; color: inherit" href="index.php?action=registerForm">Sign-up</a></button>{/block}
-                    {/if}
+                    <?php 
+$_smarty_tpl->inheritance->instanceBlock($_smarty_tpl, 'Block_1192511682650ab5e477e3e3_06501790', "register");
+?>
+
+                    <?php }?>
                 </div>
             </div>
         </div>
 </header>
 
-{*    The 'div' class was 'container-fluid'. I setted the class to container, because it looks better*}
 <div class="container">
-    {block name="userInformation"}{/block}
-    {block name="registerForm"}{/block}
-    {block name="homePage"}{/block}
-    {block name="productPage"}{/block}
-    {block name="loginForm"}{/block}
-    {block name="admin-login"}{/block}
-    {block name="contact-page"}{/block}
+    <?php 
+$_smarty_tpl->inheritance->instanceBlock($_smarty_tpl, 'Block_1801172954650ab5e477fbb2_45934689', "userInformation");
+?>
+
+    <?php 
+$_smarty_tpl->inheritance->instanceBlock($_smarty_tpl, 'Block_1948651723650ab5e4780c78_68459964', "registerForm");
+?>
+
+    <?php 
+$_smarty_tpl->inheritance->instanceBlock($_smarty_tpl, 'Block_1667575912650ab5e4781c16_35271571', "homePage");
+?>
+
+    <?php 
+$_smarty_tpl->inheritance->instanceBlock($_smarty_tpl, 'Block_1724966447650ab5e4782bb1_79924287', "productPage");
+?>
+
+    <?php 
+$_smarty_tpl->inheritance->instanceBlock($_smarty_tpl, 'Block_377919945650ab5e4783b11_22544600', "loginForm");
+?>
+
+    <?php 
+$_smarty_tpl->inheritance->instanceBlock($_smarty_tpl, 'Block_36333108650ab5e4784a80_78668667', "admin-login");
+?>
+
+    <?php 
+$_smarty_tpl->inheritance->instanceBlock($_smarty_tpl, 'Block_961537091650ab5e47859d3_34647088', "contact-page");
+?>
+
 </div>
 
     <div class="container">
@@ -214,9 +267,136 @@
         </footer>
     </div>
 
-    <!--<script src="../assets/dist/js/bootstrap.bundle.min.js"></script>-->
-    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.1/dist/js/bootstrap.bundle.min.js" integrity="sha384-HwwvtgBNo3bZJJLYd8oVXjrBZt8cqVSpeBNS5n7C8IVInixGAoxmnlMuBnhbgrkm" crossorigin="anonymous">
-    </script>
+    <!--<?php echo '<script'; ?>
+ src="../assets/dist/js/bootstrap.bundle.min.js"><?php echo '</script'; ?>
+>-->
+    <?php echo '<script'; ?>
+ src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.1/dist/js/bootstrap.bundle.min.js" integrity="sha384-HwwvtgBNo3bZJJLYd8oVXjrBZt8cqVSpeBNS5n7C8IVInixGAoxmnlMuBnhbgrkm" crossorigin="anonymous">
+    <?php echo '</script'; ?>
+>
     </body>
 </html>
 
+<?php }
+/* {block "title"} */
+class Block_545393963650ab5e4775389_92842524 extends Smarty_Internal_Block
+{
+public $subBlocks = array (
+  'title' => 
+  array (
+    0 => 'Block_545393963650ab5e4775389_92842524',
+  ),
+);
+public function callBlock(Smarty_Internal_Template $_smarty_tpl) {
+?>
+GameHub<?php
+}
+}
+/* {/block "title"} */
+/* {block "register"} */
+class Block_1192511682650ab5e477e3e3_06501790 extends Smarty_Internal_Block
+{
+public $subBlocks = array (
+  'register' => 
+  array (
+    0 => 'Block_1192511682650ab5e477e3e3_06501790',
+  ),
+);
+public function callBlock(Smarty_Internal_Template $_smarty_tpl) {
+?>
+ <button type="button" class="btn btn-warning" style="background-color: orange"><a style="text-decoration: none; color: inherit" href="index.php?action=registerForm">Sign-up</a></button><?php
+}
+}
+/* {/block "register"} */
+/* {block "userInformation"} */
+class Block_1801172954650ab5e477fbb2_45934689 extends Smarty_Internal_Block
+{
+public $subBlocks = array (
+  'userInformation' => 
+  array (
+    0 => 'Block_1801172954650ab5e477fbb2_45934689',
+  ),
+);
+public function callBlock(Smarty_Internal_Template $_smarty_tpl) {
+}
+}
+/* {/block "userInformation"} */
+/* {block "registerForm"} */
+class Block_1948651723650ab5e4780c78_68459964 extends Smarty_Internal_Block
+{
+public $subBlocks = array (
+  'registerForm' => 
+  array (
+    0 => 'Block_1948651723650ab5e4780c78_68459964',
+  ),
+);
+public function callBlock(Smarty_Internal_Template $_smarty_tpl) {
+}
+}
+/* {/block "registerForm"} */
+/* {block "homePage"} */
+class Block_1667575912650ab5e4781c16_35271571 extends Smarty_Internal_Block
+{
+public $subBlocks = array (
+  'homePage' => 
+  array (
+    0 => 'Block_1667575912650ab5e4781c16_35271571',
+  ),
+);
+public function callBlock(Smarty_Internal_Template $_smarty_tpl) {
+}
+}
+/* {/block "homePage"} */
+/* {block "productPage"} */
+class Block_1724966447650ab5e4782bb1_79924287 extends Smarty_Internal_Block
+{
+public $subBlocks = array (
+  'productPage' => 
+  array (
+    0 => 'Block_1724966447650ab5e4782bb1_79924287',
+  ),
+);
+public function callBlock(Smarty_Internal_Template $_smarty_tpl) {
+}
+}
+/* {/block "productPage"} */
+/* {block "loginForm"} */
+class Block_377919945650ab5e4783b11_22544600 extends Smarty_Internal_Block
+{
+public $subBlocks = array (
+  'loginForm' => 
+  array (
+    0 => 'Block_377919945650ab5e4783b11_22544600',
+  ),
+);
+public function callBlock(Smarty_Internal_Template $_smarty_tpl) {
+}
+}
+/* {/block "loginForm"} */
+/* {block "admin-login"} */
+class Block_36333108650ab5e4784a80_78668667 extends Smarty_Internal_Block
+{
+public $subBlocks = array (
+  'admin-login' => 
+  array (
+    0 => 'Block_36333108650ab5e4784a80_78668667',
+  ),
+);
+public function callBlock(Smarty_Internal_Template $_smarty_tpl) {
+}
+}
+/* {/block "admin-login"} */
+/* {block "contact-page"} */
+class Block_961537091650ab5e47859d3_34647088 extends Smarty_Internal_Block
+{
+public $subBlocks = array (
+  'contact-page' => 
+  array (
+    0 => 'Block_961537091650ab5e47859d3_34647088',
+  ),
+);
+public function callBlock(Smarty_Internal_Template $_smarty_tpl) {
+}
+}
+/* {/block "contact-page"} */
+}

@@ -9,7 +9,7 @@ use Project9\Db;
 use Project9\Mysql;
 use Project9\ProductList;
 use Project9\Nintendo;
-use Project9\xboxPage;
+use Project9\XBox;
 use Project9\Playstation;
 use Project9\Security;
 use Project9\User;
@@ -23,7 +23,6 @@ use Project9\NintendoPageActionHandler;
 use Project9\MoreInfoPageActionHandler;
 use Project9\UserInformationActionHandler;
 use Project9\SearchPageHandler;
-use Project9\xboxPage;
 use Project9\AdminListHandler;
 use Project9\UserListHandler;
 use Project9\AdminChangeState;
@@ -60,6 +59,7 @@ switch ($action) {
     case "registerForm":
         $template->display("template/registerForm.tpl");
         break;
+
     case "register":
         $handler = new RegistrationActionHandler();
         $handler->handleRegister();
@@ -68,6 +68,7 @@ switch ($action) {
     case "loginForm":
         $template->display("template/loginForm.tpl");
         break;
+
     case "login":
         $handler = new LoginActionHandler();
         $handler->handleLogin();
@@ -76,44 +77,55 @@ switch ($action) {
         case "admin-login":
         $template->display("template/admin-login.tpl");
         break;
+
         case "login-adm":
             $adminHandler = new AdminHandler($_POST['email'], $_POST['pass']);
         break;
+
     case "logout":
         $handler = new LogoutActionHandler();
         $handler->handleLogout();
         break;
+
     case "productPage":
         $handler = new productPageActionHandler();
         $handler->handleProductPage();
         break;
+
     case "contact":
         $template->display("template/contact.tpl");
         break;
+
     case "xboxPage":
         $handler = new xboxPageActionHandler();
         $handler->handleXboxPage();
         break;
+
     case "playstationPage":
         $handler = new playstationPageActionHandler();
         $handler->handlePlaystationPage();
         break;
+
     case "nintendoPage":
         $handler = new nintendoPageActionHandler();
         $handler->handleNintendoPage();
         break;
+
     case "moreInfo":
         $handler = new MoreInfoPageActionHandler();
         $handler->handleMoreInfoPage();
         break;
+
     case "userInformation":
         $handler = new UserInformationActionHandler();
         $handler->handleUserInformationPage();
         break;
+
     case "search":
         $handler = new SearchPageHandler();
         $handler->handleSearchPage();
         break;
+
     default:
         $template->display("template/homePage.tpl");
         break;
