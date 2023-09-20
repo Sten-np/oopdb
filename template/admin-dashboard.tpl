@@ -2,7 +2,7 @@
 {block name="footer"}{/block}
 {block name="nav"}{/block}
 {block name="title"}
-  GameHub | Admin Dashboard
+    GameHub | Admin Dashboard
 {/block}
 
 {block name="adm-dash"}
