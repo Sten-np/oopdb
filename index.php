@@ -25,6 +25,8 @@ use Project9\UserInformationActionHandler;
 use Project9\SearchPageHandler;
 use Project9\AdminListHandler;
 use Project9\UserListHandler;
+use Project9\UserUpdateLocate;
+use Project9\UserUpdateCredentials;
 use Project9\AdminChangeState;
 
 
@@ -79,38 +81,8 @@ switch ($action) {
         break;
 
     case "login-adm":
-        if(!empty($_POST['email']) && !empty($_POST['pass']))
-        {
-            $email = $_POST['email'];
-            $pass = $_POST['pass'];
-
-            $where = ['emailadress' => $email];
-            $admin = Db::$db->select('user', ['*'], $where);
-
-            if (!empty($admin) && password_verify($pass, $admin[0]['password'])) {
-                // Authentication successful
-                // Set the user's session or redirect to a dashboard page
-                if(isset($admin[0]['bool_adm']) && $admin[0]['bool_adm'] != 1)
-                {
-                    echo "Your account is not permitted to login as admin...";
-                    header("Refresh:2; url=index.php?action=admin-login");
-                    exit();
-                }
-                $_SESSION['admin'] = $admin[0];
-                echo "<h2>Welcome " . $admin[0]['username'] . "</h2><br>";
-                echo "<p>You've logged in.</p>";
-                header("Refresh:2; url=index.php?action=admin-dashboard");
-                exit;
-            } else {
-                // Authentication failed
-                // Display an error message or redirect back to the login page with an error parameter
-                echo "<p>Incorrect email or password. Please try again.</p>";
-                header("Refresh:3; url=index.php?action=admin-login");
-                exit;
-            }
-
-
-        }
+        $handler = new AdminHandler();
+        $handler->passVerify();
         break;
 
 
@@ -168,6 +140,16 @@ switch ($action) {
     case "userInformation":
         $handler = new UserInformationActionHandler();
         $handler->handleUserInformationPage();
+        break;
+
+    case "userUpdateLocate":
+        $handler = new userUpdateLocate();
+        $handler->handleUserUpdateLocate();
+        break;
+
+    case "userUpdateCredentials":
+        $handler = new UserUpdateCredentials();
+        $handler->handleUserUpdateCredentials();
         break;
 
     case "search":

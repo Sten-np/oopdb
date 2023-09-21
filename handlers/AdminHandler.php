@@ -29,21 +29,15 @@ class AdminHandler
             if(isset($admin[0]['bool_adm']) && $admin[0]['bool_adm'] != 1)
             {
                 echo "Your account is not permitted to login as admin...";
-<<<<<<< HEAD
                 header("Refresh:2; url=index.php?action=admin-login");
-=======
                 header("Refresh:1; url=index.php?action=admin-login");
->>>>>>> admin-dashboard
                 exit();
             }
             $_SESSION['admin'] = $admin[0];
             echo "<h2>Welcome " . $admin[0]['username'] . "</h2><br>";
             echo "<p>You've logged in.</p>";
-<<<<<<< HEAD
             header("Refresh:2; url=index.php");
-=======
             header("Refresh:1; url=index.php?action=admin-dashboard");
->>>>>>> admin-dashboard
             exit;
         } else {
             // Authentication failed

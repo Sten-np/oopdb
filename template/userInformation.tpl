@@ -62,6 +62,8 @@
                         <div class="grid-item">{$smarty.session.user.emailadress}</div>
                         <h4>Telefoon nummer:</h4>
                         <div class="grid-item">{$smarty.session.user.phonenumber}</div>
+
+                        <div type="submit"><a href="index.php?action=userUpdateLocate"> > Gegevens Aanpassen</a></div>
                 </div>
             </div>
     </div>
