@@ -13,7 +13,7 @@ if (!isset($_SESSION['csrf_token'])) {
 
 class UserUpdateCredentials
 {
-    public function __construct()
+    public function handleUserUpdateCredentials()
     {
         global $security;
         try {
@@ -40,6 +40,8 @@ class UserUpdateCredentials
             } else {
                 // Handle CSRF token verification failure (e.g., show an error page).
                 echo '<script>alert("CSRF Token Verification Failed!");</script>';
+                header('Location: index.php?action=userInformation');
+                exit(); // Ensure no further code execution after redirection.
             }
         } catch (\PDOException $error) {
             // Log or handle the database error gracefully

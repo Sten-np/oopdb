@@ -81,6 +81,8 @@
         <button type="submit" class="btn btn-primary">Opslaan</button>
         <br>
         <a href="index.php?action=userInformation" class="btn btn-secondary">Annuleren</a>
+{*        <script>alert("Your credentials hasn't changed");*}
+{*      </script>*}
     </div>
 
 {/block}
