@@ -17,11 +17,11 @@ use Handlers\UserListHandler;
 use Handlers\XboxPageActionHandler;
 use Project9\AdminChangeState;
 use Project9\Db;
-use Project9\LoginActionHandler;
+use Handlers\LoginActionHandler;
 use Project9\LoginChecker;
-use Project9\LogoutActionHandler;
+use Handlers\LogoutActionHandler;
 use Project9\Mysql;
-use Project9\RegistrationActionHandler;
+use Handlers\RegistrationActionHandler;
 use Project9\Security;
 
 
@@ -108,7 +108,6 @@ switch ($action) {
 
 
     case "logout":
-
         $handler = new LogoutActionHandler();
         $handler->handleLogout();
         break;

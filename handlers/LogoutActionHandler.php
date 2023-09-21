@@ -1,8 +1,8 @@
 <?php
 
-namespace Project9;
+namespace Handlers;
 
-require_once 'Security.php';
+use Project9\Security;
 
 $security = new Security();
 
