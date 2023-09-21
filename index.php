@@ -1,32 +1,28 @@
 <?php
-
 declare(strict_types=1);
+
+global $timeFormatted;
 
 require_once "vendor/autoload.php";
 
 use Handlers\AdminHandler;
-use Project9\Db;
-use Project9\Mysql;
-use Project9\ProductList;
-use Project9\Nintendo;
-use Project9\XBox;
-use Project9\Playstation;
-use Project9\Security;
-use Project9\User;
-use Project9\ProductPageActionHandler;
-use Project9\LoginActionHandler;
-use Project9\LogoutActionHandler;
-use Project9\RegistrationActionHandler;
-use Project9\XboxPageActionHandler;
-use Project9\PlaystationPageActionHandler;
-use Project9\NintendoPageActionHandler;
-use Project9\MoreInfoPageActionHandler;
-use Project9\UserInformationActionHandler;
-use Project9\SearchPageHandler;
-use Project9\AdminListHandler;
-use Project9\UserListHandler;
+use Handlers\AdminListHandler;
+use Handlers\MoreInfoPageActionHandler;
+use Handlers\NintendoPageActionHandler;
+use Handlers\PlaystationPageActionHandler;
+use Handlers\ProductPageActionHandler;
+use Handlers\SearchPageHandler;
+use Handlers\UserInformationActionHandler;
+use Handlers\UserListHandler;
+use Handlers\XboxPageActionHandler;
 use Project9\AdminChangeState;
-
+use Project9\Db;
+use Project9\LoginActionHandler;
+use Project9\LoginChecker;
+use Project9\LogoutActionHandler;
+use Project9\Mysql;
+use Project9\RegistrationActionHandler;
+use Project9\Security;
 
 
 session_start();
@@ -79,50 +75,30 @@ switch ($action) {
         break;
 
     case "login-adm":
-        if(!empty($_POST['email']) && !empty($_POST['pass']))
-        {
-            $email = $_POST['email'];
-            $pass = $_POST['pass'];
-
-            $where = ['emailadress' => $email];
-            $admin = Db::$db->select('user', ['*'], $where);
-
-            if (!empty($admin) && password_verify($pass, $admin[0]['password'])) {
-                // Authentication successful
-                // Set the user's session or redirect to a dashboard page
-                if(isset($admin[0]['bool_adm']) && $admin[0]['bool_adm'] != 1)
-                {
-                    echo "Your account is not permitted to login as admin...";
-                    header("Refresh:2; url=index.php?action=admin-login");
-                    exit();
-                }
-                $_SESSION['admin'] = $admin[0];
-                echo "<h2>Welcome " . $admin[0]['username'] . "</h2><br>";
-                echo "<p>You've logged in.</p>";
-                header("Refresh:2; url=index.php?action=admin-dashboard");
-                exit;
-            } else {
-                // Authentication failed
-                // Display an error message or redirect back to the login page with an error parameter
-                echo "<p>Incorrect email or password. Please try again.</p>";
-                header("Refresh:3; url=index.php?action=admin-login");
-                exit;
-            }
-
-
-        }
+        $adminHandler = new AdminHandler();
         break;
 
 
     case "admin-dashboard":
+        $adminChecker = new LoginChecker();
+        $adminChecker->checkAdmin();
+        $timestamp = time();
+        $timeFormatted = date("H:i:s", $timestamp);
+        $template->assign('time', $timeFormatted);
         $template->display("template/admin-dashboard.tpl");
         break;
 
     case "admin-users":
+        $adminChecker = new LoginChecker();
+        $adminChecker->checkAdmin();
+        $template->assign('time', $timeFormatted);
         $UserListHandler = new UserListHandler();
         break;
 
     case "admin-admins":
+        $adminChecker = new LoginChecker();
+        $adminChecker->checkAdmin();
+        $template->assign('time', $timeFormatted);
         $adminHandler = new AdminListHandler();
         break;
 
@@ -132,6 +108,7 @@ switch ($action) {
 
 
     case "logout":
+
         $handler = new LogoutActionHandler();
         $handler->handleLogout();
         break;
@@ -166,6 +143,8 @@ switch ($action) {
         break;
 
     case "userInformation":
+        $userChecker = new LoginChecker();
+        $userChecker->checkUser();
         $handler = new UserInformationActionHandler();
         $handler->handleUserInformationPage();
         break;
@@ -173,6 +152,9 @@ switch ($action) {
     case "search":
         $handler = new SearchPageHandler();
         $handler->handleSearchPage();
+        break;
+    case "notpermitted":
+        $template->display("template/notpermitted.tpl");
         break;
 
     default:
