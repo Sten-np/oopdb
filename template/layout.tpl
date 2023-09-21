@@ -183,6 +183,7 @@
     {block name="admin-login"}{/block}
     {block name="adm-dash"}{/block}
     {block name="contact-page"}{/block}
+    {block name="notpermitted"}{/block}
 </div>
 
     <div class="container">

@@ -1,6 +1,8 @@
 <?php
 
-namespace Project9;
+namespace Handlers;
+
+use Project9\Db;
 
 class AdminListHandler
 {

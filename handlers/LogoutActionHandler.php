@@ -1,8 +1,8 @@
 <?php
 
-namespace Project9;
+namespace Handlers;
 
-require_once 'Security.php';
+use Project9\Security;
 
 $security = new Security();
 
@@ -22,13 +22,13 @@ class LogoutActionHandler
 
             // Redirect to the homepage after logout
             header("Refresh: 3; url=index.php");
-            exit;
+            exit();
         } else {
             // If the user is logged in, you can handle it accordingly
             // For example, show an error message or redirect to a login page
             echo "<h2>You are not logged in yet!</h2>";
             header('Location: login.php'); // Redirect to the login page
-            exit;
+            exit();
         }
     }
 }

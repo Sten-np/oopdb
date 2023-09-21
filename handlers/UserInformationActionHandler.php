@@ -1,6 +1,6 @@
 <?php
 
-namespace Project9;
+namespace Handlers;
 
 class UserInformationActionHandler
 {

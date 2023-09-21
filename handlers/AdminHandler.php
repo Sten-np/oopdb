@@ -9,12 +9,12 @@ class AdminHandler
     private string $email;
     private string $pass;
 
-    public function __construct(string $email, string $pass)
+    public function __construct()
     {
         if(!empty($_POST['email']) && !empty($_POST['pass']))
         {
-            $this->email = $email;
-            $this->pass = $pass;
+            $this->email = $_POST["email"];
+            $this->pass = $_POST["pass"];
             $this->passVerify();
         }
     }
@@ -29,28 +29,24 @@ class AdminHandler
             if(isset($admin[0]['bool_adm']) && $admin[0]['bool_adm'] != 1)
             {
                 echo "Your account is not permitted to login as admin...";
-<<<<<<< HEAD
-                header("Refresh:2; url=index.php?action=admin-login");
-=======
                 header("Refresh:1; url=index.php?action=admin-login");
->>>>>>> admin-dashboard
                 exit();
             }
             $_SESSION['admin'] = $admin[0];
             echo "<h2>Welcome " . $admin[0]['username'] . "</h2><br>";
             echo "<p>You've logged in.</p>";
-<<<<<<< HEAD
-            header("Refresh:2; url=index.php");
-=======
             header("Refresh:1; url=index.php?action=admin-dashboard");
->>>>>>> admin-dashboard
-            exit;
+
+
+
+
+            exit();
         } else {
             // Authentication failed
             // Display an error message or redirect back to the login page with an error parameter
             echo "<p>Incorrect email or password. Please try again.</p>";
             header("Refresh:3; url=index.php?action=admin-login");
-            exit;
+            exit();
         }
 
     }
