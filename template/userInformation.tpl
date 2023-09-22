@@ -26,6 +26,7 @@
             font-size: 20px;
             text-align: center;
             border-radius: 20px 20px 20px 20px;
+            color: black;
         }
     </style>
     <div class="position-relative overflow-hidden p-3 p-md-5 m-md-3 text-center bg-body-tertiary">
@@ -54,7 +55,7 @@
                     <div class="card-body">
                         <h2>Mijn gegevens</h2>
                         <p>Dit zijn uw gegevens</p>
-                        <h4>Uw user id:</h4>
+                        <h4>Klantnummer:</h4>
                         <div class="grid-item">{$smarty.session.user.id}</div>
                         <h4>Username:</h4>
                         <div class="grid-item">{$smarty.session.user.username}</div>
@@ -62,6 +63,8 @@
                         <div class="grid-item">{$smarty.session.user.emailadress}</div>
                         <h4>Telefoon nummer:</h4>
                         <div class="grid-item">{$smarty.session.user.phonenumber}</div>
+
+                        <div type="submit"><a href="index.php?action=userUpdateLocate"> > Gegevens Aanpassen</a></div>
                 </div>
             </div>
     </div>

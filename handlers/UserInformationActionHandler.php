@@ -8,8 +8,6 @@ class UserInformationActionHandler
     {
 
         global $template;
-
-
         // Display the "productPage.tpl" template
         $template->display("template/userInformation.tpl");
     }

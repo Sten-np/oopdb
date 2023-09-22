@@ -24,6 +24,9 @@ use Project9\Db;
 use Project9\LoginChecker;
 use Project9\Mysql;
 use Project9\Security;
+use Project9\UserChangeSuccesFull;
+use Project9\UserUpdateCredentials;
+use Project9\UserUpdateLocate;
 use Project9\ChangeProdInfo;
 
 session_start();
@@ -140,6 +143,19 @@ switch ($action) {
         $handler = new UserInformationActionHandler();
         $handler->handleUserInformationPage();
         break;
+
+    case "userUpdateLocate":
+        $handler = new userUpdateLocate();
+        $handler->handleUserUpdateLocate();
+        break;
+
+    case "userUpdateCredentials":
+        $handler = new UserUpdateCredentials();
+        break;
+
+    case "userChangeSuccesFull":
+        $handler = new UserChangeSuccesFull();
+        $handler->handleuserChangeSuccesFull();
 
     case "search":
         $handler = new SearchPageHandler();
