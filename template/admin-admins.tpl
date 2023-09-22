@@ -17,7 +17,7 @@
                 <td style="border: 1px solid #ffffff ; padding: 8px; background-color: #212529;">{$admin.emailadress}</td>
                 <td style="border: 1px solid #ffffff ; padding: 8px; background-color: #212529;">
                     <form method="post" action="index.php?action=changeadminstate">
-                        <input type="number" step="1"  value="{$admin.bool_adm}" name="bool_adm_stateform" required>
+                        <input type="number" pattern="[01]*"  value="{$admin.bool_adm}" name="bool_adm_stateform" required>
                         <input type="hidden" value="{$admin.id}" name="user_id_stateform">
                         <input type="submit" value="change" name="submit">
                     </form>

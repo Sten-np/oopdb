@@ -15,15 +15,16 @@ use Handlers\SearchPageHandler;
 use Handlers\UserInformationActionHandler;
 use Handlers\UserListHandler;
 use Handlers\XboxPageActionHandler;
+use Handlers\AdminProdHandler;
+use Handlers\LoginActionHandler;
+use Handlers\LogoutActionHandler;
+use Handlers\RegistrationActionHandler;
 use Project9\AdminChangeState;
 use Project9\Db;
-use Handlers\LoginActionHandler;
 use Project9\LoginChecker;
-use Handlers\LogoutActionHandler;
 use Project9\Mysql;
-use Handlers\RegistrationActionHandler;
 use Project9\Security;
-
+use Project9\ChangeProdInfo;
 
 session_start();
 $template = new Smarty();
@@ -33,8 +34,6 @@ global $template;
 
 $database = new Db();
 
-
-// Generate a random token string
 $security = new Security();
 
 if (!isset($_SESSION['csrf_token'])) {
@@ -42,14 +41,9 @@ if (!isset($_SESSION['csrf_token'])) {
     $_SESSION['csrf_token'] = $security->generateCSRFToken();
 }
 
-
 $template->assign('csrf_token', $_SESSION['csrf_token']);
 
-//I've added a extra $_GET['action'], so that the 'switch statement' will work!
 $action = isset($_GET['action']) ? $_GET['action'] : null;
-
-
-
 
 switch ($action) {
     case "registerForm":
@@ -77,7 +71,6 @@ switch ($action) {
     case "login-adm":
         $adminHandler = new AdminHandler();
         break;
-
 
     case "admin-dashboard":
         $adminChecker = new LoginChecker();
@@ -154,6 +147,15 @@ switch ($action) {
         break;
     case "notpermitted":
         $template->display("template/notpermitted.tpl");
+        break;
+    case "admin-products":
+        $adminChecker = new LoginChecker();
+        $adminChecker->checkAdmin();
+        $template->assign('time', $timeFormatted);
+        $AdminProdHandler = new AdminProdHandler();
+        break;
+    case "changeProdInfo":
+        $ChangeProdInfo = new ChangeProdInfo();
         break;
 
     default:

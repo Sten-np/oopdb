@@ -16,6 +16,7 @@ class productPageActionHandler
 
             // Assign the product information to template variables
             $template->assign('products', $products);
+            $template->assign('valuta', "€ ");
 
             // Display the "productPage.tpl" template
             $template->display("template/productPage.tpl");
