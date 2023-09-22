@@ -117,7 +117,7 @@
 
     </style>
     <form class="form-horizontal" action="index.php?action=userUpdateCredentials" method="POST" autocomplete="off">
-        <h2>Mijn gegevens aanpassen</h2>
+            <h2>Mijn gegevens aanpassen</h2>
         <p>Pas hier uw gegevens aan welke u wilt.</p>
 
         <div class="form-group">
@@ -137,7 +137,7 @@
         <input type="password" class="form-control" id="password" name="password" minlength="8" placeholder="********">
     </div>
         <div class="form-group">
-            <label for="passwordrepeat" title="At least one lowercase, one uppercase, one digit number, one special character, miminum 8 to maximum 30 characters">Password:</label>
+            <label for="passwordrepeat" title="At least one lowercase, one uppercase, one digit number, one special character, miminum 8 to maximum 30 characters">Repeat Password:</label>
             <input type="password" class="form-control" id="passwordrepeat" name="passwordrepeat" minlength="8" placeholder="********">
             <input class="showPassword" type="checkbox" onclick="myFunction()"> Show Both Password
         </div>
@@ -246,5 +246,4 @@
             }
         }
     </script>
-
-{/block}
+        {/block}
