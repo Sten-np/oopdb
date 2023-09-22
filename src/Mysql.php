@@ -70,7 +70,10 @@ class Mysql implements Database
             }
 
             $sql = rtrim($sql, ', ');
-            $sql .= " WHERE `id` =  $where";
+            $sql .= " WHERE `id` = :where"; // Use a placeholder for $where
+
+            // Add the $where value to the $values array
+            $values[':where'] = $where;
 
             $stmt = self::$db->prepare($sql);
             $stmt->execute($values);

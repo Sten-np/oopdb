@@ -27,6 +27,7 @@ use Project9\AdminListHandler;
 use Project9\UserListHandler;
 use Project9\UserUpdateLocate;
 use Project9\UserUpdateCredentials;
+use Project9\UserChangeSuccesFull;
 use Project9\AdminChangeState;
 
 
@@ -149,8 +150,11 @@ switch ($action) {
 
     case "userUpdateCredentials":
         $handler = new UserUpdateCredentials();
-        $handler->handleUserUpdateCredentials();
         break;
+
+    case "userChangeSuccesFull":
+        $handler = new UserChangeSuccesFull();
+        $handler->handleuserChangeSuccesFull();
 
     case "search":
         $handler = new SearchPageHandler();

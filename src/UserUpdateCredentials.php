@@ -13,39 +13,39 @@ if (!isset($_SESSION['csrf_token'])) {
 
 class UserUpdateCredentials
 {
-    public function handleUserUpdateCredentials()
-    {
-        global $security;
-        try {
-            if (isset($_POST['csrf_token']) && $security->verifyCSRFToken($_POST['csrf_token'])) {
-                // Validate and sanitize user inputs
-                $username = filter_var($_POST['username'], FILTER_SANITIZE_STRING);
-                $email = filter_var($_POST['emailadress'], FILTER_SANITIZE_EMAIL);
-                $phonenumber = filter_var($_POST['phonenumber'], FILTER_SANITIZE_STRING);
-                $password = $_POST['password']; // You should validate and hash the password securely.
+  public function __construct()
+  {
+      global $security;
+      try
+      {
+          $data = [
+            'username' => $_POST['username'],
+            'emailadress' => $_POST['emailadress'],
+            'phonenumber' => $_POST['phonenumber'],
+          ];
+          if(!empty($_POST['password']))
+          {
+              // Hash the password
+              $hashedPassword = password_hash($_POST['password'], PASSWORD_DEFAULT);
+              $data['password'] = $hashedPassword;
+          }
 
-                // Perform the database update
-                $data = [
-                    'username' => $username,
-                    'emailadress' => $email,
-                    'phonenumber' => $phonenumber,
-                    'password' => $password, // Remember to hash the password securely.
-                ];
-                Db::$db->update("user", $data, $username, $email, $phonenumber, $password);
+          if ($security->verifyCSRFToken($_POST['csrf_token']))
+          {
 
-                // Redirect upon successful update
-                echo '<script>alert("Change your credentials was successful!");</script>';
-                header('Location: index.php?action=userInformation');
-                exit(); // Ensure no further code execution after redirection.
-            } else {
-                // Handle CSRF token verification failure (e.g., show an error page).
-                echo '<script>alert("CSRF Token Verification Failed!");</script>';
-                header('Location: index.php?action=userInformation');
-                exit(); // Ensure no further code execution after redirection.
-            }
-        } catch (\PDOException $error) {
-            // Log or handle the database error gracefully
-            throw new \Exception($error);
-        }
-    }
+              Db::$db->update("user", $data, $_POST['user_id_check']);
+
+              // Expire the CSRF token
+              $security->expireCSRFToken($_POST['csrf_token']);
+
+              echo "Change credentials successful!";
+              echo "For the change occurs, you have to log out first!";
+              header('Location: index.php?action=userChangeSuccesFull');
+          }
+
+      } catch (\PDOException $error)
+      {
+          throw new \Exception($error);
+      }
+  }
 }

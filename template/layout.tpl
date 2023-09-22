@@ -184,6 +184,7 @@
     {block name="adm-dash"}{/block}
     {block name="userUpdateCredentials"}{/block}
     {block name="contact-page"}{/block}
+    {block name="userChangeSuccesFull"}{/block}
 </div>
 
     <div class="container">
