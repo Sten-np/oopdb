@@ -47,7 +47,7 @@
                             </a>
                         </li>
                         <li class="nav-item">
-                            <a class="nav-link" href="#">
+                            <a class="nav-link" href="index.php?action=admin-products">
                                 <span data-feather="shopping-cart"></span>
                                 Products
                             </a>
@@ -81,6 +81,7 @@
                 <h2>{$time}</h2>
                 {block name="admins"}{/block}
                 {block name="users"}{/block}
+                {block name="admin-products"}{/block}
             </main>
         </div>
     </div>

@@ -30,7 +30,7 @@
                     <img class="card-img-top" src="{$product.image}" alt="Card image cap">
                     <div class="card-body">
                         <h5 class="card-title">{$product.productName}</h5>
-                        <p class="card-price">{$product.price}</p>
+                        <p class="card-price">{$valuta}{$product.price}</p>
                         <p class="card-text">{$product.description}</p>
                         <a href="index.php?action=moreInfo&product_id={$product.id}" class="btn btn-primary" style="background-color: orange; color: black; border: none">More Info</a>                    </div>
                 </div>
