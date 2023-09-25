@@ -5,6 +5,7 @@ global $timeFormatted;
 
 require_once "vendor/autoload.php";
 
+//With the namespaces 'Handlers'
 use Handlers\AdminHandler;
 use Handlers\AdminListHandler;
 use Handlers\MoreInfoPageActionHandler;
@@ -19,6 +20,8 @@ use Handlers\AdminProdHandler;
 use Handlers\LoginActionHandler;
 use Handlers\LogoutActionHandler;
 use Handlers\RegistrationActionHandler;
+
+//With the namespaces 'Project9'
 use Project9\AdminChangeState;
 use Project9\Db;
 use Project9\LoginChecker;

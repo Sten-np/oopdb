@@ -4,8 +4,6 @@ namespace Handlers;
 
 use Project9\Db;
 
-require_once 'Db.php';
-
 class SearchPageHandler
 {
     public function handleSearchPage()
@@ -36,10 +34,12 @@ class SearchPageHandler
 
             if (count($result) > 0)
             {
+                echo"You are searching for '".$_POST["search"]."'";
                 $template->assign('products', $result);
                 $template->display("template/searchPage.tpl");
             } else
             {
+                echo"You are searching for '".$_POST["search"]."'";
                 echo "Helaas Pindekaas.... we kunnen geen resultaten vinden.";
                 $template->assign('products', []);
                 $template->display("template/searchPage.tpl");

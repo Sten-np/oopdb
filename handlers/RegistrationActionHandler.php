@@ -3,6 +3,7 @@
 namespace Handlers;
 
 use Project9\Security;
+use Project9\User;
 
 $security = new Security();
 
