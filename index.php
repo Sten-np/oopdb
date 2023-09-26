@@ -20,6 +20,7 @@ use Handlers\AdminProdHandler;
 use Handlers\LoginActionHandler;
 use Handlers\LogoutActionHandler;
 use Handlers\RegistrationActionHandler;
+use Handlers\FilterPageHandler;
 
 //With the namespaces 'Project9'
 use Project9\AdminChangeState;
@@ -164,6 +165,10 @@ switch ($action) {
         $handler = new SearchPageHandler();
         $handler->handleSearchPage();
         break;
+    case "filterPage":
+        $handler = new FilterPageHandler();
+        $handler->filterProductPage();
+        break;
     case "notpermitted":
         $template->display("template/notpermitted.tpl");
         break;
@@ -176,6 +181,7 @@ switch ($action) {
     case "changeProdInfo":
         $ChangeProdInfo = new ChangeProdInfo();
         break;
+
 
     default:
         $template->display("template/homePage.tpl");

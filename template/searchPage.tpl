@@ -35,21 +35,21 @@
     </style>
     <section class="category-filter">
         <h3 class="filter-title">Filter by Category</h3>
-        <form id="nintendoForm" action="index.php?action=nintendoPage" method="POST">
+        <form id="nintendoForm" action="index.php?action=filterPage" method="POST">
             <label class="category-checkbox">
-                <input type="checkbox" name="action" value="category1"> Nintendo
+                <input type="checkbox" name="actionNintendo" value="category1"> Nintendo
             </label>
             <button type="submit" class="btn btn-primary">Apply Filter</button>
         </form>
-        <form id="playstationForm" action="index.php?action=playstationPage" method="POST">
+        <form id="playstationForm" action="index.php?action=filterPage" method="POST">
             <label class="category-checkbox">
-                <input type="checkbox" name="action" value="category2"> Playstation
+                <input type="checkbox" name="actionPlaystation" value="category2"> Playstation
             </label>
             <button type="submit" class="btn btn-primary">Apply Filter</button>
         </form>
-        <form id="xboxForm" action="index.php=?action=xboxPage" method="POST">
+        <form id="xboxForm" action="index.php=?action=filterPage" method="POST">
             <label class="category-checkbox">
-                <input type="checkbox" name="action" value="category3"> Xbox
+                <input type="checkbox" name="actionXbox" value="category3"> Xbox
             </label>
             <button type="submit" class="btn btn-primary">Apply Filter</button>
         </form>
