@@ -5,7 +5,7 @@ namespace Project9;
 class LoginChecker
 {
 
-    public function checkUser():void
+    public static function checkUser():void
     {
         if(!isset($_SESSION['user']) || !$_SESSION['user'])
         {
@@ -14,7 +14,7 @@ class LoginChecker
         }
     }
 
-    public function checkAdmin():void
+    public static function checkAdmin():void
     {
         if(!isset($_SESSION['admin']) || !$_SESSION['admin'])
         {

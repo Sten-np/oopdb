@@ -1,8 +1,6 @@
 <?php
 declare(strict_types=1);
 
-global $timeFormatted;
-
 require_once "vendor/autoload.php";
 
 //With the namespaces 'Handlers'
@@ -20,6 +18,7 @@ use Handlers\AdminProdHandler;
 use Handlers\LoginActionHandler;
 use Handlers\LogoutActionHandler;
 use Handlers\RegistrationActionHandler;
+use Handlers\AddProductHandler;
 
 //With the namespaces 'Project9'
 use Project9\AdminChangeState;
@@ -49,7 +48,7 @@ if (!isset($_SESSION['csrf_token'])) {
 
 $template->assign('csrf_token', $_SESSION['csrf_token']);
 
-$action = isset($_GET['action']) ? $_GET['action'] : null;
+$action = $_GET['action'] ?? null;
 
 switch ($action) {
     case "registerForm":
@@ -79,25 +78,17 @@ switch ($action) {
         break;
 
     case "admin-dashboard":
-        $adminChecker = new LoginChecker();
-        $adminChecker->checkAdmin();
-        $timestamp = time();
-        $timeFormatted = date("H:i:s", $timestamp);
-        $template->assign('time', $timeFormatted);
+        LoginChecker::checkAdmin();
         $template->display("template/admin-dashboard.tpl");
         break;
 
     case "admin-users":
-        $adminChecker = new LoginChecker();
-        $adminChecker->checkAdmin();
-        $template->assign('time', $timeFormatted);
+        LoginChecker::checkAdmin();
         $UserListHandler = new UserListHandler();
         break;
 
     case "admin-admins":
-        $adminChecker = new LoginChecker();
-        $adminChecker->checkAdmin();
-        $template->assign('time', $timeFormatted);
+        LoginChecker::checkAdmin();
         $adminHandler = new AdminListHandler();
         break;
 
@@ -141,8 +132,7 @@ switch ($action) {
         break;
 
     case "userInformation":
-        $userChecker = new LoginChecker();
-        $userChecker->checkUser();
+        LoginChecker::checkUser();
         $handler = new UserInformationActionHandler();
         $handler->handleUserInformationPage();
         break;
@@ -168,13 +158,20 @@ switch ($action) {
         $template->display("template/notpermitted.tpl");
         break;
     case "admin-products":
-        $adminChecker = new LoginChecker();
-        $adminChecker->checkAdmin();
-        $template->assign('time', $timeFormatted);
+        LoginChecker::checkAdmin();
         $AdminProdHandler = new AdminProdHandler();
         break;
     case "changeProdInfo":
         $ChangeProdInfo = new ChangeProdInfo();
+        break;
+    case "addprod":
+        LoginChecker::checkAdmin();
+        $template->display("template/addprod.tpl");
+        break;
+
+    case "addproduct":
+        LoginChecker::checkAdmin();
+        $addProductHandler = new AddProductHandler();
         break;
 
     default:

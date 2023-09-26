@@ -107,6 +107,7 @@
     </style>
 </head>
 <body>
+{block name="navmenu"}
     <header class="p-3 text-bg-dark">
         <div class="container">
             <div class="d-flex flex-wrap align-items-center justify-content-center justify-content-lg-start">
@@ -172,7 +173,7 @@
             </div>
         </div>
 </header>
-
+{/block}
 {*    The 'div' class was 'container-fluid'. I setted the class to container, because it looks better*}
 <div class="container">
     {block name="userInformation"}{/block}
@@ -188,6 +189,7 @@
     {block name="notpermitted"}{/block}
 </div>
 
+{block name="footer"}
     <div class="container">
         <footer class="py-5 " >
             <div class="row">
@@ -217,6 +219,7 @@
             </div>
         </footer>
     </div>
+{/block}
 
     <!--<script src="../assets/dist/js/bootstrap.bundle.min.js"></script>-->
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.1/dist/js/bootstrap.bundle.min.js" integrity="sha384-HwwvtgBNo3bZJJLYd8oVXjrBZt8cqVSpeBNS5n7C8IVInixGAoxmnlMuBnhbgrkm" crossorigin="anonymous">
