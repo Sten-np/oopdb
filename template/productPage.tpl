@@ -11,7 +11,48 @@
         .card {
             display: inline-block;
         }
+        .category-filter {
+            display: grid;
+            justify-content: center;
+            background-color: #333;
+            padding: 15px;
+            border-radius: 5px;
+            box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+        }
+
+        /* Style for the filter title */
+        .filter-title {
+            font-size: 18px;
+            font-weight: bold;
+            margin-bottom: 10px;
+        }
+
+        /* Style for individual category checkboxes */
+        .category-checkbox {
+            margin-right: 10px;
+        }
     </style>
+    <section class="category-filter">
+    <h3 class="filter-title">Filter by Category</h3>
+    <form id="nintendoForm" action="index.php?action=nintendoPage" method="POST">
+        <label class="category-checkbox">
+            <input type="checkbox" name="action" value="category1"> Nintendo
+        </label>
+        <button type="submit" class="btn btn-primary">Apply Filter</button>
+    </form>
+        <form id="playstationForm" action="index.php?action=playstationPage" method="POST">
+        <label class="category-checkbox">
+            <input type="checkbox" name="action" value="category2"> Playstation
+        </label>
+            <button type="submit" class="btn btn-primary">Apply Filter</button>
+        </form>
+        <form id="xboxForm" action="index.php=?action=xboxPage" method="POST">
+        <label class="category-checkbox">
+            <input type="checkbox" name="action" value="category3"> Xbox
+        </label>
+            <button type="submit" class="btn btn-primary">Apply Filter</button>
+        </form>
+    </section>
     <div class="position-relative overflow-hidden p-3 p-md-5 m-md-3 text-center bg-body-tertiary">
         <div class="col-md-6 p-lg-5 mx-auto my-5">
             <h3 class="display-3 fw-bold"><img src="../img/GameHub.png" style="height: 100%; width: 40%; object-fit: contain;"</h3>

@@ -34,12 +34,12 @@ class SearchPageHandler
 
             if (count($result) > 0)
             {
-                echo"You are searching for '".$_POST["search"]."'";
+//                echo"You are searching for '".$_POST["search"]."'";
                 $template->assign('products', $result);
                 $template->display("template/searchPage.tpl");
             } else
             {
-                echo"You are searching for '".$_POST["search"]."'";
+//                echo"You are searching for '".$_POST["search"]."'";
                 echo "Helaas Pindekaas.... we kunnen geen resultaten vinden.";
                 $template->assign('products', []);
                 $template->display("template/searchPage.tpl");
