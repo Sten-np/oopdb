@@ -25,9 +25,9 @@ class AddProductHandler
                 'image' => $_POST['prodimg'],
                 'category' => $_POST['prodcategory']
             ];
-            $product = Db::$db->insert("product", $data);
+            Db::$db->insert("product", $data);
             Db::$db->disconnect();
-            header('location; index.php?action=admin-products');
+            header("Refresh:1; url=index.php?action=admin-products");
 
         }catch(PDOException $e)
         {

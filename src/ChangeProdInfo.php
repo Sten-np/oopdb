@@ -20,6 +20,7 @@ class ChangeProdInfo
                 'productName' => $_POST['prodname'],
                 'price' => $_POST['price'],
                 'description' => $_POST['description'],
+                'image' => $_POST['image'],
                 'category' => $_POST['category']
             ];
             Db::$db->update("product", $data , $_POST['prodid']);

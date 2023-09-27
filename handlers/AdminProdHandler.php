@@ -11,10 +11,10 @@ class AdminProdHandler
     {
         try
         {
-            $prod = Db::$db->select('product', ['id','productName', 'price' ,'description', 'category']);
+            $prod = Db::$db->select('product', ['id','productName', 'price' ,'description', 'image', 'category']);
         }catch (PDOException $error)
         {
-            throw new Exception("Error!" . $error);
+            throw new PDOException("Error!" . $error);
         }
 
         global $template;
