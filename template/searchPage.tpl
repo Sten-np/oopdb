@@ -34,31 +34,28 @@
         }
     </style>
 
-    {*    This code here under shows the products*}
+
+    {* This is the category filter *}
     <section class="category-filter">
         <h3 class="filter-title">Filter by Category</h3>
-        <form id="nintendoForm" action="index.php?action=filterPage" method="POST">
+        <form action="index.php?action=filterPage" method="POST">
             <label class="category-checkbox">
-                <input type="text" name="actionNintendo" value="category1"> Nintendo
+                <input type="checkbox" name="nintendoForm" value="Nintendo"> Nintendo
             </label>
-            <button type="submit" class="btn btn-primary">Apply Filter</button>
-        </form>
-        <form id="playstationForm" action="index.php?action=filterPage" method="POST">
             <label class="category-checkbox">
-                <input type="checkbox" name="actionPlaystation" value="category2"> Playstation
+                <input type="checkbox" name="playstationForm" value="Playstation"> Playstation
             </label>
-            <button type="text" class="btn btn-primary">Apply Filter</button>
-        </form>
-        <form id="xboxForm" action="index.php=?action=filterPage" method="POST">
             <label class="category-checkbox">
-                <input type="text" name="actionXbox" value="category3"> Xbox
+                <input type="checkbox" name="xboxForm" value="Xbox"> Xbox
             </label>
-            <button type="submit" class="btn btn-primary">Apply Filter</button>
-        </form>
-        <form id="priceForm" action="index.php=?action=filterPage" method="POST">
             <label class="category-checkbox">
-                <input type="search" name="priceForm" value="category3"> Price
+                <input id="price" type="checkbox" name="priceForm" value="price" onclick="togglePriceFilters()"> Price
             </label>
+            <!-- Add price input fields if Price is selected -->
+            <div id="priceFilters" class="priceFilter" style="display: none;">
+                <input id="minPrice" type="number" name="minPrice" placeholder="Min Price">
+                <input id="maxPrice" type="number" name="maxPrice" placeholder="Max Price">
+            </div>
             <button type="submit" class="btn btn-primary">Apply Filter</button>
         </form>
     </section>
@@ -89,6 +86,17 @@
                     </div>
                 </div>
             </div>
+            <script>
+                function togglePriceFilters() {
+                    var priceFilters = document.getElementById("priceFilters");
+
+                    if (priceFilters.style.display === "none") {
+                        priceFilters.style.display = "block";
+                    } else {
+                        priceFilters.style.display = "none";
+                    }
+                }
+            </script>
         {/foreach}
     </div>
 {/block}

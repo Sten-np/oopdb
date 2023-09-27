@@ -33,6 +33,7 @@
         }
     </style>
 
+
     {* This is the category filter *}
     <section class="category-filter">
         <h3 class="filter-title">Filter by Category</h3>
@@ -47,10 +48,10 @@
                 <input type="checkbox" name="xboxForm" value="Xbox"> Xbox
             </label>
             <label class="category-checkbox">
-                <input type="checkbox" name="priceForm" value="price"> Price
+                <input id="priceForm" type="checkbox" name="priceForm" value="price" onclick="togglePriceFilters()"> Price
             </label>
             <!-- Add price input fields if Price is selected -->
-            <div id="priceFilters" style="display: none;">
+            <div id="priceFilter" class="priceFilter" style="display: none;">
                 <input id="minPrice" type="number" name="minPrice" placeholder="Min Price">
                 <input id="maxPrice" type="number" name="maxPrice" placeholder="Max Price">
             </div>
@@ -81,6 +82,19 @@
                         <a href="index.php?action=moreInfo&product_id={$product.id}" class="btn btn-primary" style="background-color: orange; color: black; border: none">More Info</a>                    </div>
                 </div>
             </div>
+            <script>
+                function togglePriceFilters() {
+                    var priceFilters = document.getElementById("priceFilter");
+
+                    if (priceFilters.style.display === "none" || priceFilters.style.display === "") {
+                        priceFilters.style.display = "block";
+                    } else {
+                        priceFilters.style.display = "none";
+                    }
+                    console.log("Function called"); // Add this line to check if the function is called
+
+                }
+            </script>
         {/foreach}
 
     </div>

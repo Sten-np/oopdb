@@ -13,41 +13,69 @@ class FilterPageHandler
         global $template;
 
         try{
+            $pdo = new \PDO("mysql:host=localhost;dbname=gamehub", "root", "");
+            $pdo->setAttribute(\PDO::ATTR_ERRMODE, \PDO::ERRMODE_EXCEPTION);
         // Check if the form was submitted
-        if ($_SERVER["REQUEST_METHOD"] === "POST")
-        {
-            // Check if categories checkboxes were selected
-            // Check if categories checkboxes were selected
-            if (isset($_POST['nintendoForm'])) {
-                $category = 'nintendo';
-            } elseif (isset($_POST['playstationForm'])) {
-                $category = 'playstation';
-            } elseif (isset($_POST['xboxForm'])) {
-                $category = 'xbox';
-            }
+            if ($_SERVER["REQUEST_METHOD"] === "POST") {
+                $selectedCategories = [];
 
-            if (isset($category)) {
-                $columns = ['*'];
-                $where = ['category' => $category];
-                $products = Db::$db->select('product', $columns, $where);
+                // Check if categories checkboxes were selected
+                if (isset($_POST['nintendoForm'])) {
+                    $selectedCategories[] = 'nintendo';
+                }
+                if (isset($_POST['playstationForm'])) {
+                    $selectedCategories[] = 'playstation';
+                }
+                if (isset($_POST['xboxForm'])) {
+                    $selectedCategories[] = 'xbox';
+                }
 
-                // Assign the filtered products to the template
-                $template->assign('valuta', '$');
-                $template->assign('products', $products);
-                $template->display("template/filterPage.tpl");
-            }
-            elseif (isset($_POST['priceForm'])) {
+                $priceFilter = false;
+                // Check if the price checkbox was selected
+                if (isset($_POST['priceForm'])) {
+                    $priceFilter = true;
+                    $minPrice = isset($_POST['minPrice']) ? (float)$_POST['minPrice'] : 0;
+                    $maxPrice = isset($_POST['maxPrice']) ? (float)$_POST['maxPrice'] : PHP_FLOAT_MAX;
+                }
+
+                // Build the WHERE condition for the SQL query
+                $where = [];
+                $placeholders = [];
+
+                // Add category conditions
+                foreach ($selectedCategories as $category) {
+                    $where[] = 'category = :category_' . $category;
+                    $placeholders['category_' . $category] = $category;
+                }
+
+                // Add price conditions if price filter is enabled
+                if ($priceFilter) {
+                    $where[] = 'price >= :minPrice AND price <= :maxPrice';
+                    $placeholders['minPrice'] = $minPrice;
+                    $placeholders['maxPrice'] = $maxPrice;
+                }
+
+                $whereClause = implode(' OR ', $where);
+
+                // If no checkboxes were selected, include all categories
+                if (empty($selectedCategories)) {
+                    $selectedCategories = ['nintendo', 'playstation', 'xbox'];
+                }
+
+                // Construct the SQL query
+                $sql = "SELECT * FROM product WHERE $whereClause";
+                var_dump($sql);
+
                 // Connect to the database using PDO
                 $pdo = new \PDO("mysql:host=localhost;dbname=gamehub", "root", "");
 
-                // Define the maximum price
-                $maxPrice = 100;
+                // Prepare the SQL query
+                $query = $pdo->prepare($sql);
 
-                // Prepare the SQL query with a placeholder
-                $query = $pdo->prepare("SELECT * FROM product WHERE price < :maxPrice");
-
-                // Bind the parameter
-                $query->bindValue(':maxPrice', $maxPrice, \PDO::PARAM_INT); // Assuming price is an integer
+                // Bind parameters
+                foreach ($placeholders as $key => $value) {
+                    $query->bindValue(':' . $key, $value);
+                }
 
                 // Execute the query
                 $query->execute();
@@ -60,15 +88,16 @@ class FilterPageHandler
                 $template->assign('products', $result);
                 $template->display("template/filterPage.tpl");
             }
+
             else {
                 echo "No product found...<br>";
                 echo "The product you selected in the filter doesn't exist.";
             }
-          }
         }
         catch(PDOException $e)
         {
-            throw new PDOException("Error! " . $e);
+            echo "Database Connection Error: " . $e->getMessage();
+            exit;
         }
     }
 }
