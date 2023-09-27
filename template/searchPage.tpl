@@ -39,7 +39,7 @@
         <h3 class="filter-title">Filter by Category</h3>
         <form id="nintendoForm" action="index.php?action=filterPage" method="POST">
             <label class="category-checkbox">
-                <input type="checkbox" name="actionNintendo" value="category1"> Nintendo
+                <input type="text" name="actionNintendo" value="category1"> Nintendo
             </label>
             <button type="submit" class="btn btn-primary">Apply Filter</button>
         </form>
@@ -47,17 +47,17 @@
             <label class="category-checkbox">
                 <input type="checkbox" name="actionPlaystation" value="category2"> Playstation
             </label>
-            <button type="submit" class="btn btn-primary">Apply Filter</button>
+            <button type="text" class="btn btn-primary">Apply Filter</button>
         </form>
         <form id="xboxForm" action="index.php=?action=filterPage" method="POST">
             <label class="category-checkbox">
-                <input type="checkbox" name="actionXbox" value="category3"> Xbox
+                <input type="text" name="actionXbox" value="category3"> Xbox
             </label>
             <button type="submit" class="btn btn-primary">Apply Filter</button>
         </form>
         <form id="priceForm" action="index.php=?action=filterPage" method="POST">
             <label class="category-checkbox">
-                <input type="checkbox" name="priceForm" value="category3"> Price
+                <input type="search" name="priceForm" value="category3"> Price
             </label>
             <button type="submit" class="btn btn-primary">Apply Filter</button>
         </form>
