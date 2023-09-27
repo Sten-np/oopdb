@@ -17,8 +17,6 @@ class SearchPageHandler
             // Fetch all products (assuming it's necessary)
             $products = Db::$db->select('product', ['*']);
 
-            // Use prepared statements for security
-
             // Ignores the warning message, because the filter_var works
             error_reporting(E_ALL ^ E_DEPRECATED);
 

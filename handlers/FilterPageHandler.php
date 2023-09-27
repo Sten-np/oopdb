@@ -49,13 +49,36 @@ class FilterPageHandler
             $template->assign('products', $products);
             $template->display("template/filterPage.tpl");
         }
+        elseif (isset($_POST['priceForm'])) {
+            // Connect to the database using PDO
+            $pdo = new \PDO("mysql:host=localhost;dbname=gamehub", "root", "");
+
+            // Define the maximum price
+            $maxPrice = 100;
+
+            // Prepare the SQL query with a placeholder
+            $query = $pdo->prepare("SELECT * FROM product WHERE price < :maxPrice");
+
+            // Bind the parameter
+            $query->bindValue(':maxPrice', $maxPrice, \PDO::PARAM_INT); // Assuming price is an integer
+
+            // Execute the query
+            $query->execute();
+
+            // Fetch the results
+            $result = $query->fetchAll(\PDO::FETCH_ASSOC);
+
+            // Assign the results to the template
+            $template->assign('valuta', '$');
+            $template->assign('products', $result);
+            $template->display("template/filterPage.tpl");
+        }
         else
         {
             echo"No product found";
 
             // Assuming you have a Database class with a select function
-            $template->assign('valuta', '$');
-            $template->display("template/filterPage.tpl");
+            $template->display("template/productPage.tpl");
         }
     }
 }

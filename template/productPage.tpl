@@ -32,6 +32,8 @@
             margin-right: 10px;
         }
     </style>
+
+    {*    This code here under shows the products*}
     <section class="category-filter">
         <h3 class="filter-title">Filter by Category</h3>
         <form id="nintendoForm" action="index.php?action=filterPage" method="POST">
@@ -52,7 +54,14 @@
             </label>
             <button type="submit" class="btn btn-primary">Apply Filter</button>
         </form>
+        <form id="priceForm" action="index.php=?action=filterPage" method="POST">
+            <label class="category-checkbox">
+                <input type="checkbox" name="priceForm" value="category3"> 0 - 100 Price
+            </label>
+            <button type="submit" class="btn btn-primary">Apply Filter</button>
+        </form>
     </section>
+
     <div class="position-relative overflow-hidden p-3 p-md-5 m-md-3 text-center bg-body-tertiary">
         <div class="col-md-6 p-lg-5 mx-auto my-5">
             <h3 class="display-3 fw-bold"><img src="../img/GameHub.png" style="height: 100%; width: 40%; object-fit: contain;"</h3>
