@@ -10,6 +10,7 @@ use Handlers\MoreInfoPageActionHandler;
 use Handlers\NintendoPageActionHandler;
 use Handlers\PlaystationPageActionHandler;
 use Handlers\ProductPageActionHandler;
+use Handlers\RemoveProductHandler;
 use Handlers\SearchPageHandler;
 use Handlers\UserInformationActionHandler;
 use Handlers\UserListHandler;
@@ -172,6 +173,10 @@ switch ($action) {
     case "addproduct":
         LoginChecker::checkAdmin();
         $addProductHandler = new AddProductHandler();
+        break;
+    case "removeProd":
+        LoginChecker::checkAdmin();
+        $removeProductHandler = new RemoveProductHandler();
         break;
 
     default:

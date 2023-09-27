@@ -15,5 +15,5 @@ interface Database
 
     public function update(string $table, array $data, string $where);
 
-    public function delete();
+    public function delete(string $table);
 }

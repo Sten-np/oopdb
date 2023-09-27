@@ -84,9 +84,21 @@ class Mysql implements Database
         }
     }
 
-    public function delete()
+    public function delete(string $table)
     {
-        // TODO: Implement delete() method.
+        try
+        {
+            $sql = "DELETE FROM {$table}";
+            $sql .= " WHERE `id` = {$_POST['prodid']}";
+
+            $stmt = self::$db->prepare($sql);
+            $stmt->execute();
+        }
+        catch(PDOException $e)
+        {
+            throw new PDOException("Error! " . $e);
+        }
+
     }
 
     //username, password, passwordRepeat, email
