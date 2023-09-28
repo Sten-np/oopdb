@@ -17,8 +17,6 @@ class SearchPageHandler
             // Fetch all products (assuming it's necessary)
             $products = Db::$db->select('product', ['*']);
 
-            // Use prepared statements for security
-
             // Ignores the warning message, because the filter_var works
             error_reporting(E_ALL ^ E_DEPRECATED);
 
@@ -34,12 +32,12 @@ class SearchPageHandler
 
             if (count($result) > 0)
             {
-                echo"You are searching for '".$_POST["search"]."'";
+//                echo"You are searching for '".$_POST["search"]."'";
                 $template->assign('products', $result);
                 $template->display("template/searchPage.tpl");
             } else
             {
-                echo"You are searching for '".$_POST["search"]."'";
+//                echo"You are searching for '".$_POST["search"]."'";
                 echo "Helaas Pindekaas.... we kunnen geen resultaten vinden.";
                 $template->assign('products', []);
                 $template->display("template/searchPage.tpl");
