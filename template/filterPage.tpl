@@ -85,19 +85,20 @@
                         <a href="index.php?action=moreInfo&product_id={$product.id}" class="btn btn-primary" style="background-color: orange; color: black; border: none">More Info</a>                    </div>
                 </div>
             </div>
+        {/foreach}
 
             <script>
                 function togglePriceFilters() {
-                    var priceFilters = document.getElementById("priceFilter");
+                    var priceFilter = document.getElementById("priceFilter");
+                    console.log("togglePriceFilters function called"); // Add this line
 
-                    if (priceFilters.style.display === "none" || priceFilters.style.display === "") {
-                        priceFilters.style.display = "block";
+                    if (priceFilter.style.display === "none" || priceFilter.style.display === "") {
+                        priceFilter.style.display = "block";
                     } else {
-                        priceFilters.style.display = "none";
+                        priceFilter.style.display = "none";
                     }
 
                 }
             </script>
-        {/foreach}
     </div>
 {/block}

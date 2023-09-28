@@ -82,6 +82,7 @@
                         <a href="index.php?action=moreInfo&product_id={$product.id}" class="btn btn-primary" style="background-color: orange; color: black; border: none">More Info</a>                    </div>
                 </div>
             </div>
+        {/foreach}
             <script>
                 function togglePriceFilters() {
                     var priceFilters = document.getElementById("priceFilter");
@@ -94,6 +95,5 @@
 
                 }
             </script>
-        {/foreach}
     </div>
 {/block}

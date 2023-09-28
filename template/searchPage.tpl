@@ -87,7 +87,9 @@
                     </div>
                 </div>
             </div>
-            <script>
+        {/foreach}
+
+        <script>
                 function togglePriceFilters() {
                     var priceFilters = document.getElementById("priceFilter");
 
@@ -99,6 +101,5 @@
 
                 }
             </script>
-        {/foreach}
     </div>
 {/block}
