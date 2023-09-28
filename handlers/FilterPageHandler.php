@@ -31,8 +31,6 @@ class FilterPageHandler
                     $selectedCategories[] = 'xbox';
                 }
 
-
-
                 $priceFilter = false;
                 // Check if the price checkbox was selected
                 if (isset($_POST['priceForm'])) {
@@ -46,9 +44,13 @@ class FilterPageHandler
                 $placeholders = [];
 
                 // Add category conditions
-                foreach ($selectedCategories as $category) {
-                    $where[] = 'category = :category_' . $category;
-                    $placeholders['category_' . $category] = $category;
+                if (!empty($selectedCategories)) {
+                    $categoryConditions = [];
+                    foreach ($selectedCategories as $category) {
+                        $categoryConditions[] = 'category = :category_' . $category;
+                        $placeholders['category_' . $category] = $category;
+                    }
+                    $where[] = '(' . implode(' OR ', $categoryConditions) . ')';
                 }
 
                 // Add price conditions if price filter is enabled
@@ -58,8 +60,12 @@ class FilterPageHandler
                     $placeholders['maxPrice'] = $maxPrice;
                 }
 
-                $whereClause = implode(' OR ', $where);
-
+                if (empty($where)) {
+                    // No filters selected, display all products
+                    $whereClause = '1'; // Always true
+                } else {
+                    $whereClause = implode(' AND ', $where);
+                }
                 // Construct the SQL query
                 $sql = "SELECT * FROM product WHERE $whereClause";
 
