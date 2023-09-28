@@ -186,6 +186,7 @@
     {block name="userUpdateCredentials"}{/block}
     {block name="contact-page"}{/block}
     {block name="userChangeSuccesFull"}{/block}
+    {block name="registerSuccesFull"}{/block}
     {block name="notpermitted"}{/block}
 </div>
 

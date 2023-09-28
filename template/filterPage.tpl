@@ -95,15 +95,9 @@
                     } else {
                         priceFilters.style.display = "none";
                     }
-                    console.log("Function called"); // Add this line to check if the function is called
 
                 }
             </script>
         {/foreach}
     </div>
-
-
-
-
-
 {/block}

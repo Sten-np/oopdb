@@ -29,6 +29,7 @@ use Project9\LoginChecker;
 use Project9\Mysql;
 use Project9\Security;
 use Project9\UserChangeSuccesFull;
+use Project9\RegisterSuccesFull;
 use Project9\UserUpdateCredentials;
 use Project9\UserUpdateLocate;
 use Project9\ChangeProdInfo;
@@ -159,7 +160,12 @@ switch ($action) {
 
     case "userChangeSuccesFull":
         $handler = new UserChangeSuccesFull();
-        $handler->handleuserChangeSuccesFull();
+        $handler->handleUserChangeSuccesFull();
+
+    case "registerSuccesFull":
+        $handler = new RegisterSuccesFull();
+        $handler->handleRegisterSuccesFull();
+        break;
 
     case "search":
         $handler = new SearchPageHandler();

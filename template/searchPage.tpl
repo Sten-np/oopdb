@@ -49,17 +49,18 @@
                 <input type="checkbox" name="xboxForm" value="Xbox"> Xbox
             </label>
             <label class="category-checkbox">
-                <input id="price" type="checkbox" name="priceForm" value="price" onclick="togglePriceFilters()"> Price
+                <input id="priceForm" type="checkbox" name="priceForm" value="price" onclick="togglePriceFilters()"> Price
             </label>
             <!-- Add price input fields if Price is selected -->
-            <div id="priceFilters" class="priceFilter" style="display: none;">
+            <div id="priceFilter" class="priceFilter" style="display: none;">
                 <input id="minPrice" type="number" name="minPrice" placeholder="Min Price">
                 <input id="maxPrice" type="number" name="maxPrice" placeholder="Max Price">
             </div>
             <button type="submit" class="btn btn-primary">Apply Filter</button>
         </form>
     </section>
-    <div class="
+
+
     <div class="position-relative overflow-hidden p-3 p-md-5 m-md-3 text-center bg-body-tertiary">
         <div class="col-md-6 p-lg-5 mx-auto my-5">
             <h3 class="display-3 fw-bold"><img src="../img/GameHub.png" style="height: 100%; width: 40%; object-fit: contain;"></h3>
@@ -88,13 +89,14 @@
             </div>
             <script>
                 function togglePriceFilters() {
-                    var priceFilters = document.getElementById("priceFilters");
+                    var priceFilters = document.getElementById("priceFilter");
 
-                    if (priceFilters.style.display === "none") {
+                    if (priceFilters.style.display === "none" || priceFilters.style.display === "") {
                         priceFilters.style.display = "block";
                     } else {
                         priceFilters.style.display = "none";
                     }
+
                 }
             </script>
         {/foreach}

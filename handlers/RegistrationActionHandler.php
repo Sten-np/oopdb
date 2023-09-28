@@ -108,8 +108,8 @@ class registrationActionHandler
     $this->smarty->assign('loginMessage', "You can now login with your email address " . $_POST['emailadress']);
 
     // Display the success template
-    $template->display("template/register_success.tpl");
-    header("Refresh:3; url=index.php", true, 303);
+    $template->display("template/registerSuccessfull.tpl");
+    header("Refresh:3; url=index.php?action=registerSuccesfull", true, 303);
     exit();
  }
 }

@@ -4,6 +4,7 @@ namespace Handlers;
 
 use Project9\Db;
 use PDOException;
+use PDO;
 
 class FilterPageHandler
 {
@@ -13,8 +14,8 @@ class FilterPageHandler
         global $template;
 
         try{
-            $pdo = new \PDO("mysql:host=localhost;dbname=gamehub", "root", "");
-            $pdo->setAttribute(\PDO::ATTR_ERRMODE, \PDO::ERRMODE_EXCEPTION);
+            $pdo = new PDO("mysql:host=localhost;dbname=gamehub", "root", "");
+            $pdo->setAttribute(PDO::ATTR_ERRMODE, PDO::ERRMODE_EXCEPTION);
         // Check if the form was submitted
             if ($_SERVER["REQUEST_METHOD"] === "POST") {
                 $selectedCategories = [];
@@ -29,6 +30,8 @@ class FilterPageHandler
                 if (isset($_POST['xboxForm'])) {
                     $selectedCategories[] = 'xbox';
                 }
+
+
 
                 $priceFilter = false;
                 // Check if the price checkbox was selected
@@ -57,14 +60,8 @@ class FilterPageHandler
 
                 $whereClause = implode(' OR ', $where);
 
-                // If no checkboxes were selected, include all categories
-                if (empty($selectedCategories)) {
-                    $selectedCategories = ['nintendo', 'playstation', 'xbox'];
-                }
-
                 // Construct the SQL query
                 $sql = "SELECT * FROM product WHERE $whereClause";
-                var_dump($sql);
 
                 // Connect to the database using PDO
                 $pdo = new \PDO("mysql:host=localhost;dbname=gamehub", "root", "");

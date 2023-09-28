@@ -2,9 +2,9 @@
 
 namespace Project9;
 
-class userChangeSuccesFull
+class UserChangeSuccesFull
 {
-    public function handleuserChangeSuccesFull()
+    public function handleUserChangeSuccesFull()
     {
 
         global $template;
