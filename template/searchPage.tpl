@@ -4,8 +4,6 @@
     GameHub | Search
 {/block}
 
-{block name="navmenu"}{/block}
-
 {block name="productPage"}
     <style>
         .card {

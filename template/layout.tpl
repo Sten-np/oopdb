@@ -189,6 +189,7 @@
     {block name="userChangeSuccesFull"}{/block}
     {block name="registerSuccesFull"}{/block}
     {block name="notpermitted"}{/block}
+    {block name="removeUser"}{/block}
 </div>
 
 {block name="footer"}

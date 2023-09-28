@@ -21,6 +21,7 @@ use Handlers\LogoutActionHandler;
 use Handlers\RegistrationActionHandler;
 use Handlers\AddProductHandler;
 use Handlers\FilterPageHandler;
+use Handlers\RemoveUserHandler;
 
 //With the namespaces 'Project9'
 use Project9\AdminChangeState;
@@ -189,6 +190,11 @@ switch ($action) {
         LoginChecker::checkAdmin();
         $removeProductHandler = new RemoveProductHandler();
         break;
+
+    case "removeUser":
+        LoginChecker::checkAdmin();
+         $removeUserHandler = new RemoveUserHandler();
+         break;
 
     default:
         $template->display("template/homePage.tpl");
