@@ -14,6 +14,7 @@ use Handlers\RemoveProductHandler;
 use Handlers\SearchPageHandler;
 use Handlers\UserInformationActionHandler;
 use Handlers\UserListHandler;
+use Handlers\CartPageHandler;
 use Handlers\XboxPageActionHandler;
 use Handlers\AdminProdHandler;
 use Handlers\LoginActionHandler;
@@ -24,6 +25,7 @@ use Handlers\FilterPageHandler;
 
 //With the namespaces 'Project9'
 use Project9\AdminChangeState;
+use Project9\AddToCart;
 use Project9\Db;
 use Project9\LoginChecker;
 use Project9\Mysql;
@@ -48,7 +50,6 @@ if (!isset($_SESSION['csrf_token'])) {
     // Generate a new CSRF token and store it in the session
     $_SESSION['csrf_token'] = $security->generateCSRFToken();
 }
-
 $template->assign('csrf_token', $_SESSION['csrf_token']);
 
 $action = $_GET['action'] ?? null;
@@ -99,6 +100,14 @@ switch ($action) {
         $adminChangeState = new AdminChangeState();
         break;
 
+
+    case "addtocart":
+        $addtocart = new AddToCart();
+        break;
+
+    case "cartPage ":
+        $CartHandler = new CartPageHandler();
+        break;
 
     case "logout":
         $handler = new LogoutActionHandler();
