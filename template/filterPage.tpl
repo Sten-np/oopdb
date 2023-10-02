@@ -9,6 +9,12 @@
         .card {
             display: inline-block;
         }
+
+        .card-img-top {
+            height: 225px;
+            width: 290px;
+        }
+
         .category-filter {
             display: grid;
             justify-content: center;

@@ -22,6 +22,7 @@ use Handlers\RegistrationActionHandler;
 use Handlers\AddProductHandler;
 use Handlers\FilterPageHandler;
 use Handlers\RemoveUserHandler;
+use Handlers\AdminInformationActionHandler;
 
 //With the namespaces 'Project9'
 use Project9\AdminChangeState;
@@ -169,6 +170,11 @@ switch ($action) {
         break;
     case "notpermitted":
         $template->display("template/notpermitted.tpl");
+        break;
+    case "admin-information":
+        LoginChecker::checkAdmin();
+        $AdminInfoHandler = new AdminInformationActionHandler();
+        $AdminInfoHandler->handleAdminInformationPage();
         break;
     case "admin-products":
         LoginChecker::checkAdmin();
