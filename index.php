@@ -105,7 +105,7 @@ switch ($action) {
         $addtocart = new AddToCart();
         break;
 
-    case "cartPage ":
+    case "cartPage":
         $CartHandler = new CartPageHandler();
         break;
 

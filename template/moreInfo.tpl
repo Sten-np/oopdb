@@ -19,10 +19,11 @@
                         <span>{$product[0].price}</span>
                     </div>
                     <p class="lead">{$product[0].description}</p>
+                    {var_dump($product[0].id)}
                     <!-- Add to cart button -->
                     <form method="post" action="index.php?action=addtocart">
                         <input type="hidden" name="product_id" value="{$product[0].id}" />
-                        <input type="submit" class="btn btn-outline-light flex-shrink-0" value="Add to cart" />
+                        <input type="submit" name="submit" class="btn btn-outline-light flex-shrink-0" value="Add to cart" />
                     </form>
 
                 </div>

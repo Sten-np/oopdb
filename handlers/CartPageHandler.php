@@ -17,8 +17,6 @@ class CartPageHandler
             throw new \Exception("Error!" . $error);
         }
 
-
-
         global $template;
         $template->assign("products", $products);
         $template->display("template/cart.tpl");

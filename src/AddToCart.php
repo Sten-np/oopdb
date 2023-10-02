@@ -17,10 +17,9 @@ class AddToCart
             }
             $data = [
                 'productId' => $_POST['product_id'],
-
             ];
             $_SESSION['cart'] = $data;
-            header('Location: index.php?action=cart.tpl');
+            header('Refresh:1; index.php?action=cartPage');
         }catch (\PDOException $error)
         {
             throw new \Exception($error);
