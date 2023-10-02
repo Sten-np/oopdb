@@ -3,6 +3,9 @@
 declare(strict_types=1);
 
 require_once "vendor/autoload.php";
+session_start();
+
+var_dump($_SESSION);
 
 use Handlers\AdminHandler;
 use Project9\Db;
@@ -17,12 +20,13 @@ use Project9\NintendoPageActionHandler;
 use Project9\MoreInfoPageActionHandler;
 use Project9\xboxPage;
 use Project9\AdminListHandler;
+use Project9\cartPageHandler;
+use Project9\addCartHandler;
 use Project9\UserListHandler;
 use Project9\AdminChangeState;
 
 
 
-session_start();
 $template = new Smarty();
 $template->clearCompiledTemplate();
 $template->clearAllCache();
@@ -66,6 +70,11 @@ switch ($action) {
         $handler = new xboxPageActionHandler();
         $handler->handleXboxPage();
         break;
+    case "cartPage":
+        $handler = new cartPageHandler();
+        $handler->handleCartPage();
+        break;
+
     case "playstationPage":
         $handler = new playstationPageActionHandler();
         $handler->handlePlaystationPage();

@@ -6,29 +6,33 @@
 
 {block name="navmenu"}{/block}
 
-{block name="productPage"}
+{block name="moreInfoPage"}
     <section class="py-5">
         <div class="container px-4 px-lg-5 my-5">
             {if isset($product) && !empty($product)}
-                <div class="row gx-4 gx-lg-5 align-items-center">
+{*                <div class="row gx-4 gx-lg-5 align-items-center">*}
                     <div class="col-md-6"><img class="card-img-top mb-5 mb-md-0" src="{$product[0].image}" alt="Product Image" /></div>
-                    <div class="col-md-6">
-{*                        <div class="small mb-1">SKU: {$product[0].sku}</div>*}
-                        <h1 class="display-5 fw-bolder">{$product[0].productName}</h1>
-                        <div class="fs-5 mb-5">
-{*                            <span class="text-decoration-line-through">{$product[0].originalPrice}</span>*}
-                            <span>{$product[0].price}</span>
-                        </div>
-                        <p class="lead">{$product[0].description}</p>
-                        <div class="d-flex">
-                            <input class="form-control text-center me-3" id="inputQuantity" type="number" value="1" style="max-width: 4rem" />
-                            <button class="btn btn-outline-light flex-shrink-0" type="button">
-                                <i class="bi-cart-fill me-1"></i>
-                                Add to cart
-                            </button>
-                        </div>
+{*                    <div class="col-md-6">*}
+{*                        <h1 class="display-5 fw-bolder">{$product[0].productName}</h1>*}
+{*                        <div class="fs-5 mb-5">*}
+{*                            <span>{$product[0].price}</span>*}
+{*                        </div>*}
+{*                        <p class="lead">{$product[0].description}</p>*}
+{*                        <div class="d-flex">*}
+{*                            <input class="form-control text-center me-3" id="inputQuantity" type="number" value="1" style="max-width: 4rem" />*}
+{*                            <button class="btn btn-outline-light flex-shrink-0" type="button"><i class="bi-cart-fill me-1"></i>Add to cart</button>*}
+{*                        </div>*}
+{*                    </div>*}
+{*                </div>*}
+                <form method="POST" action="index.php?action=moreInfo">
+                    <div class="d-flex">
+                        <input class="form-control text-center me-3" name="quantity" type="number" value="1" style="max-width: 4rem" />
+                        <input type="hidden" name="productId" value="{$product[0].id}" />
+                        <input type="hidden" name="productName" value="{$product[0].productName}" />
+                        <input type="hidden" name="price" value="{$product[0].price}" />
+                        <button class="btn btn-outline-light flex-shrink-0" type="submit"><i class="bi-cart-fill me-1"></i>Add to cart</button>
                     </div>
-                </div>
+                </form>
             {else}
                 <p>No product information available.</p>
             {/if}

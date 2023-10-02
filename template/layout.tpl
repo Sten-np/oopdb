@@ -87,7 +87,6 @@
         }
 
     </style>
-
     <header class="p-3 text-bg-dark">
         <div class="container">
             <div class="d-flex flex-wrap align-items-center justify-content-center justify-content-lg-start">
@@ -111,6 +110,7 @@
 
                 <div class="text-end">
                     <button type="button" class="btn btn-outline-light me-2"><a style="text-decoration: none;  color: inherit" href="index.php?action=loginForm">Login</a></button>
+                    <button type="button" class="btn btn-outline-light me-2"><a style="text-decoration: none;  color: inherit" href="index.php?action=cartPage">Cart</a></button>
                     {block name="register"} <button type="button" class="btn btn-warning" style="background-color: orange"><a style="text-decoration: none;  color: inherit" href="index.php?action=registerForm">Sign-up</a></button>{/block}
                 </div>
         </div>
@@ -118,11 +118,17 @@
 <div class="container-fluid">
     {block name="registerForm"}{/block}
     {block name="homePage"}{/block}
+    {block name="playstationPage"}{/block}
     {block name="productPage"}{/block}
+    {block name="xboxPage"}{/block}
+    {block name="moreInfoPage"}{/block}
+    {block name="nintendoPage"}{/block}
     {block name="loginForm"}{/block}
     {block name="productPage"}{/block}
     {block name="admin-login"}{/block}
+    {block name="cartPage"}{/block}
     {block name="contact-page"}{/block}
+
 </div>
 
     <div class="container">

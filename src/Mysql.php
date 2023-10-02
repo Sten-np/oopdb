@@ -34,7 +34,13 @@ class Mysql implements Database
             if (!empty($where)) {
                 $whereConditions = [];
                 foreach ($where as $key => $value) {
-                    $whereConditions[] = "$key = :$key";
+                    // Check if the value is an array (for IN clause)
+                    if (is_array($value)) {
+                        $inValues = implode(',', array_fill(0, count($value), '?'));
+                        $whereConditions[] = "$key IN ($inValues)";
+                    } else {
+                        $whereConditions[] = "$key = :$key";
+                    }
                 }
                 $sql .= " WHERE " . implode(' AND ', $whereConditions);
             }
@@ -43,10 +49,16 @@ class Mysql implements Database
 
             if (!empty($where)) {
                 foreach ($where as $key => $value) {
-                    $query->bindValue(":$key", $value);
+                    // Bind values differently for IN clause
+                    if (is_array($value)) {
+                        foreach ($value as $index => $val) {
+                            $query->bindValue($index + 1, $val);
+                        }
+                    } else {
+                        $query->bindValue(":$key", $value);
+                    }
                 }
             }
-
 
             $query->execute();
 
@@ -56,6 +68,7 @@ class Mysql implements Database
             throw new Exception($error->getMessage());
         }
     }
+
 
 
     public function update(string $table, array $data, string $where)

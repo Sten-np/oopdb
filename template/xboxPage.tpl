@@ -6,7 +6,7 @@
 
 {block name="navmenu"}{/block}
 
-{block name="productPage"}
+{block name="xboxPage"}
     <style>
         .card {
             display: inline-block;
