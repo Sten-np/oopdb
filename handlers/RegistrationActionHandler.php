@@ -4,7 +4,6 @@ namespace Handlers;
 
 use Project9\Security;
 use Project9\User;
-use Project9\RegisterSuccesFull;
 
 $security = new Security();
 
@@ -98,9 +97,8 @@ class registrationActionHandler
             // Expire the CSRF token
             $security->expireCSRFToken($_POST['csrf_token']);
 
-            header("Refresh:3; url=index.php?action=registerSuccesfull", true, 303);
+            header("Refresh:3; url=index.php?action=registerSuccesFull", true, 303);
             exit();
-
         }
         else
         {
@@ -112,15 +110,5 @@ class registrationActionHandler
             exit();
         }
     }
-
-    // Assign success messages to Smarty variables
-    $template->assign('welcomeMessage', "Welcome " . $_POST['username']);
-    $template->assign('accountCreatedMessage', "Your account has been created.");
-    $this->smarty->assign('loginMessage', "You can now login with your email address " . $_POST['emailadress']);
-
-    // Display the success template
-    $template->display("template/registerSuccessfull.tpl");
-    header("Refresh:3; url=index.php?action=registerSuccesfull", true, 303);
-    exit();
  }
 }

@@ -80,6 +80,7 @@ switch ($action) {
 
     case "login-adm":
         $adminHandler = new AdminHandler();
+        $adminHandler->passVerify();
         break;
 
     case "admin-dashboard":
@@ -154,6 +155,7 @@ switch ($action) {
     case "userChangeSuccesFull":
         $handler = new UserChangeSuccesFull();
         $handler->handleUserChangeSuccesFull();
+        break;
 
     case "registerSuccesFull":
         $handler = new RegisterSuccesFull();

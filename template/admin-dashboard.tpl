@@ -76,13 +76,14 @@
                 </div>
             </nav>
 
-{if isset($smarty.session.user)}
+
+
 <main class="col-md-9 ms-sm-auto col-lg-10 px-md-4">
     <div class="d-flex justify-content-between flex-wrap flex-md-nowrap align-items-center pt-3 pb-2 mb-3 border-bottom">
         <h1 class="h2">Dashboard</h1>
     {block name="admin-information"}
     <h3>Beheerder:
-        <button type="button" class="btn btn-warning" style="background-color: orange"><a style="text-decoration: none; color: inherit" href="index.php?action=admin-information">{$smarty.session.user.username}</a></button></h3>
+        <button type="button" class="btn btn-warning" style="background-color: orange"><a style="text-decoration: none; color: inherit" href="index.php?action=admin-information">{$smarty.session.admin.username}</a></button></h3>
     {/block}
     </div>
     {block name="admins"}{/block}
@@ -90,17 +91,9 @@
     {block name="admin-products"}{/block}
     {block name="addprod"}{/block}
 </main>
-{else}
-<main class="col-md-9 ms-sm-auto col-lg-10 px-md-4">
-    <div class="d-flex justify-content-between flex-wrap flex-md-nowrap align-items-center pt-3 pb-2 mb-3 border-bottom">
-        <h1 class="h2">Dashboard</h1>
-    </div>
-    {block name="admins"}{/block}
-    {block name="users"}{/block}
-    {block name="admin-products"}{/block}
-    {block name="addprod"}{/block}
-</main>
-{/if}
+
+
+
         </div>
     </div>
     <script src="../assets/dist/js/bootstrap.bundle.min.js"></script>

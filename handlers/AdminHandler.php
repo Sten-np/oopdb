@@ -30,8 +30,6 @@ class AdminHandler
     }
 
 
-
-
     public function passVerify() {
         global $security;
 
@@ -48,7 +46,7 @@ class AdminHandler
 
             if ($security->verifyCSRFToken($_POST['csrf_token'])) {
                 $_SESSION['admin'] = $admin[0];
-                echo "<h2>Welcome " . $_POST['username'] . $admin[0]['username'] . "</h2><br>";
+                echo "<h2>Welcome " . $admin[0]['username'] . "</h2><br>";
                 echo "<p>You've logged in.</p>";
                 header("Refresh:1; url=index.php?action=admin-dashboard");
                 exit();
