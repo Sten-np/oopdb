@@ -19,6 +19,10 @@
             display: flex;
         }
 
+        .priceFilter{
+            margin: 5px;
+        }
+
         /* Style for the filter title */
         .filter-title {
             display: flex;
@@ -30,6 +34,7 @@
         /* Style for individual category checkboxes */
         .category-checkbox {
             display: flex;
+            gap: 10px;
             justify-content: flex-start;
             margin-right: 10px;
         }
@@ -46,17 +51,17 @@
             background-color: #333;
             border-radius: 5px;
             box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
-            margin-right: 1%; /* Adjust the margin as needed */
+            margin-right: 5%; /* Adjust the margin as needed */
         }
 
         /* Style for the right column (product cards) */
-        .right-column {
-            flex: 2;
-            padding-left: 1%;
+        .grid-column {
+            display: grid;
+            grid-template-columns: auto auto auto;
+            gap: 50px;
         }
     </style>
 
-    <div class="right-column">
     <div class="position-relative overflow-hidden p-3 p-md-5 m-md-3 text-center bg-body-tertiary">
         <div class="col-md-6 p-lg-5 mx-auto my-5">
             <h3 class="display-3 fw-bold"><img src="../img/GameHub.png" style="height: 100%; width: 40%; object-fit: contain;"</h3>
@@ -72,6 +77,7 @@
     <div class="row" style="padding-left: 1%"  >
     <div class="two-column-layout">
         <div class="left-column">
+
             {* This is the category filter *}
             <section class="category-filter">
                 <form action="index.php?action=filterPage" method="POST">
@@ -93,11 +99,13 @@
                         <input id="minPrice" type="number" name="minPrice" placeholder="Min Price"><br>
                         <input id="maxPrice" type="number" name="maxPrice" placeholder="Max Price">
                     </div>
+                    <br>
                     <button type="submit" class="btn btn-primary">Apply Filter</button>
                 </form>
             </section>
         </div>
-        {foreach from=$products item=product}
+    <div class="grid-column">
+    {foreach from=$products item=product}
             <div class="col-md-4" style="width: 25%; padding-top: 3%">
                 <div class="card" style="width: 18rem;">
                     <img class="card-img-top" src="{$product.image}" alt="Card image cap">

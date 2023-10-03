@@ -87,8 +87,8 @@ class FilterPageHandler
                 $result = $query->fetchAll(\PDO::FETCH_ASSOC);
 
                 // Assign the results to the template
-                $template->assign('valuta', '$');
                 $template->assign('products', $result);
+                $template->assign('valuta', '€ ');
                 $template->display("template/filterPage.tpl");
             }
 

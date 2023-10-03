@@ -34,12 +34,14 @@ class SearchPageHandler
             {
 //                echo"You are searching for '".$_POST["search"]."'";
                 $template->assign('products', $result);
+                $template->assign('valuta', "€ ");
                 $template->display("template/searchPage.tpl");
             } else
             {
 //                echo"You are searching for '".$_POST["search"]."'";
                 echo "Helaas Pindekaas.... we kunnen geen resultaten vinden.";
                 $template->assign('products', []);
+                $template->assign('valuta', "€ ");
                 $template->display("template/searchPage.tpl");
             }
         } else
