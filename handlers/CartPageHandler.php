@@ -10,16 +10,30 @@ class CartPageHandler
     {
         try
         {
-            $where = ['id' => 'productId'];
-            $products = Db::$db->select('product', ['id', 'productName', 'price' ,'description'], $where);
-        }catch (\PDOException $error)
+            $products = [];
+
+            if (isset($_SESSION['cart']) && is_array($_SESSION['cart']) && !empty($_SESSION['cart']))
+            {
+                foreach ($_SESSION['cart'] as $cartItem)
+                {
+                    if (isset($cartItem['productId']) && is_numeric($cartItem['productId'])) {
+                        $where = ['id' => (int)$cartItem['productId']];
+                        $product = Db::$db->select('product', ['id', 'productName', 'price', 'description'], $where);
+
+                        if (!empty($product)) {
+                            $products[] = $product[0];
+                        }
+                    }
+                }
+            }
+        } catch (\PDOException $error)
         {
             throw new \Exception("Error!" . $error);
         }
 
+        var_dump($_SESSION['cart']);
         global $template;
         $template->assign("products", $products);
         $template->display("template/cart.tpl");
     }
-
 }

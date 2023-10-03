@@ -1,10 +1,8 @@
 <?php
-
 namespace Project9;
 
 class AddToCart
 {
-
     public function __construct()
     {
         try
@@ -15,15 +13,23 @@ class AddToCart
                 header('Refresh:1; index.php?action=productPage');
                 exit();
             }
+
+            if (!isset($_SESSION['cart']))
+            {
+                $_SESSION['cart'] = [];
+            }
+
             $data = [
-                'productId' => $_POST['product_id'],
+                'productId' => (int)$_POST['product_id'],
             ];
-            $_SESSION['cart'] = $data;
+
+            // Append the product to the cart
+            $_SESSION['cart'][] = $data;
+
             header('Refresh:1; index.php?action=cartPage');
-        }catch (\PDOException $error)
+        } catch (\PDOException $error)
         {
             throw new \Exception($error);
         }
     }
-
 }
