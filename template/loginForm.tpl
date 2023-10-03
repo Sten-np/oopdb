@@ -49,7 +49,7 @@
             </div>
             <div class="form-check">
                 <label class="form-check-label">
-                    <input type="checkbox" name="remember" value="1" id="RememberMe"> Remember me
+                    <input type="checkbox" name="remember" class="form-control-check-input" value="1" id="RememberMe"> Remember me
                 </label>
             </div>
             <button type="submit" class="btn btn-primary">Submit</button>
