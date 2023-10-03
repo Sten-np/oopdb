@@ -11,7 +11,7 @@ class CartPageHandler
         try
         {
             $products = [];
-
+            $totalCost = 0;
             if (isset($_SESSION['cart']) && is_array($_SESSION['cart']) && !empty($_SESSION['cart']))
             {
                 foreach ($_SESSION['cart'] as $cartItem)
@@ -22,6 +22,8 @@ class CartPageHandler
 
                         if (!empty($product)) {
                             $products[] = $product[0];
+                            $totalCost += $product[0]['price'];
+                            $costNoVat = round($totalCost / 1.21);
                         }
                     }
                 }
@@ -30,10 +32,10 @@ class CartPageHandler
         {
             throw new \Exception("Error!" . $error);
         }
-
-        var_dump($_SESSION['cart']);
         global $template;
         $template->assign("products", $products);
+        $template->assign("totalCost", $totalCost);
+        $template->assign("priceNoVat", $costNoVat);
         $template->display("template/cart.tpl");
     }
 }
