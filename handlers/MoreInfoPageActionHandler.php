@@ -18,7 +18,10 @@ class MoreInfoPageActionHandler
         $where = ['id' => $product_id];
         $product = Db::$db->select('product', ['*'], $where);
         $template->assign('product', $product);
-        $template->display("template/moreInfo.tpl");
 
+
+
+        // Display the moreInfo.tpl template
+        $template->display("template/moreInfo.tpl");
     }
 }
