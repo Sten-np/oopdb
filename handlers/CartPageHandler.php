@@ -18,7 +18,7 @@ class CartPageHandler
                 {
                     if (isset($cartItem['productId']) && is_numeric($cartItem['productId'])) {
                         $where = ['id' => (int)$cartItem['productId']];
-                        $product = Db::$db->select('product', ['id', 'productName', 'price', 'description'], $where);
+                        $product = Db::$db->select('product', ['id', 'productName', 'price', 'description', 'image'], $where);
 
                         if (!empty($product)) {
                             $products[] = $product[0];
@@ -30,8 +30,6 @@ class CartPageHandler
         {
             throw new \Exception("Error!" . $error);
         }
-
-        var_dump($_SESSION['cart']);
         global $template;
         $template->assign("products", $products);
         $template->display("template/cart.tpl");
