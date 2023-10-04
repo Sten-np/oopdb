@@ -27,7 +27,7 @@
     </table>
     <br>
     <br>
-    <form>
+    <form method="post" action="index.php?action=processorder">
         <div class="form-group">
             <label>First name</label>
             <input class="form-control" type="text" name="fname" required placeholder="John">
@@ -43,6 +43,7 @@
             <input class="form-control" type="text" name="zipcode" required placeholder="1111AP">
             <label>Country</label>
             <select class="form-control" required name="country">
+                <option value="">--please select an option--</option>
                 <option value="Netherlands">Netherlands</option>
                 <option value="Belgium">Belgium</option>
                 <option value="Germany">Germany</option>
@@ -54,7 +55,7 @@
         <h4>EXCL BTW: &euro; {$priceNoVat}</h4>
         <h3>TOTAL: &euro; {$totalCost}</h3>
         <br>
-        <input type="submit" name="submit" value="Order Now">
+        <input type="submit" name="submitorder" value="Order Now">
     </form>
     <br>
 
