@@ -4,7 +4,7 @@
 {block name="admin-products"}
     <button style="background-color: orange; border-radius: 5px; color: black"><a href="index.php?action=addprod">Add a product</a></button>
     <form method="post" action="index.php?action=removeProd">
-        <input type="number" name="prodid" placeholder="enter id to remove" required>
+        <input type="number" name="id" placeholder="enter id to remove" required>
         <input type="submit" name="removeprodsubmit" value="Remove product">
     </form>
     <table style="border-collapse: collapse; width: 100%;">

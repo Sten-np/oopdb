@@ -53,8 +53,8 @@
                 </label>
             </div>
             <button type="submit" class="btn btn-primary">Submit</button>
-                <input type="hidden" name="csrf_token" value="{$csrf_token}">
-                <p class="mt-5 mb-3 text-body-secondary">&copy; 2017–2023</p>
+            <input type="hidden" name="csrf_token" value="{$csrf_token}">
+            <p class="mt-5 mb-3 text-body-secondary">&copy; 2017–2023</p>
         </form>
     </main>
 

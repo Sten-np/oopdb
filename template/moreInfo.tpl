@@ -4,8 +4,6 @@
     GameHub | Product Details
 {/block}
 
-{block name="navmenu"}{/block}
-
 {block name="productPage"}
 
 <section class="py-5">

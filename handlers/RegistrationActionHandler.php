@@ -16,14 +16,23 @@ if (!isset($_SESSION['csrf_token']))
 class registrationActionHandler
 {
     public function handleRegisterForm()
-{
+    {
     global $template;
     $template->display("template/registerForm.tpl");
-}
+    }
+
+    public function handleRegisterSuccesfull()
+    {
+        global $template;
+        $template->display("template/registerSuccesfull.tpl");
+    }
 
 
     public function handleRegister()
-{    global $security;
+{
+    global $template;
+    global $security;
+
 
     if (!empty($_POST['username']) && !empty($_POST['emailadress']) && !empty($_POST['phonenumber']) && !empty($_POST['password']) && !empty($_POST['passwordrepeat']))
     {
@@ -88,7 +97,7 @@ class registrationActionHandler
             // Expire the CSRF token
             $security->expireCSRFToken($_POST['csrf_token']);
 
-            header("Refresh:3; url=index.php", true, 303);
+            header("Refresh:3; url=index.php?action=registerSuccesFull", true, 303);
             exit();
         }
         else
@@ -97,19 +106,9 @@ class registrationActionHandler
             echo "<h2>Invalid Token</h2>";
             echo "<p>Your token is invalid.</p>";
             echo "<p>We are unable to make a account for you</p>";
-            header("Refresh:3; url=index.php", true, 303);
+            header("Refresh:3; url=index.php?action=registerForm", true, 303);
             exit();
         }
     }
-    global $template;
-    // Assign success messages to Smarty variables
-    $template->assign('welcomeMessage', "Welcome " . $_POST['username']);
-    $template->assign('accountCreatedMessage', "Your account has been created.");
-    $this->smarty->assign('loginMessage', "You can now login with your email address " . $_POST['emailadress']);
-
-    // Display the success template
-    $template->display("template/registerSuccessfull.tpl");
-    header("Refresh:3; url=index.php?action=registerSuccesfull", true, 303);
-    exit();
  }
 }

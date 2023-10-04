@@ -23,6 +23,8 @@ use Handlers\RegistrationActionHandler;
 use Handlers\AddProductHandler;
 use Handlers\FilterPageHandler;
 use Handlers\RemoveProductCartHandler;
+use Handlers\RemoveUserHandler;
+use Handlers\AdminInformationActionHandler;
 
 //With the namespaces 'Project9'
 use Project9\AdminChangeState;
@@ -80,6 +82,7 @@ switch ($action) {
 
     case "login-adm":
         $adminHandler = new AdminHandler();
+        $adminHandler->passVerify();
         break;
 
     case "admin-dashboard":
@@ -169,6 +172,7 @@ switch ($action) {
     case "userChangeSuccesFull":
         $handler = new UserChangeSuccesFull();
         $handler->handleUserChangeSuccesFull();
+        break;
 
     case "registerSuccesFull":
         $handler = new RegisterSuccesFull();
@@ -185,6 +189,11 @@ switch ($action) {
         break;
     case "notpermitted":
         $template->display("template/notpermitted.tpl");
+        break;
+    case "admin-information":
+        LoginChecker::checkAdmin();
+        $AdminInfoHandler = new AdminInformationActionHandler();
+        $AdminInfoHandler->handleAdminInformationPage();
         break;
     case "admin-products":
         LoginChecker::checkAdmin();
@@ -206,6 +215,11 @@ switch ($action) {
         LoginChecker::checkAdmin();
         $removeProductHandler = new RemoveProductHandler();
         break;
+
+    case "removeUser":
+        LoginChecker::checkAdmin();
+         $removeUserHandler = new RemoveUserHandler();
+         break;
 
     default:
         $template->display("template/homePage.tpl");

@@ -192,6 +192,7 @@
     {block name="registerSuccesFull"}{/block}
     {block name="notpermitted"}{/block}
     {block name="cartPage"}{/block}
+    {block name="removeUser"}{/block}
 </div>
 
 {block name="footer"}

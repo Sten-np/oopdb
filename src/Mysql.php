@@ -89,7 +89,7 @@ class Mysql implements Database
         try
         {
             $sql = "DELETE FROM {$table}";
-            $sql .= " WHERE `id` = {$_POST['prodid']}";
+            $sql .= " WHERE `id` = {$_POST['id']}";
 
             $stmt = self::$db->prepare($sql);
             $stmt->execute();
