@@ -38,6 +38,7 @@ use Project9\UserUpdateLocate;
 use Project9\ChangeProdInfo;
 
 session_start();
+var_dump($_SESSION['cart']);
 $template = new Smarty();
 $template->clearCompiledTemplate();
 $template->clearAllCache();
