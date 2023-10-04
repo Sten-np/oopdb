@@ -17,7 +17,7 @@
                                     <div class="p-5">
                                         <div class="d-flex justify-content-between align-items-center mb-5">
                                             <h1 class="fw-bold mb-0">Shopping Cart</h1>
-                                            <h6 class="mb-0 text-muted">HOW MANY ITEMS</h6>
+                                            <h6 class="mb-0 text-muted">Items</h6>
                                         </div>
                                         <hr class="my-4">
                                         {foreach $products as $product}
@@ -40,6 +40,18 @@
                                             <div class="col-md-1 col-lg-1 col-xl-1 text-end">
                                                 <a href="#!" class="text-muted"><i class="fas fa-times"></i></a>
                                             </div>
+
+                                                <div class="col-md-1 col-lg-1 col-xl-1 text-end">
+                                                    <form action="index.php?action=removeProduct" method="post">
+                                                        <input type="hidden" name="productId" value="{$product.id}">
+                                                        <button type="submit" class="btn btn-link text-muted" style="padding: 0; border: none; background: none;">
+                                                            <svg xmlns="http://www.w3.org/2000/svg" width="40" height="40" fill="currentColor" class="bi bi-x" viewBox="0 0 16 16">
+                                                                <path d="M4.646 4.646a.5.5 0 0 1 .708 0L8 7.293l2.646-2.647a.5.5 0 0 1 .708.708L8.707 8l2.647 2.646a.5.5 0 0 1-.708.708L8 8.707l-2.646 2.647a.5.5 0 0 1-.708-.708L7.293 8 4.646 5.354a.5.5 0 0 1 0-.708z"/>
+                                                            </svg>
+                                                        </button>
+                                                    </form>
+                                                </div>
+
                                         </div>
                                         {/foreach}
                                         <hr class="my-4">
@@ -56,19 +68,19 @@
                                         <h3 class="fw-bold mb-5 mt-2 pt-1">Summary</h3>
                                         <hr class="my-4">
 
-                                        <div class="d-flex justify-content-between mb-4">
-                                            <h5 class="text-uppercase">How many items</h5>
-                                            <h5>Total price</h5>
-                                        </div>
+{*                                        <div class="d-flex justify-content-between mb-4">*}
+{*                                            <h5 class="text-uppercase">Items</h5>*}
+{*                                            <h5>Total price</h5>*}
+{*                                        </div>*}
 
                                         <h5 class="text-uppercase mb-3">Shipping</h5>
 
                                         <div class="mb-4 pb-2">
-                                            <select class="select">
-                                                <option value="1">Standard-Delivery- €5.00</option>
-                                                <option value="2">Two</option>
-                                                <option value="3">Three</option>
-                                                <option value="4">Four</option>
+                                            <select class="form-select" aria-label="Default select example">
+                                                <option selected>Shipping Option</option>
+                                                <option value="1">Standard Shippping - $10</option>
+                                                <option value="2">Express Shipping - $15</option>
+                                                <option value="3">Same Day delivery - $20</option>
                                             </select>
                                         </div>
 

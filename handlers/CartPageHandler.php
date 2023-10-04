@@ -26,6 +26,18 @@ class CartPageHandler
                     }
                 }
             }
+            // Handle product removal
+            if ($_GET['action'] === 'removeProduct' && isset($_POST['productId']) && is_numeric($_POST['productId'])) {
+                $productIDToRemove = (int)$_POST['productId'];
+
+                // Find the index of the product in the session cart and remove it
+                foreach ($_SESSION['cart'] as $key => $cartItem) {
+                    if (isset($cartItem['productId']) && (int)$cartItem['productId'] === $productIDToRemove) {
+                        unset($_SESSION['cart'][$key]);
+                        break;
+                    }
+                }
+            }
         } catch (\PDOException $error)
         {
             throw new \Exception("Error!" . $error);
