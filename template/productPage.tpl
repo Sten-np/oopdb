@@ -49,7 +49,6 @@
         /* Style for the left column (category filter) */
         .left-column {
             padding: 1%;
-            background-color: #333;
             border-radius: 5px;
             box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
             margin-right: 5%; /* Adjust the margin as needed */
@@ -63,13 +62,9 @@
         }
     </style>
 
-    <div class="position-relative overflow-hidden p-3 p-md-5 m-md-3 text-center bg-body-tertiary">
-        <div class="col-md-6 p-lg-5 mx-auto my-5">
-            <h3 class="display-3 fw-bold"><img src="../img/GameHub.png" style="height: 100%; width: 40%; object-fit: contain;"</h3>
-            <div class="d-flex gap-3 justify-content-center lead fw-normal">
-                <a class="icon-link" href="#">
-                </a>
-            </div>
+    <div class="position-relative overflow-hidden p-3 p-md-5 m-md-3 text-center bg-body-tertiary" >
+        <div class="col-md-6 p-lg-5 mx-auto my-5" href="#">
+            <h1 class="display-3 fw-bold"><img src="../img/GameHub.png" style="width: 80%;"></h1>
         </div>
         <div class="product-device shadow-sm d-none d-md-block"></div>
         <div class="product-device product-device-2 shadow-sm d-none d-md-block"></div>
@@ -101,7 +96,7 @@
                         <input id="maxPrice" type="number" name="maxPrice" placeholder="Max Price">
                     </div>
                     <br>
-                    <button type="submit" class="btn btn-primary">Apply Filter</button>
+                    <button type="submit" class="btn btn-primary" style="background-color: orange; color: black; border: none">Apply Filter</button>
                 </form>
             </section>
         </div>
