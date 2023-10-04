@@ -1,11 +1,11 @@
 <?php
-/* Smarty version 4.3.4, created on 2023-10-04 08:22:13
+/* Smarty version 4.3.4, created on 2023-10-04 11:30:33
   from 'C:\Wamp.NET\sites\Project9\template\homePage.tpl' */
 
 /* @var Smarty_Internal_Template $_smarty_tpl */
 if ($_smarty_tpl->_decodeProperties($_smarty_tpl, array (
   'version' => '4.3.4',
-  'unifunc' => 'content_651d20b5a6d581_27777255',
+  'unifunc' => 'content_651d4cd9a1a217_99135268',
   'has_nocache_code' => false,
   'file_dependency' => 
   array (
@@ -20,29 +20,29 @@ if ($_smarty_tpl->_decodeProperties($_smarty_tpl, array (
   array (
   ),
 ),false)) {
-function content_651d20b5a6d581_27777255 (Smarty_Internal_Template $_smarty_tpl) {
+function content_651d4cd9a1a217_99135268 (Smarty_Internal_Template $_smarty_tpl) {
 $_smarty_tpl->_loadInheritance();
 $_smarty_tpl->inheritance->init($_smarty_tpl, true);
 ?>
 
 
 <?php 
-$_smarty_tpl->inheritance->instanceBlock($_smarty_tpl, 'Block_1554804078651d20b5a6acd3_56753665', "title");
+$_smarty_tpl->inheritance->instanceBlock($_smarty_tpl, 'Block_1359459889651d4cd9a17788_00645191', "title");
 ?>
 
 
 
 <?php 
-$_smarty_tpl->inheritance->instanceBlock($_smarty_tpl, 'Block_339837147651d20b5a6c2f9_90358291', "homePage");
+$_smarty_tpl->inheritance->instanceBlock($_smarty_tpl, 'Block_1034140631651d4cd9a18d26_44973399', "homePage");
 $_smarty_tpl->inheritance->endChild($_smarty_tpl, "template/layout.tpl");
 }
 /* {block "title"} */
-class Block_1554804078651d20b5a6acd3_56753665 extends Smarty_Internal_Block
+class Block_1359459889651d4cd9a17788_00645191 extends Smarty_Internal_Block
 {
 public $subBlocks = array (
   'title' => 
   array (
-    0 => 'Block_1554804078651d20b5a6acd3_56753665',
+    0 => 'Block_1359459889651d4cd9a17788_00645191',
   ),
 );
 public function callBlock(Smarty_Internal_Template $_smarty_tpl) {
@@ -54,12 +54,12 @@ public function callBlock(Smarty_Internal_Template $_smarty_tpl) {
 }
 /* {/block "title"} */
 /* {block "homePage"} */
-class Block_339837147651d20b5a6c2f9_90358291 extends Smarty_Internal_Block
+class Block_1034140631651d4cd9a18d26_44973399 extends Smarty_Internal_Block
 {
 public $subBlocks = array (
   'homePage' => 
   array (
-    0 => 'Block_339837147651d20b5a6c2f9_90358291',
+    0 => 'Block_1034140631651d4cd9a18d26_44973399',
   ),
 );
 public function callBlock(Smarty_Internal_Template $_smarty_tpl) {
