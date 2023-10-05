@@ -9,6 +9,7 @@ class LoginChecker
     {
         if(!isset($_SESSION['user']) || !$_SESSION['user'])
         {
+            echo "<script>alert('You need to be logged in for that action!')</script>";
             header("Refresh:1; url=index.php");
             exit();
         }
