@@ -193,6 +193,7 @@
     {block name="notpermitted"}{/block}
     {block name="cartPage"}{/block}
     {block name="orderpage"}{/block}
+    {block name="removeUser"}{/block}
 </div>
 
 {block name="footer"}

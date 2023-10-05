@@ -4,8 +4,6 @@
     GameHub | Userinformation
 {/block}
 
-{block name="navmenu"}{/block}
-
 {block name="userInformation"}
     <style>
         .card {

@@ -1,5 +1,9 @@
 {extends file="template/admin-dashboard.tpl"}
 {block name="users"}
+    <form action="index.php?action=removeUser" method="POST">
+        <input type="number" name="id" placeholder="enter id to remove the user" required>
+        <input type="submit" name="removeUserSubmit" value="Remove user">
+    </form>
     <table style="border-collapse: collapse; width: 100%;">
         <thead>
         <tr>
@@ -12,7 +16,9 @@
         <tbody>
         {foreach $users as $user}
             <tr>
-                <td style="border: 1px solid #ffffff ; padding: 8px; background-color: #212529;">{$user.id}</td>
+                <td style="border: 1px solid #ffffff ; padding: 8px; background-color: #212529;">{$user.id}
+                    <input type="hidden" name="userid" value="{$user.id}">
+                </td>
                 <td style="border: 1px solid #ffffff ; padding: 8px; background-color: #212529;">{$user.username}</td>
                 <td style="border: 1px solid #ffffff ; padding: 8px; background-color: #212529;">{$user.emailadress}</td>
                 <td style="border: 1px solid #ffffff ; padding: 8px; background-color: #212529;">

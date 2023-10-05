@@ -4,8 +4,6 @@
     GameHub | Product Details
 {/block}
 
-{block name="navmenu"}{/block}
-
 {block name="productPage"}
 
 <section class="py-5">
@@ -16,10 +14,9 @@
                 <div class="col-md-6">
                     <h1 class="display-5 fw-bolder">{$product[0].productName}</h1>
                     <div class="fs-5 mb-5">
-                        <span>{$product[0].price}</span>
+                        <span>${$product[0].price}</span>
                     </div>
                     <p class="lead">{$product[0].description}</p>
-                    {var_dump($product[0].id)}
                     <!-- Add to cart button -->
                     <form method="post" action="index.php?action=addtocart">
                         <input type="hidden" name="product_id" value="{$product[0].id}" />
