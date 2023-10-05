@@ -23,6 +23,7 @@ use Handlers\LogoutActionHandler;
 use Handlers\RegistrationActionHandler;
 use Handlers\AddProductHandler;
 use Handlers\FilterPageHandler;
+use Handlers\RemoveProductCartHandler;
 
 //With the namespaces 'Project9'
 use Project9\AdminChangeState;
@@ -110,6 +111,14 @@ switch ($action) {
     case "processorder":
         $processOrderHandler = new ProcessOrderHandler();
         break;
+
+    case "removeProduct":
+        // Instantiate the RemoveProductHandler and call handleRemoveProduct
+        $removeProductHandler = new RemoveProductCartHandler();
+        $removeProductHandler->handleRemoveProduct();
+        break;
+
+
     case "logout":
         $handler = new LogoutActionHandler();
         $handler->handleLogout();

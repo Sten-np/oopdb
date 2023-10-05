@@ -18,13 +18,25 @@ class CartPageHandler
                 {
                     if (isset($cartItem['productId']) && is_numeric($cartItem['productId'])) {
                         $where = ['id' => (int)$cartItem['productId']];
-                        $product = Db::$db->select('product', ['id', 'productName', 'price', 'description'], $where);
+                        $product = Db::$db->select('product', ['id', 'productName', 'price', 'description', 'image'], $where);
 
                         if (!empty($product)) {
                             $products[] = $product[0];
                             $totalCost += $product[0]['price'];
                             $costNoVat = round($totalCost / 1.21);
                         }
+                    }
+                }
+            }
+            // Handle product removal
+            if ($_GET['action'] === 'removeProduct' && isset($_POST['productId']) && is_numeric($_POST['productId'])) {
+                $productIDToRemove = (int)$_POST['productId'];
+
+                // Find the index of the product in the session cart and remove it
+                foreach ($_SESSION['cart'] as $key => $cartItem) {
+                    if (isset($cartItem['productId']) && (int)$cartItem['productId'] === $productIDToRemove) {
+                        unset($_SESSION['cart'][$key]);
+                        break;
                     }
                 }
             }
