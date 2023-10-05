@@ -10,7 +10,6 @@ class Mysql implements Database
 {
     public static $db;
 
-
     public function __construct(string $host, string $dbname, string $username, string $password)
     {
         try
@@ -46,7 +45,6 @@ class Mysql implements Database
                     $query->bindValue(":$key", $value);
                 }
             }
-
 
             $query->execute();
 
@@ -101,7 +99,6 @@ class Mysql implements Database
 
     }
 
-    //username, password, passwordRepeat, email
     public function insert(string $table, $params = []) : void
     {
         try {
@@ -118,14 +115,6 @@ class Mysql implements Database
         {
             throw new Exception($error->getMessage());
         }
-
-        // TODO: Implement insert() method.
-//        $insert = $db->prepare("INSERT INTO users SET username=:username, password=:password");
-//        INSERT INTO users (username, password)) VALUES (:username, :password);
-//        $insert->bindParam(":username", $user);
-//        $insert->bindParam(":password", $_POST['password']);
-//        $insert->execute();
-
     }
 
     public function disconnect()

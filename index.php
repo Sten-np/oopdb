@@ -9,6 +9,7 @@ use Handlers\AdminListHandler;
 use Handlers\MoreInfoPageActionHandler;
 use Handlers\NintendoPageActionHandler;
 use Handlers\PlaystationPageActionHandler;
+use Handlers\ProcessOrderHandler;
 use Handlers\ProductPageActionHandler;
 use Handlers\RemoveProductHandler;
 use Handlers\SearchPageHandler;
@@ -43,9 +44,7 @@ $template->clearAllCache();
 global $template;
 
 $database = new Db();
-
 $security = new Security();
-
 if (!isset($_SESSION['csrf_token'])) {
     // Generate a new CSRF token and store it in the session
     $_SESSION['csrf_token'] = $security->generateCSRFToken();
@@ -108,7 +107,9 @@ switch ($action) {
     case "cartPage":
         $CartHandler = new CartPageHandler();
         break;
-
+    case "processorder":
+        $processOrderHandler = new ProcessOrderHandler();
+        break;
     case "logout":
         $handler = new LogoutActionHandler();
         $handler->handleLogout();
@@ -161,12 +162,11 @@ switch ($action) {
     case "userChangeSuccesFull":
         $handler = new UserChangeSuccesFull();
         $handler->handleUserChangeSuccesFull();
-
+    break;
     case "registerSuccesFull":
         $handler = new RegisterSuccesFull();
         $handler->handleRegisterSuccesFull();
         break;
-
     case "search":
         $handler = new SearchPageHandler();
         $handler->handleSearchPage();

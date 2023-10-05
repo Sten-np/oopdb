@@ -141,9 +141,9 @@
                             <a class="dropdown-item d-flex gap-2 align-items-center" href="index.php?action=userInformation">
                                 <svg class="bi" width="16" height="16"><use xlink:href="#files"/></svg>
                                 Mijn gegevens
-                            <a class="dropdown-item d-flex gap-2 align-items-center" href="#">
+                            <a class="dropdown-item d-flex gap-2 align-items-center" href="index.php?action=cartPage">
                                 <svg class="bi" width="16" height="16"><use xlink:href="#image-fill"/></svg>
-                                Photos
+                                Winkelwagen
                             <a class="dropdown-item d-flex gap-2 align-items-center" href="#">
                                 <svg class="bi" width="16" height="16"><use xlink:href="#film"/></svg>
                                 Movies
@@ -190,6 +190,7 @@
     {block name="registerSuccesFull"}{/block}
     {block name="notpermitted"}{/block}
     {block name="cartPage"}{/block}
+    {block name="orderpage"}{/block}
 </div>
 
 {block name="footer"}
