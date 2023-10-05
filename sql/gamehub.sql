@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- Host: 127.0.0.1
--- Gegenereerd op: 02 okt 2023 om 13:14
+-- Gegenereerd op: 05 okt 2023 om 11:08
 -- Serverversie: 10.6.5-MariaDB
 -- PHP-versie: 8.1.2
 
@@ -24,28 +24,27 @@ SET time_zone = "+00:00";
 -- --------------------------------------------------------
 
 --
--- Tabelstructuur voor tabel `orderitems`
+-- Tabelstructuur voor tabel `orders`
 --
 
-CREATE TABLE `orderitems` (
-  `orderitems_id` int(5) NOT NULL,
-  `order_id` int(5) NOT NULL,
-  `product_id` int(11) NOT NULL
+CREATE TABLE `orders` (
+  `OrderID` int(11) NOT NULL,
+  `CustomerID` int(11) DEFAULT NULL,
+  `OrderDate` date DEFAULT NULL,
+  `TotalAmount` decimal(10,2) DEFAULT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=latin1;
 
 -- --------------------------------------------------------
 
 --
--- Tabelstructuur voor tabel `orders`
+-- Tabelstructuur voor tabel `order_items`
 --
 
-CREATE TABLE `orders` (
-  `id` int(5) NOT NULL,
-  `adress` varchar(35) NOT NULL,
-  `city` varchar(20) NOT NULL,
-  `zipCode` varchar(10) NOT NULL,
-  `country` varchar(20) NOT NULL,
-  `user_id` int(11) NOT NULL
+CREATE TABLE `order_items` (
+  `OrderItemID` int(11) NOT NULL,
+  `OrderID` int(11) DEFAULT NULL,
+  `ProductID` int(11) DEFAULT NULL,
+  `Quantity` int(11) DEFAULT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=latin1;
 
 -- --------------------------------------------------------
@@ -118,19 +117,19 @@ INSERT INTO `user` (`id`, `username`, `emailadress`, `password`, `phonenumber`, 
 --
 
 --
--- Indexen voor tabel `orderitems`
---
-ALTER TABLE `orderitems`
-  ADD PRIMARY KEY (`orderitems_id`),
-  ADD KEY `order_id` (`order_id`),
-  ADD KEY `product_id` (`product_id`);
-
---
 -- Indexen voor tabel `orders`
 --
 ALTER TABLE `orders`
-  ADD PRIMARY KEY (`id`),
-  ADD KEY `user_id` (`user_id`);
+  ADD PRIMARY KEY (`OrderID`),
+  ADD KEY `CustomerID` (`CustomerID`);
+
+--
+-- Indexen voor tabel `order_items`
+--
+ALTER TABLE `order_items`
+  ADD PRIMARY KEY (`OrderItemID`),
+  ADD KEY `OrderID` (`OrderID`),
+  ADD KEY `ProductID` (`ProductID`);
 
 --
 -- Indexen voor tabel `product`
@@ -149,16 +148,16 @@ ALTER TABLE `user`
 --
 
 --
--- AUTO_INCREMENT voor een tabel `orderitems`
---
-ALTER TABLE `orderitems`
-  MODIFY `orderitems_id` int(5) NOT NULL AUTO_INCREMENT;
-
---
 -- AUTO_INCREMENT voor een tabel `orders`
 --
 ALTER TABLE `orders`
-  MODIFY `id` int(5) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=2;
+  MODIFY `OrderID` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=16;
+
+--
+-- AUTO_INCREMENT voor een tabel `order_items`
+--
+ALTER TABLE `order_items`
+  MODIFY `OrderItemID` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=9;
 
 --
 -- AUTO_INCREMENT voor een tabel `product`
@@ -177,17 +176,17 @@ ALTER TABLE `user`
 --
 
 --
--- Beperkingen voor tabel `orderitems`
---
-ALTER TABLE `orderitems`
-  ADD CONSTRAINT `orderitems_ibfk_1` FOREIGN KEY (`order_id`) REFERENCES `orders` (`id`),
-  ADD CONSTRAINT `orderitems_ibfk_2` FOREIGN KEY (`product_id`) REFERENCES `product` (`id`);
-
---
 -- Beperkingen voor tabel `orders`
 --
 ALTER TABLE `orders`
-  ADD CONSTRAINT `orders_ibfk_1` FOREIGN KEY (`user_id`) REFERENCES `user` (`id`);
+  ADD CONSTRAINT `orders_ibfk_1` FOREIGN KEY (`CustomerID`) REFERENCES `user` (`id`);
+
+--
+-- Beperkingen voor tabel `order_items`
+--
+ALTER TABLE `order_items`
+  ADD CONSTRAINT `order_items_ibfk_1` FOREIGN KEY (`OrderID`) REFERENCES `orders` (`OrderID`),
+  ADD CONSTRAINT `order_items_ibfk_2` FOREIGN KEY (`ProductID`) REFERENCES `product` (`id`);
 COMMIT;
 
 /*!40101 SET CHARACTER_SET_CLIENT=@OLD_CHARACTER_SET_CLIENT */;

@@ -28,32 +28,9 @@
     <br>
     <br>
     <form method="post" action="index.php?action=processorder">
-        <div class="form-group">
-            <label>First name</label>
-            <input class="form-control" type="text" name="fname" required placeholder="John">
-            <label>Last name</label>
-            <input class="form-control" type="text" name="lname" required placeholder="Smith">
-        </div>
-        <div class="form-group">
-            <label>Address</label>
-            <input class="form-control" type="text" name="street" required placeholder="First Street">
-            <label>Number</label>
-            <input class="form-control" type="number" name="number" required placeholder="1">
-            <label>Zipcode</label>
-            <input class="form-control" type="text" name="zipcode" required placeholder="1111AP">
-            <label>Country</label>
-            <select class="form-control" required name="country">
-                <option value="">--please select an option--</option>
-                <option value="Netherlands">Netherlands</option>
-                <option value="Belgium">Belgium</option>
-                <option value="Germany">Germany</option>
-                <option value="United Kingdom">United Kingdom</option>
-            </select>
-        </div>
-        <br>
-        <br>
         <h4>EXCL BTW: &euro; {$priceNoVat}</h4>
         <h3>TOTAL: &euro; {$totalCost}</h3>
+        <input type="hidden" value="{$totalCost}" name="TotalAmount">
         <br>
         <input type="submit" name="submitorder" value="Order Now">
     </form>

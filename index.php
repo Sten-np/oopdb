@@ -38,16 +38,13 @@ use Project9\UserUpdateLocate;
 use Project9\ChangeProdInfo;
 
 session_start();
-var_dump($_SESSION['cart']);
 $template = new Smarty();
 $template->clearCompiledTemplate();
 $template->clearAllCache();
 global $template;
 
 $database = new Db();
-
 $security = new Security();
-
 if (!isset($_SESSION['csrf_token'])) {
     // Generate a new CSRF token and store it in the session
     $_SESSION['csrf_token'] = $security->generateCSRFToken();
