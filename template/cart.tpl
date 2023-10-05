@@ -73,34 +73,24 @@
 {*                                            <h5>Total price</h5>*}
 {*                                        </div>*}
 
-                                        <h5 class="text-uppercase mb-3">Shipping</h5>
-
-                                        <div class="mb-4 pb-2">
-                                            <select class="form-select" aria-label="Default select example">
-                                                <option selected>Shipping Option</option>
-                                                <option value="1">Standard Shippping - $10</option>
-                                                <option value="2">Express Shipping - $15</option>
-                                                <option value="3">Same Day delivery - $20</option>
-                                            </select>
+                                        <div class="d-flex justify-content-between mb-5">
+                                            <h5 class="text-uppercase">Price excl VAT: &euro; {$priceNoVat}</h5>
                                         </div>
 
-{*                                        <h5 class="text-uppercase mb-3">Give code</h5>*}
 
-{*                                        <div class="mb-5">*}
-{*                                            <div class="form-outline">*}
-{*                                                <input type="text" id="form3Examplea2" class="form-control form-control-lg" />*}
-{*                                                <label class="form-label" for="form3Examplea2">Enter your code</label>*}
-{*                                            </div>*}
-{*                                        </div>*}
 
                                         <hr class="my-4">
 
                                         <div class="d-flex justify-content-between mb-5">
                                             <h5 class="text-uppercase">Total price</h5>
-                                            <h5>$</h5>
+                                            <h5>&euro; {$totalCost}</h5>
                                         </div>
 
-                                        <button type="button" class="btn btn-warning" style="background-color: orange"><a style="text-decoration: none; color: inherit" href="index.php?action=#">Checkout</a></button>
+                                        <form method="post" action="index.php?action=processorder">
+                                            <input type="hidden" value="{$totalCost}" name="TotalAmount">
+                                            <br>
+                                            <input type="submit" name="submitorder" value="Checkout">
+                                        </form>
 
                                     </div>
                                 </div>
