@@ -35,7 +35,7 @@
 
                                             </div>
                                             <div class="col-md-3 col-lg-2 col-xl-2 offset-lg-1">
-                                                <h6 class="mb-0">${$product.price}</h6>
+                                                <h6 class="mb-0">&euro;{$product.price}</h6>
                                             </div>
                                             <div class="col-md-1 col-lg-1 col-xl-1 text-end">
                                                 <a href="#!" class="text-muted"><i class="fas fa-times"></i></a>
@@ -74,7 +74,8 @@
 {*                                        </div>*}
 
                                         <div class="d-flex justify-content-between mb-5">
-                                            <h5 class="text-uppercase">Price excl VAT: &euro; {$priceNoVat}</h5>
+                                            <h5 class="text-uppercase">Price excl. VAT</h5>
+                                            <h5 class="text-uppercase"> &euro; {$priceNoVat}</h5>
                                         </div>
 
 

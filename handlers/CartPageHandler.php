@@ -12,6 +12,7 @@ class CartPageHandler
         {
             $products = [];
             $totalCost = 0;
+            $costNoVat = 0;
             if (isset($_SESSION['cart']) && is_array($_SESSION['cart']) && !empty($_SESSION['cart']))
             {
                 foreach ($_SESSION['cart'] as $cartItem)

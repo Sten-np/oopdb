@@ -107,11 +107,11 @@ switch ($action) {
     case "addtocart":
         $addtocart = new AddToCart();
         break;
-
     case "cartPage":
         $CartHandler = new CartPageHandler();
         break;
     case "processorder":
+        LoginChecker::checkUser();
         $processOrderHandler = new ProcessOrderHandler();
         break;
 
