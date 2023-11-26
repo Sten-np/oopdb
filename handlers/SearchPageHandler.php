@@ -12,7 +12,7 @@ class SearchPageHandler
         if (isset($_POST["search"]))
         {
             // Assuming you have a PDO database connection
-            $pdo = new \PDO("mysql:host=localhost;dbname=gamehub", "root", "");
+            $pdo = new \PDO("mysql:host=localhost;dbname=gamehub", "root", "root");
 
             // Fetch all products (assuming it's necessary)
             $products = Db::$db->select('product', ['*']);

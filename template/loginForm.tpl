@@ -5,14 +5,6 @@
 {/block}
 
 {block name="loginForm"}
-
-{*    {if isset($_COOKIE['emailadress']) && isset($_COOKIE['password'])}*}
-{*        {$id=$_COOKIE['emailadress']}*}
-{*        {$pass=$_COOKIE['password']}*}
-{*    {else}*}
-{*        {$id=$_COOKIE['emailadress']}*}
-{*        {$pass=$_COOKIE['password']}*}
-{*    {/if}*}
     <style>
         /* Add your existing styles here */
 
@@ -56,6 +48,7 @@
                 <input type="password" class="form-control" id="password" placeholder="Enter password" name="password" required>
                 <input class="showPassword" type="checkbox" onclick="myFunction()"> Show Password
             </div>
+
             <div class="form-check">
                 <input type="checkbox" name="RememberMe" class="form-check-input" value="1" id="RememberMe">
                 <label class="form-check-label" for="RememberMe" onclick="setcookie()">Remember me
@@ -82,24 +75,26 @@
             }
         }
 
-        function setcookie()
-        {
+        function setcookie() {
             var e = document.getElementById('email').value;
             var p = document.getElementById('password').value;
 
-            document.cookie="myemail=" + e +";path=http://gamehub/index/;";
-            document.cookie="mypwd=" + p + ";path=http://gamehub/index/;";
+            console.log('Setting cookies...');
+            document.cookie = "myemail=" +e+ ";path=http://gamehub/index.php/";
+            document.cookie = "mypwd=" +p+ ";path=http://gamehub/index.php/";
         }
 
-        function getcookiedata()
-        {
+
+        function getcookiedata() {
+            console.log(document.cookie);
+
             var email = getCookie('myemail');
             var password = getCookie('mypwd');
 
-            document.getElementById('email').value=email;
-            document.getElementById('password').value=password;
-
+                document.getElementById('email').value = email;
+                document.getElementById('password').value = password;
         }
+
 
         function getCookie(cname)
         {

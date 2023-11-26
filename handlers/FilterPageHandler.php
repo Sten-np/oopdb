@@ -14,7 +14,7 @@ class FilterPageHandler
         global $template;
 
         try{
-            $pdo = new PDO("mysql:host=localhost;dbname=gamehub", "root", "");
+            $pdo = new PDO("mysql:host=localhost;dbname=gamehub", "root", "root");
             $pdo->setAttribute(PDO::ATTR_ERRMODE, PDO::ERRMODE_EXCEPTION);
         // Check if the form was submitted
             if ($_SERVER["REQUEST_METHOD"] === "POST") {
@@ -70,7 +70,7 @@ class FilterPageHandler
                 $sql = "SELECT * FROM product WHERE $whereClause";
 
                 // Connect to the database using PDO
-                $pdo = new \PDO("mysql:host=localhost;dbname=gamehub", "root", "");
+                $pdo = new \PDO("mysql:host=localhost;dbname=gamehub", "root", "root");
 
                 // Prepare the SQL query
                 $query = $pdo->prepare($sql);

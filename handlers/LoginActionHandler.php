@@ -37,21 +37,6 @@ class LoginActionHandler
 
             if (!empty($users) && password_verify($password, $users[0]['password'])) {
 
-//                if(isset($_POST['RememberMe']))
-//                {
-//                    print ("Test");
-//                    var_dump($_POST['RememberMe']);
-//                    setcookie('emailadress',$_POST['emailadress'], time() + (60*60*24));
-//                    setcookie('password',$_POST['password'], time() + (60*60*24));
-//
-//                    $template->assign('id', isset($_COOKIE['emailadress']) ? $_COOKIE['emailadress'] : '');
-//                    $template->assign('pass', isset($_COOKIE['password']) ? $_COOKIE['password'] : '');
-//                }
-//                else
-//                {
-//                    setcookie('emailadress','', time() - (60*60*24));
-//                    setcookie('password','', time() - (60*60*24));
-//                }
                 //Will check the CSRF Token first
                 if ($security->verifyCSRFToken($_POST['csrf_token'])) {
                     // Authentication successful

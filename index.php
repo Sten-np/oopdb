@@ -226,5 +226,5 @@ switch ($action) {
         break;
 }
 //Connecting to the database
-$database = new Mysql("localhost", "gamehub", "root", "");
-$database->__construct("localhost", "gamehub", "root", "");
+$database = new Mysql("localhost", "gamehub", "root", "root");
+$database->__construct("localhost", "gamehub", "root", "root");

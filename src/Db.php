@@ -8,6 +8,6 @@ class Db
 
     public function __construct()
     {
-        self::$db = new Mysql("localhost", "gamehub", "root", "");
+        self::$db = new Mysql("localhost", "gamehub", "root", "root");
     }
 }
